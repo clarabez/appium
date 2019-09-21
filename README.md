@@ -108,3 +108,13 @@ Tudo que estiver acompanhado do símbolo **✔** significa que está instalado c
 Tudo que estiver acompanhado do símbolo **✖** significa que *NÃO* está instalado ou identificado. Esses casos você deve ajustar.
 
 O pacote do **Xcode** é específico para iOS, então, para Android, não devemos nos preocupar.
+
+___
+# Checklist
+
+Se você chegou até aqui, significa que provavelmente o seu setup está pronto e agora você já pode usar todos os recursos do Appium! Só para checar, instalamos e configuramnos:
+- Appium Desktop
+- Android Studio (pacote AVD)
+- JAVA
+- IDE
+- Configuração de variáveis de ambiente
