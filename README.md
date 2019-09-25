@@ -65,6 +65,18 @@ Para identificar onde está a sua pasta para JAVA_HOME, é só usar o seguinte c
 which java
 ```
 Deverá ser retornado o caminho até seu pacote JAVA.
+
+**Dica 2:**
+Para evitar que suas variáveis de ambiente percam os valores, salve o conteúdo da variável no seu arquivo bashrc (Linux) ou bash_profile (macOS). Após salvar os valores, não esqueça de "compilar" o arquivo para as mudanças serem refletidas:
+Para macOS:
+```bash
+source ~./bash_profile
+```
+
+Para Linux:
+```bash
+source ~/.bashrc
+```
 ___
 
 # Como validar se tudo tá configurado ou se falta algo?
