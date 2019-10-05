@@ -12,9 +12,27 @@ class CasasBahiaHome:
         self.produtos = WebDriverWait(self.driver.instance, 10).until(EC.visibility_of_element_located((
             MobileBy.ID, 'com.novapontocom.casasbahia:id/tabProduct'
         )))
+        self.carrinho = WebDriverWait(self.driver.instance, 10).until(EC.visibility_of_element_located(
+            MobileBy.ID, 'com.novapontocom.casasbahia:id/tabCart'
+        )))
+
+        self.conta = WebDriverWait (self.driver.instance, 10).until (EC.visibility_of_element_located ((
+            MobileBy.ID, 'ccom.novapontocom.casasbahia:id/tabAccount'
+        )))
+
+         self.home = WebDriverWait (self.driver.instance, 10).until (EC.visibility_of_element_located ((
+            MobileBy.ID, 'com.novapontocom.casasbahia:id/tabHome'
+        )))
+
 
     def go_produtos(self):
         self.produtos.click()
+    def go_carrinho(self):
+        self.carrinho.click()
+    def go_conta(self):
+        self.conta(self)
+    def go_home(self):
+        self.home.click()
 
 
 class Product:
@@ -26,6 +44,7 @@ class Product:
         self.produtos = WebDriverWait (self.driver.instance, 10).until (EC.visibility_of_element_located ((
             MobileBy.ID, 'com.novapontocom.casasbahia:id/tabProduct'
         )))
+        
 
     def go_tvmenu(self):
         self.produtos.click()
