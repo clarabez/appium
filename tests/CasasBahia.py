@@ -19,3 +19,10 @@ class CasasBahiaApp(unittest.TestCase):
         launch = Product(self.driver)
         launch.go_produtos()
 
+    def test_three(self):
+        launch = CasasBahiaHome(self.driver)
+        launch.go_carrinho
+
+    def test_four(self):
+        launch = CasasBahiaHome(self.driver)
+        launch.go_conta
