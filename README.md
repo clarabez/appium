@@ -1,6 +1,12 @@
 # Objetivo do documento
 
-Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes móveis. Muito provavelmente este documento sofrerá ajustes e complementos ao longo do tempo :)
+Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes móveis. Aqui você vai: 
+1. Entender como funciona o Appium e como fazer mapeamento de elementos de uma aplicação;
+2. Como instanciar um dispositivo Android emulado através do Android Studio; 
+3. Como organizar o código de uma automação utilizando padrões de código como o PageObjects; 
+4. Como escrever testes através do framework PyTest.
+
+Muito provavelmente este documento sofrerá ajustes e complementos ao longo do tempo :)
 
 Em breve irei disponibilizar o mesmo conteúdo em inglês e também uma solução usando o Docker, visando tornar mais prática a etapa de configuração.
 
@@ -29,6 +35,8 @@ Durante o nosso Learning Session vamos utlizar algumas ferramentas essenciais pa
   - **Android Virtual Device (AVD):** é um pacote do Android Studio que possibilita que possamos instaciar dispositivos móveis de várias configurações e modelos de forma emulada e em vários níveis de API. Para isso, é preciso baixar o Android Studio e, durante o setup, marcar a opção de instalar também o AVD: https://developer.android.com/studio/index.html?hl=pt-br
   
   - **PyCharm** (ou alguma outra IDE de sua preferência e que dê suporte a Python): https://www.jetbrains.com/pycharm/
+  
+  - **VSCode** (caso seja sua IDE de preferência. Basta escolher entre o PyCharm e o VSCode): https://code.visualstudio.com/
   
 # Setup - Variáveis de ambiente:
 
@@ -130,3 +138,8 @@ Se você chegou até aqui, significa que provavelmente o seu setup está pronto 
 - JAVA
 - IDE
 - Configuração de variáveis de ambiente
+
+___
+# Iniciando com o Appium
+
+Depois de tudo configurado, é hora de iniciarmos com o Appium Desktop.
