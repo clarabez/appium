@@ -143,3 +143,49 @@ ___
 # Iniciando com o Appium
 
 Depois de tudo configurado, é hora de iniciarmos com o Appium Desktop.
+
+___
+# Comandos ADB
+ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é uma ferramenta que faz uma "ponte" de comunicação entre o seu computador e o seu dispositivo móvel Android através de linhas de comando. Através do ADB, é possível que possamos manipular o dispositvo através de comandos, de forma muito prática, como:
+- Instalar/desintalar aplicativos;
+- Mudar configurações internas, como: tempo de desligar tela, bloqueio/desbloqueio de tela, etc.
+- Habilitar/desabilitar funções de conexões, como: wifi, dados, modo avião.
+- Transfência/manipulação de arquivos;
+- Rebootar e desligar o dispositivo - não funciona para ligá-lo (mas isso pode ser resolvido através de frameworks).
+
+É também possível automatizar algumas atividades de rotina combinando comandos ADB e Python Script.
+
+**Um pouco mais sobre comandos ADB:** https://developer.android.com/studio/command-line/adb?hl=pt-br
+**Um pouco Python Script:** https://realpython.com/run-python-scripts/
+
+___
+# Emulando um dispositivo Android através do Android Studio
+Durante nossos estudos podemos utilizar dispositivos emulados para a realização dos nossos testes. Isso nos dá grande versatilidade pela possibilidade de escolher o dispositivo e a versão de Android que iremos utilizar. Desta forma, é possível validar o mesmo apk em cenários diversos apenas alterando configurações.
+
+Vamos utilizar o Android Virtual Device Manager que fica no Android Studio para isso.
+
+Alguns pontos importantes sobre este tópico:
+- Em breve farei um material falando como emular um dispositivo iOS.
+- Existem outras ferramentas que emulam dispositivos Androids mas, das que testei, nenhuma é tão boa quando a do Android Studio. Por esse motivo prefiro me manter nele e recomendo o uso.
+
+___
+# Tutorial 1: instalando um apk no meu dispositivo Android emulado
+O primeiro de tudo é escolher algum APK disponível na Play Store para a realização dos estudos. Ultimamente tenho utilizado o APK das Casas Bahia, pois tem boa parte de seus elementos mapeados e também porque tem diversos menus, itens e uma excelente usabilidade, o que facilita no processo de aprendizado. A seguir estão os passos para você baixar uma aplicação e fazer a instação dela no seu dispositivo:
+1. Escolha o APK a ser estudado;
+2. Busque o APK no Google Play Store;
+3. Copie o link da Play Store do apk (o link do perfil do aplicativo);
+4. Cole o link do APK no Evozi (link abaixo) para fazer o download do apk escolhido;
+5. Salve o apk numa pasta de sua escolha;
+6. Abra o seu Android Emulado e aguarde que ele fique na tela inicial (home screen);
+7. Agora arraste o APK que vc baixou para a página inicial do seu dispositivo emulado.
+8. Pode abrir o apk diretamente no dispositivo :) 
+8.1. Se desejar fazer via linha de comando, é só abrir o terminal na pasta que está sua aplicação e usar o seguinte comando ADB:
+```bash
+adb install nome-do-apk
+```
+
+**Evozi - APK Downloader:** https://apps.evozi.com/apk-downloader/
+**Google Play Store:** https://play.google.com/store/apps?hl=pt_BR
+
+___
+# Tutorial 2: Identificando os elementos da aplicação
