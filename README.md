@@ -27,18 +27,20 @@ Appium é uma ferramenta open-source e multi-plataforma com foco em automação 
 
 # Iniciando o Setup - Download
 
-Durante o nosso Learning Session vamos utlizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas:
+Durante o nosso workshop vamos utlizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas, que são comuns para Windows, MAC ou Linux:
   - **Appium Desktop:** é a interface da ferramenta Appium que será o foco do nosso workshop. O download está disponível aqui: https://github.com/appium/appium-desktop/releases/tag/v1.13.0 (aqui tem um acervo para vários Sistemas Operacionais. Baixe apenas aquele que for direcionado para o seu SO.)
   
-  - **JAVA:** https://www.java.com/pt_BR/download/ 
+  - **JDK (JAVA Development Kit):** https://www.java.com/pt_BR/download/ 
 
   - **Android Virtual Device (AVD):** é um pacote do Android Studio que possibilita que possamos instaciar dispositivos móveis de várias configurações e modelos de forma emulada e em vários níveis de API. Para isso, é preciso baixar o Android Studio e, durante o setup, marcar a opção de instalar também o AVD: https://developer.android.com/studio/index.html?hl=pt-br
   
-  - **PyCharm** (ou alguma outra IDE de sua preferência e que dê suporte a Python): https://www.jetbrains.com/pycharm/
+  - **IDE:**
+  Escolha uma IDE de sua preferência para desenvolver os testes na linguagem escolhida. Como vamos focar em Python, sugiro PyCharm ou VSCode. Links abaixo para download:
+  - PyCharm: https://www.jetbrains.com/pycharm/
   
-  - **VSCode** (caso seja sua IDE de preferência. Basta escolher entre o PyCharm e o VSCode): https://code.visualstudio.com/
+  - VSCode: https://code.visualstudio.com/
   
-# Setup - Variáveis de ambiente:
+# Setup - Variáveis de ambiente - Mac:
 
 Depois de realizadas as instalações do Appium Desktop, JAVA, Android Studio e da sua IDE, é hora de setarmos as variáveis de ambiente para que seu sistema operacional identifique os processos  e as aplicações de forma mais rápida e prática.
 Para isso, abra o seu terminal, identifique a localização de instalação dos pacotes e os exporte para a variável PATH.
@@ -66,15 +68,54 @@ export PATH=$ANDROID_HOME/build-tools:$PATH
 export JAVA_HOME=/your/path/to/jdk1.8.0_112.jdk/Contents/Home 
 export PATH=$JAVA_HOME/bin:$PATH
 ```
+# Setup - Variáveis de ambiente - Windows:
+Após o download (link acima) e instalação do JDK do seu ambiente Windows, é hora de configurar as variáveis de ambiente. Para isso, siga as opções de menu:
+1. Propriedades do Sistema >> Configurações avançadas do sistema >> Variáveis de ambiente >> Variáveis de usuário >> Novo.
+2. Insira o nome da variável como "JAVA_HOME" e insira como valor a localização exata do seu arquivo jre, por exemplo, "C:\Arquivos de Programa\Java\jdk1.2.2_2\jre".
+3. Na seção de variáveis de sistema, dê um clique duplo em "Path" e adicione a expressão "%JAVA_HOME%\bin". Isto significa que você está adicionando o mesmo valor criado para JAVA_HOME, só que também contuando para a pasta \bin.
+4. É só clicar OK e aplicar as mudanças de configuração.
 
-**Dica:**
+Agora, para baixar (link acima) e instalar o Android SDK, siga os passos:
+1. Siga o mesmo passo #1 descrito acima até alcançar o campo de variáveis de ambiente.
+2. Agora, insira o nome da variável como "ANDROID_HOME" e insira como valor a localização exata onde seu Android SDK foi instalado, por exemplo, "C:\android-sdk".
+3. Agora, mais uma vez precisamos adicionar o valor da sua nova variável à sua variável global do sistema, que é o Path: "%ANDROID_HOME%\platform-tools" e também "%ANDROID_HOME\tools%".
+4. É só clicar OK e aplicar as mudanças de configuração.
+
+# Setup - Variáveis de ambiente - Linux:
+A configuração de variáveis de ambiente para Linux funciona de forma muito semelhante a do Mac. Basta que vc identifique o caminho exato de instalação do JDK e do Android e aplicar (através de export) os caminhos no seu arquivo de configuração global, que neste caso é o ~/.bashrc
+
+Por exemplo, para Linux a localização normalmente fica em:
+
+```bash
+/Users/user_name/Library/Android/sdk
+```
+
+Então será a partir desta pasta que vamos identificar os outros caminhos necessários, como:
+```bash
+/Users/user_name/Library/Android/sdk/platform-tools
+/Users/user_name/Library/Android/sdk/tools
+/Users/user_name/Library/Android/sdk/build-tools
+```
+
+Quando você identificar estes caminhos em sua máquina, é hora de exportar esses valores para a variável PATH, como sugere o exemplo a seguir:
+
+```bash
+export ANDROID_HOME=/your/path/to/Android/sdk 
+export PATH=$ANDROID_HOME/platform-tools:$PATH 
+export PATH=$ANDROID_HOME/tools:$PATH 
+export PATH=$ANDROID_HOME/build-tools:$PATH 
+export JAVA_HOME=/your/path/to/jdk1.8.0_112.jdk/Contents/Home 
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
+**Dica - Windows/Linux/Mac:**
 Para identificar onde está a sua pasta para JAVA_HOME, é só usar o seguinte comando no terminal:
 ```bash
 which java
 ```
 Deverá ser retornado o caminho até seu pacote JAVA.
 
-**Dica 2:**
+**Dica 2 - Linux/Mac:**
 Para evitar que suas variáveis de ambiente percam os valores, salve o conteúdo da variável no seu arquivo bashrc (Linux) ou bash_profile (macOS). Após salvar os valores, não esqueça de "compilar" o arquivo para as mudanças serem refletidas:
 Para macOS:
 ```bash
@@ -86,6 +127,17 @@ Para Linux:
 source ~/.bashrc
 ```
 ___
+# Instalando o Appium
+
+A instalação do Appium é bastante simples e não requer configuração adicional - além da do Android e do JDK. Basta baixar o Appium Desktop na página oficial do Appium(como no link do começo do documento) ou via linha de comando atráves do terminal:
+
+```bash
+npm install -g appium
+```
+ATENÇÃO: Não instale o Appium com sudo.
+
+**Dica - O que é npm?**
+Npm é o gerenciador de downloads para pacotes node.js. 
 
 # Como validar se tudo tá configurado ou se falta algo?
 
