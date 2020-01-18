@@ -20,7 +20,7 @@ Appium é uma ferramenta open-source e multi-plataforma com foco em automação 
 
 **Página oficial do repo no GitHub:** https://github.com/appium/
 
-# Nativas, híbridas e móveis? Qual a diferença entre elas?
+Nativas, híbridas e móveis? Qual a diferença entre elas?
   - **Nativas:** aquelas aplicações que foram desenvolvidas especificamente para Android ou iOS, ou seja, a partir de seus específicos SDKs.
   - **Híbridas:** aquelas que são desenvolvidas em HTML, CSS, JavaScript e que são compatíveis com qualquer plataforma (Android, iOS, Windows).
   - **Móveis:** aquelas que podemos acessar através de um link, via página web.
