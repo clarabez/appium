@@ -1,8 +1,8 @@
-[appium]:appiumwithpython.png
-
 # Objetivo do documento
 
-![alt text][appium]
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/appiumwithpython.png">
+</p>
 
 Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes em dispositivos móveis. Aqui você vai: 
 1. Entender como funciona a ferramenta Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;
