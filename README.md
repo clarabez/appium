@@ -1,5 +1,3 @@
-# Objetivo do documento
-
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/appiumwithpython.png">
 </p>
@@ -194,7 +192,7 @@ Tudo que estiver acompanhado do símbolo **✖** significa que *NÃO* está inst
 O pacote do **Xcode** é específico para iOS, então, para Android, não devemos nos preocupar.
 
 ___
-# Checklist
+# Checklist de tudo o que fizemos até agora
 
 Se você chegou até aqui, significa que provavelmente o seu setup está pronto e agora você já pode usar todos os recursos do Appium! Só para checar, instalamos e configuramnos:
 - Appium Desktop
@@ -219,14 +217,29 @@ ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é
 
 É também possível automatizar algumas atividades de rotina combinando comandos ADB e Python Script.
 
+Como o assunto sobre comandos ADB merece maior aprofundamento e dedicação, criei um repositório à parte para falar mais sobre o tema: https://github.com/clarabez/comandosadb
+
 **Um pouco mais sobre comandos ADB:** https://developer.android.com/studio/command-line/adb?hl=pt-br
 **Um pouco Python Script:** https://realpython.com/run-python-scripts/
+**Meu Repositório sobre Comandos ADB:** https://github.com/clarabez/comandosadb
 
 ___
 # Emulando um dispositivo Android através do Android Studio
-Durante nossos estudos podemos utilizar dispositivos emulados para a realização dos nossos testes. Isso nos dá grande versatilidade pela possibilidade de escolher o dispositivo e a versão de Android que iremos utilizar. Desta forma, é possível validar o mesmo apk em cenários diversos apenas alterando configurações.
+Podemos usar o Appium em dispositivos reais, dispositivos emulados ou até mesmo em farms de dispositivos da Amazon, que funcionam com o mesmo conceito de computação em nuvem, onde você aloca recursos sob demanda e paga apenas o que for consumido.
+Durante nossos estudos podemos utilizar dispositivos emulados para a realização dos nossos testes. Isso nos dá grande versatilidade pela possibilidade de escolher o tipo de dispositivo e a versão de Android que iremos utilizar. Desta forma, é possível validar o mesmo apk em cenários diversos apenas alterando configurações, onde atingimos uma característica muito forte no Android que é a granularidade de versões: https://developer.android.com/about/dashboards?hl=pt-br
 
-Vamos utilizar o Android Virtual Device Manager que fica no Android Studio para isso.
+Vamos utilizar um recurso do próprio Android Studio para instanciarmos nosso dispotivo emulado: o Android Virtual Device Manager. Para acessá-lo, basta abrir o seu Android Studio e seguir até o seguinte ícone:
+
+Podemos usar comandos ADB no nosso dispositivo emulado e já ver que ele responde da mesma maneira que um dispositivo real. Tenta os seguintes comandos em seu terminal com seu dispositivo emulado ativo:
+Para litar o dispositivo e obter seu identificador:
+```bash
+adb devices
+```
+
+Ou dar um reboot (reiniciar) via terminal:
+```bash
+adb reboot
+```
 
 Alguns pontos importantes sobre este tópico:
 - Em breve farei um material falando como emular um dispositivo iOS.
@@ -234,11 +247,12 @@ Alguns pontos importantes sobre este tópico:
 
 ___
 # Tutorial 1: instalando um apk no meu dispositivo Android emulado
-O primeiro de tudo é escolher algum APK disponível na Play Store para a realização dos estudos. Ultimamente tenho utilizado o APK das Casas Bahia, pois tem boa parte de seus elementos mapeados e também porque tem diversos menus, itens e uma excelente usabilidade, o que facilita no processo de aprendizado. A seguir estão os passos para você baixar uma aplicação e fazer a instação dela no seu dispositivo:
+O primeiro de tudo é escolher algum APK disponível na Play Store para a realização dos estudos. Ultimamente tenho utilizado o APK das Casas Bahia, pois tem boa parte de seus elementos mapeados e também porque tem diversos menus, itens e uma excelente usabilidade, o que facilita no processo de aprendizado. 
+A seguir estão os passos para você baixar uma aplicação e fazer a instação dela no seu dispositivo:
 1. Escolha o APK a ser estudado;
 2. Busque o APK no Google Play Store;
 3. Copie o link da Play Store do apk (o link do perfil do aplicativo);
-4. Cole o link do APK no Evozi (link abaixo) para fazer o download do apk escolhido;
+4. Cole o link do APK no site Evozi (link abaixo) para fazer o download do apk escolhido;
 5. Salve o apk numa pasta de sua escolha;
 6. Abra o seu Android Emulado e aguarde que ele fique na tela inicial (home screen);
 7. Agora arraste o APK que vc baixou para a página inicial do seu dispositivo emulado.
@@ -252,4 +266,51 @@ adb install nome-do-apk
 **Google Play Store:** https://play.google.com/store/apps?hl=pt_BR
 
 ___
-# Tutorial 2: Identificando os elementos da aplicação
+# Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium
+Um dos pontos mais importantes quando começamos a usar o Appium é entender o funcionamento dos Desired Capabilities (abaixo eu deixo o link oficial listando todos os valores que podemos usar nos desired capabilitites). Desired Capabilities pode ser grosseiramente traduzido por "Configurações desejadas", mas prefiro seguir com a expressão "Desired Capabilities" por achar que essa nossa tradução não funcionou tão bem para essa expressão :) peço desculpas por isso!
+
+Como citado acima, o Appium funciona através de requisições HTTP e, como padrão deste tipo de comunicação, utilizamos arquivos em JSON para indicar qualquer mensagem. O appium nos traz uma interface gráfica com campos de entrada de texto mas, após preenchermos os campos de texto, ao lado ele já converte o que digitamos em um arquivo JSON. Você pode editar diretamente no JSON ou usar o campo de texto. As duas formas funcionam bem.
+
+Para iniciarmos uma sessão vamos precisar de pelo menos 2 campos, que são:
+
+```bash
+{
+    'platformName': 'Android',
+    'deviceName': 'HAHEHHAHE'
+}
+```
+
+Os nomes são bem intuitivos, e aí estou criando um dicionário com a chave 'platformName' para indicar a plataforma que irei utilizar, que pode ser: Android, Windows, iOS. Já o identificador do dispositivo móvel iremos inserir em 'deviceName', e podemos obter esse valor através do comando adb 'adb devices' que já explicamos mais acima.
+
+Se quisermos estabelecer uma sessão de forma mais direcionada e detalhada, podemos utilizar mais chaves neste dicionário, como:
+```bash
+{
+    'platformName': 'Android',
+    'deviceName': 'HAHEHHAHE'
+    '': '',
+    '': ''
+}
+```
+
+Mas, para deixarmos nosso aprendizado mais flúido e simples, mas optar inicialmente pelo uso de apenas 2 chaves que não podem faltar: 'platformName' e 'deviceName'.
+
+**Página oficial do Appium listando todos os Desired Capabilities:** http://appium.io/docs/en/writing-running-appium/caps/
+
+# Tutorial 3: Identificando os elementos da nossa aplicação
+
+# Tutorial 4: Realizando atividades de GESTOS via Appium
+Uma das características mais marcantes quando estamos trabalhando com Android é o uso de GESTOS. Inclusive, no Android Q uma das grandes mudanças que observamos foi a inclusão de mais gestos nas atividades principais desta plataforma. Via código não é uma tarefa simples simular o arrastar de dedos do usuário para encerrar uma aplicação, por exemplo. Uma das vantagens do Appium é que ele já traz uma funcionalidade que realiza alguns gestos e os traduz em código pra gente <3 Com essa funcionalidade podemos: [DETALHAR MAIS AQUI]
+
+# Tutorial 5: Realizando um fluxo simples de teste funcional
+
+# Tutorial 6: Gravando nossas ações e transformando isso em código
+
+# Tutorial 7: Operações aritméticas com a Calculadora nativa do Android
+
+A partir daqui, considero que o nível de dificuldade de uso e interação com o Appium cresce um pouco e passamos a trabalhar com tutoriais um pouco mais avançados.
+
+# Tutorial 8: Replicando tudo o que fiz utilizando apenas Python
+
+# Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2
+
+# Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
