@@ -21,9 +21,11 @@ Appium é uma ferramenta open-source e multi-plataforma (isso quer dizer que fun
 
 Considero Appium uma excelente ferramenta para quem quer começar a aprender automação em dispositivos móveis ou para quem já é da área de mobile e gostaria de se aprofundar mais sobre o assunto.
 
-**Página oficial:** http://appium.io
+**Links importantes para esta seção:**
 
-**Página oficial do repo no GitHub:** https://github.com/appium/
+[Página oficial do Appium](http://appium.io)
+
+[Página oficial do repo do Appium no GitHub](https://github.com/appium/)
 
 Como dito mais acima, a finalidade do Appium é testar aplicações em dispositivos móveis, e aplicações podem ser classificadas em três diferentes naturezas : nativas, híbridas e móveis. Qual a diferença entre elas?
   - **Nativas:** aquelas aplicações que foram desenvolvidas especificamente para Android ou iOS, ou seja, a partir de seus específicos SDKs.
@@ -33,7 +35,7 @@ Como dito mais acima, a finalidade do Appium é testar aplicações em dispositi
 # Setup do Ambiente - Download
 
 Durante o nosso workshop vamos utlizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas, que são comuns para Windows, MAC ou Linux:
-  - **Appium Desktop:** é a interface da ferramenta Appium que será o foco do nosso workshop. O download está disponível aqui: https://github.com/appium/appium-desktop/releases/tag/v1.13.0 (aqui tem um acervo para vários Sistemas Operacionais. Baixe apenas aquele que for direcionado para o seu SO.)
+  - **Appium Desktop:** é a interface da ferramenta Appium que será o foco do nosso workshop. O download está [disponível aqui:](https://github.com/appium/appium-desktop/releases/tag/v1.13.0) (aqui tem um acervo para vários Sistemas Operacionais. Baixe apenas aquele que for direcionado para o seu SO.)
   
   - **JDK (JAVA Development Kit):** https://www.java.com/pt_BR/download/ 
 
@@ -217,7 +219,9 @@ ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é
 
 É também possível automatizar algumas atividades de rotina combinando comandos ADB e Python Script.
 
-Como o assunto sobre comandos ADB merece maior aprofundamento e dedicação, criei um repositório à parte para falar mais sobre o tema: https://github.com/clarabez/comandosadb
+Como o assunto sobre comandos ADB merece maior aprofundamento e dedicação, criei um repositório à parte para falar mais sobre o tema: [repo comandosadb](https://github.com/clarabez/comandosadb)
+
+**Links importantes desta seção:**
 
 **Um pouco mais sobre comandos ADB:** https://developer.android.com/studio/command-line/adb?hl=pt-br
 **Um pouco Python Script:** https://realpython.com/run-python-scripts/
