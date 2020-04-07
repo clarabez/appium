@@ -1,31 +1,38 @@
+[appium]:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQNrn9CmFA7Z5bLcdpDn-2l8m7dx5Ovp7oY0CkKKTmRjrH3fO9p&usqp=CAU
+
 # Objetivo do documento
 
-Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes móveis. Aqui você vai: 
-1. Entender como funciona o Appium e como fazer mapeamento de elementos de uma aplicação;
-2. Como instanciar um dispositivo Android emulado através do Android Studio; 
-3. Como organizar o código de uma automação utilizando padrões de código como o PageObjects; 
-4. Como escrever testes através do framework PyTest.
+![alt text][appium]
 
-Muito provavelmente este documento sofrerá ajustes e complementos ao longo do tempo :)
+Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes em dispositivos móveis. Aqui você vai: 
+1. Entender como funciona a ferramenta Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;
+2. Como instanciar um dispositivo Android emulado através do Android Studio;
+3. Como instalar um aplicativo da PlayStore em seu dispositivo emulado; 
+4. Como fazer mapeamento de elementos de uma aplicação em seu dispositivo;
+5. Como iniciar testes de UI em sua aplicação através do Appium com a linguagem de programação Python.
+
+Este documento sofrerá ajustes e complementos ao longo do tempo :)
 
 Em breve irei disponibilizar o mesmo conteúdo em inglês e também uma solução usando o Docker, visando tornar mais prática a etapa de configuração.
 
 Qualquer sugestão de melhoria ou correção, por favor entrar em contato <3
 
-# Um pouco sobre Appium
+# Introdução - Um pouco sobre Appium
 
-Appium é uma ferramenta open-source e multi-plataforma com foco em automação de aplicações: nativas, híbridas e sites mobile para as plataformas Android e iOS.
+Appium é uma ferramenta open-source e multi-plataforma (isso quer dizer que funciona em Windows, Linux e Mac) e cujo foco é de interações via UI em dispositivos móveis, possibilitando a automação de aplicações: nativas, híbridas e sites mobile para as plataformas Android e iOS.
+
+Considero Appium uma excelente ferramenta para quem quer começar a aprender automação em dispositivos móveis ou para quem já é da área de mobile e gostaria de se aprofundar mais sobre o assunto.
 
 **Página oficial:** http://appium.io
 
 **Página oficial do repo no GitHub:** https://github.com/appium/
 
-Nativas, híbridas e móveis? Qual a diferença entre elas?
+Como dito mais acima, a finalidade do Appium é testar aplicações em dispositivos móveis, e aplicações podem ser classificadas em três diferentes naturezas : nativas, híbridas e móveis. Qual a diferença entre elas?
   - **Nativas:** aquelas aplicações que foram desenvolvidas especificamente para Android ou iOS, ou seja, a partir de seus específicos SDKs.
   - **Híbridas:** aquelas que são desenvolvidas em HTML, CSS, JavaScript e que são compatíveis com qualquer plataforma (Android, iOS, Windows).
   - **Móveis:** aquelas que podemos acessar através de um link, via página web.
 
-# Iniciando o Setup - Download
+# Setup do Ambiente - Download
 
 Durante o nosso workshop vamos utlizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas, que são comuns para Windows, MAC ou Linux:
   - **Appium Desktop:** é a interface da ferramenta Appium que será o foco do nosso workshop. O download está disponível aqui: https://github.com/appium/appium-desktop/releases/tag/v1.13.0 (aqui tem um acervo para vários Sistemas Operacionais. Baixe apenas aquele que for direcionado para o seu SO.)
@@ -40,7 +47,9 @@ Durante o nosso workshop vamos utlizar algumas ferramentas essenciais para a pr�
   
   - VSCode: https://code.visualstudio.com/
   
-# Setup - Variáveis de ambiente - Mac:
+  Depois de fazer o download de todo o conteúdo, agora podemos avançar com o setup do ambiente. Podemos configurar as variáveis de ambiente à nível de sistema (abaixo eu deixo detalhado como fazer para cada SO) e também podemos fazer de maneira bem mais simplificada, onde explico melhor após o detalhe de setup para cada SO.
+  
+# Setup do Ambiente - Variáveis de ambiente - Mac:
 
 Depois de realizadas as instalações do Appium Desktop, JAVA, Android Studio e da sua IDE, é hora de setarmos as variáveis de ambiente para que seu sistema operacional identifique os processos  e as aplicações de forma mais rápida e prática.
 Para isso, abra o seu terminal, identifique a localização de instalação dos pacotes e os exporte para a variável PATH.
@@ -68,7 +77,7 @@ export PATH=$ANDROID_HOME/build-tools:$PATH
 export JAVA_HOME=/your/path/to/jdk1.8.0_112.jdk/Contents/Home 
 export PATH=$JAVA_HOME/bin:$PATH
 ```
-# Setup - Variáveis de ambiente - Windows:
+# Setup do Ambiente - Variáveis de ambiente - Windows:
 Após o download (link acima) e instalação do JDK do seu ambiente Windows, é hora de configurar as variáveis de ambiente. Para isso, siga as opções de menu:
 1. Propriedades do Sistema >> Configurações avançadas do sistema >> Variáveis de ambiente >> Variáveis de usuário >> Novo.
 2. Insira o nome da variável como "JAVA_HOME" e insira como valor a localização exata do seu arquivo jre, por exemplo, "C:\Arquivos de Programa\Java\jdk1.2.2_2\jre".
@@ -81,7 +90,7 @@ Agora, para baixar (link acima) e instalar o Android SDK, siga os passos:
 3. Agora, mais uma vez precisamos adicionar o valor da sua nova variável à sua variável global do sistema, que é o Path: "%ANDROID_HOME%\platform-tools" e também "%ANDROID_HOME\tools%".
 4. É só clicar OK e aplicar as mudanças de configuração.
 
-# Setup - Variáveis de ambiente - Linux:
+# Setup do Ambiente - Variáveis de ambiente - Linux:
 A configuração de variáveis de ambiente para Linux funciona de forma muito semelhante a do Mac. Basta que vc identifique o caminho exato de instalação do JDK e do Android e aplicar (através de export) os caminhos no seu arquivo de configuração global, que neste caso é o ~/.bashrc
 
 Por exemplo, para Linux a localização normalmente fica em:
@@ -126,6 +135,9 @@ Para Linux:
 ```bash
 source ~/.bashrc
 ```
+
+# Setup do Ambiente - Forma simplificada para Windows/Linux/Mac
+Se você quiser simplificar a sua configuração de ambiente, é só utilizar o atalho de configuração do Appium
 ___
 # Instalando o Appium
 
