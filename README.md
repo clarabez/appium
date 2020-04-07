@@ -1,4 +1,4 @@
-[appium]:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQNrn9CmFA7Z5bLcdpDn-2l8m7dx5Ovp7oY0CkKKTmRjrH3fO9p&usqp=CAU
+[appium]:appiumwithpython.png
 
 # Objetivo do documento
 
