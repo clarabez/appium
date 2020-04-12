@@ -15,7 +15,11 @@ Em breve irei disponibilizar o mesmo conteúdo em inglês e também uma soluçã
 
 Qualquer sugestão de melhoria ou correção, por favor entrar em contato <3
 
-# Introdução - Um pouco sobre Appium
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/intro.png">
+</p>
+
+# Um pouco sobre Appium
 
 Appium é uma ferramenta open-source e multi-plataforma (isso quer dizer que funciona em Windows, Linux e Mac) e cujo foco é de interações via UI em dispositivos móveis, possibilitando a automação de aplicações: nativas, híbridas e sites mobile para as plataformas Android e iOS.
 
@@ -32,7 +36,16 @@ Como dito mais acima, a finalidade do Appium é testar aplicações em dispositi
   - **Híbridas:** aquelas que são desenvolvidas em HTML, CSS, JavaScript e que são compatíveis com qualquer plataforma (Android, iOS, Windows).
   - **Móveis:** aquelas que podemos acessar através de um link, via página web.
 
-# Setup do Ambiente - Download
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/setup.png">
+</p>
+
+Nesta seção vamos ver os passos para realizarmos o setup do ambiente para Windows, Linux e Mac. Todos os meus projetos faço utilizando o Mac, então tendo a passar informações mais detalhadas para este SO.
+
+**Uma dica muito importante:**
+Digo o que fazer para cada sistema operacional, mas você também pode optar por uma configuração mais simples (e efetiva da mesma forma) e que vai te poupar de muito tempo e dor de cabeça - confie em mim :) Se você quiser ir por esse caminho, pode pular direto para o tópico "Forma simplificada para Windows/Linux/Mac". O mesmo procedimento é utilizado para qualquer sistema operacional.
+
+# Download de tudo que vai ser necessário
 
 Durante o nosso workshop vamos utlizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas, que são comuns para Windows, MAC ou Linux:
   - **Appium Desktop:** é a interface da ferramenta Appium que será o foco do nosso workshop. O download está [disponível aqui:](https://github.com/appium/appium-desktop/releases/tag/v1.13.0) (aqui tem um acervo para vários Sistemas Operacionais. Baixe apenas aquele que for direcionado para o seu SO.)
@@ -49,7 +62,7 @@ Durante o nosso workshop vamos utlizar algumas ferramentas essenciais para a pr�
   
   Depois de fazer o download de todo o conteúdo, agora podemos avançar com o setup do ambiente. Podemos configurar as variáveis de ambiente à nível de sistema (abaixo eu deixo detalhado como fazer para cada SO) e também podemos fazer de maneira bem mais simplificada, onde explico melhor após o detalhe de setup para cada SO.
   
-# Setup do Ambiente - Variáveis de ambiente - Mac:
+# Variáveis de ambiente - Mac:
 
 Depois de realizadas as instalações do Appium Desktop, JAVA, Android Studio e da sua IDE, é hora de setarmos as variáveis de ambiente para que seu sistema operacional identifique os processos  e as aplicações de forma mais rápida e prática.
 Para isso, abra o seu terminal, identifique a localização de instalação dos pacotes e os exporte para a variável PATH.
@@ -77,7 +90,7 @@ export PATH=$ANDROID_HOME/build-tools:$PATH
 export JAVA_HOME=/your/path/to/jdk1.8.0_112.jdk/Contents/Home 
 export PATH=$JAVA_HOME/bin:$PATH
 ```
-# Setup do Ambiente - Variáveis de ambiente - Windows:
+# Variáveis de ambiente - Windows:
 Após o download (link acima) e instalação do JDK do seu ambiente Windows, é hora de configurar as variáveis de ambiente. Para isso, siga as opções de menu:
 1. Propriedades do Sistema >> Configurações avançadas do sistema >> Variáveis de ambiente >> Variáveis de usuário >> Novo.
 2. Insira o nome da variável como "JAVA_HOME" e insira como valor a localização exata do seu arquivo jre, por exemplo, "C:\Arquivos de Programa\Java\jdk1.2.2_2\jre".
@@ -90,7 +103,7 @@ Agora, para baixar (link acima) e instalar o Android SDK, siga os passos:
 3. Agora, mais uma vez precisamos adicionar o valor da sua nova variável à sua variável global do sistema, que é o Path: "%ANDROID_HOME%\platform-tools" e também "%ANDROID_HOME\tools%".
 4. É só clicar OK e aplicar as mudanças de configuração.
 
-# Setup do Ambiente - Variáveis de ambiente - Linux:
+# Variáveis de ambiente - Linux:
 A configuração de variáveis de ambiente para Linux funciona de forma muito semelhante a do Mac. Basta que vc identifique o caminho exato de instalação do JDK e do Android e aplicar (através de export) os caminhos no seu arquivo de configuração global, que neste caso é o ~/.bashrc
 
 Por exemplo, para Linux a localização normalmente fica em:
@@ -136,8 +149,19 @@ Para Linux:
 source ~/.bashrc
 ```
 
-# Setup do Ambiente - Forma simplificada para Windows/Linux/Mac
-Se você quiser simplificar a sua configuração de ambiente, é só utilizar o atalho de configuração do Appium
+# Forma simplificada para Windows/Linux/Mac
+Se você quiser simplificar a sua configuração de ambiente, é só utilizar o atalho de configuração do Appium e inserir manualmente os caminhos para as suas variáveis ANDROID_HOME e JAVA_HOME. Esta etapa é bem mais simples e da mesma forma efetiva para uso da ferramenta. Basta seguir os passos adiante:
+
+Abra sua ferramenta Appium Desktop e clique no botão "Edit Configurations".
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumFirstScreen.png">
+</p>
+
+Quando você clicar em "Edit Configurations", um popup vai abrir com 2 campos: ANDROID_HOME e JAVA_HOME. É só você identificar estes caminhos na sua máquina (no setup de configuração para cada SO eu deixei comandos e dicas para obter estes valores), copiar e colar nestes campos e em seguida clicar em "Save and Restart". Pronto, configuração do Appium realizada com sucesso :)
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumSecondScreen.png">
+</p>
 ___
 # Instalando o Appium
 
@@ -146,27 +170,33 @@ A instalação do Appium é bastante simples e não requer configuração adicio
 ```bash
 npm install -g appium
 ```
-ATENÇÃO: Não instale o Appium com sudo.
+**ATENÇÃO:** Não instale o Appium com sudo.
 
 **Dica - O que é npm?**
 Npm é o gerenciador de downloads para pacotes node.js. 
 
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appium-doctor.png">
+</p>
+
 # Como validar se tudo tá configurado ou se falta algo?
 
-Uma funcionalidade bem legal que o Appium oferece é o pacote Appium-doctor, cuja finalidade é conferir o checklist necessário para que seu ambiente funcione. Caso algo esteja faltando, o Appium-doctor te lista exatamente o que falta. Ele também confirma o que tá configurado como esperado. Para instalá-lo, é só instalar o pacote via npm:
+Uma funcionalidade bem legal que o Appium oferece é o pacote <em>Appium-doctor</em>, cuja finalidade é conferir o checklist necessário para que seu ambiente funcione. Caso algo esteja faltando, o Appium-doctor te lista exatamente o que falta. Ele também confirma o que tá configurado como esperado. Para instalá-lo, é só instalar o pacote npm no seu terminal:
+
 ```bash
 npm install -g appium-doctor --android
 ```
 
+**Dica:**
 Estamos usando a flag **--android** para indicar a plataforma que vamos usar o Appium. Caso fóssemos usar o iOS, usaríamos a flag **--ios--**.
 
-Depois de instalado o Appium-doctor, é só fazer a chamada via terminal:
+Depois de instalado o <em>Appium-doctor</em>, é só fazer a chamada via terminal:
 
 ```bash
 appium-doctor
 ```
 
-Abaixo segue um exemplo de como é o retorno do Appium-doctor via terminal:
+Abaixo segue um exemplo de como é o retorno do <em>Appium-doctor</em> via terminal:
 ```bash
 ➜  bin appium-doctor
 info AppiumDoctor Appium Doctor v.1.10.0
@@ -197,11 +227,11 @@ ___
 # Checklist de tudo o que fizemos até agora
 
 Se você chegou até aqui, significa que provavelmente o seu setup está pronto e agora você já pode usar todos os recursos do Appium! Só para checar, instalamos e configuramnos:
-- Appium Desktop
-- Android Studio (pacote AVD)
-- JAVA
-- IDE
-- Configuração de variáveis de ambiente
+- Appium Desktop **✔**
+- Android Studio (pacote AVD) **✔**
+- JAVA **✔**
+- IDE **✔**
+- Configuração de variáveis de ambiente **✔**
 
 ___
 # Iniciando com o Appium
@@ -209,6 +239,11 @@ ___
 Depois de tudo configurado, é hora de iniciarmos com o Appium Desktop.
 
 ___
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/adb.png">
+</p>
+
 # Comandos ADB
 ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é uma ferramenta que faz uma "ponte" de comunicação entre o seu computador e o seu dispositivo móvel Android através de linhas de comando. Através do ADB, é possível que possamos manipular o dispositvo através de comandos, de forma muito prática, como:
 - Instalar/desintalar aplicativos;
@@ -299,22 +334,29 @@ Se quisermos estabelecer uma sessão de forma mais direcionada e detalhada, pode
 Mas, para deixarmos nosso aprendizado mais flúido e simples, mas optar inicialmente pelo uso de apenas 2 chaves que não podem faltar: 'platformName' e 'deviceName'.
 
 **Página oficial do Appium listando todos os Desired Capabilities:** http://appium.io/docs/en/writing-running-appium/caps/
-
+___
 # Tutorial 3: Identificando os elementos da nossa aplicação
 
+___
 # Tutorial 4: Realizando atividades de GESTOS via Appium
 Uma das características mais marcantes quando estamos trabalhando com Android é o uso de GESTOS. Inclusive, no Android Q uma das grandes mudanças que observamos foi a inclusão de mais gestos nas atividades principais desta plataforma. Via código não é uma tarefa simples simular o arrastar de dedos do usuário para encerrar uma aplicação, por exemplo. Uma das vantagens do Appium é que ele já traz uma funcionalidade que realiza alguns gestos e os traduz em código pra gente <3 Com essa funcionalidade podemos: [DETALHAR MAIS AQUI]
 
+___
 # Tutorial 5: Realizando um fluxo simples de teste funcional
 
+___
 # Tutorial 6: Gravando nossas ações e transformando isso em código
 
+___
 # Tutorial 7: Operações aritméticas com a Calculadora nativa do Android
 
 A partir daqui, considero que o nível de dificuldade de uso e interação com o Appium cresce um pouco e passamos a trabalhar com tutoriais um pouco mais avançados.
 
+___
 # Tutorial 8: Replicando tudo o que fiz utilizando apenas Python
 
+___
 # Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2
 
+___
 # Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
