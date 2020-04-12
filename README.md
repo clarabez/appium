@@ -162,7 +162,9 @@ Quando você clicar em "Edit Configurations", um popup vai abrir com 2 campos: A
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/appiumSecondScreen.png">
 </p>
+
 ___
+
 # Instalando o Appium
 
 A instalação do Appium é bastante simples e não requer configuração adicional - além da do Android e do JDK. Basta baixar o Appium Desktop na página oficial do Appium(como no link do começo do documento) ou via linha de comando atráves do terminal:
