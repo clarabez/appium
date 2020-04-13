@@ -69,6 +69,7 @@ Appium é uma ferramenta open-source e multi-plataforma (isso quer dizer que fun
 
 Considero Appium uma excelente ferramenta para quem quer começar a aprender automação em dispositivos móveis ou para quem já é da área de mobile e gostaria de se aprofundar mais sobre o assunto.
 
+
 **Links importantes para esta seção:**
 
 [Página oficial do Appium](http://appium.io)
@@ -80,13 +81,17 @@ Como dito mais acima, a finalidade do Appium é testar aplicações em dispositi
   - **Híbridas:** aquelas que são desenvolvidas em HTML, CSS, JavaScript e que são compatíveis com qualquer plataforma (Android, iOS, Windows).
   - **Móveis:** aquelas que podemos acessar através de um link, via página web.
 
+___
+
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/setup.png">
 </p>
 
 Nesta seção vamos ver os passos para realizarmos o setup do ambiente para Windows, Linux e Mac. Todos os meus projetos faço utilizando o Mac, então tendo a passar informações mais detalhadas para este SO.
 
+
 **Uma dica muito importante:**
+
 Digo o que fazer para cada sistema operacional, mas você também pode optar por uma configuração mais simples (e efetiva da mesma forma) e que vai te poupar de muito tempo e dor de cabeça - confie em mim :) Se você quiser ir por esse caminho, pode pular direto para o tópico "Forma simplificada para Windows/Linux/Mac". O mesmo procedimento é utilizado para qualquer sistema operacional.
 
 # Download de tudo que vai ser necessário
@@ -219,7 +224,10 @@ npm install -g appium
 **ATENÇÃO:** Não instale o Appium com sudo.
 
 **Dica - O que é npm?**
+
 Npm é o gerenciador de downloads para pacotes node.js. 
+
+___
 
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/appium-doctor.png">
@@ -283,6 +291,77 @@ ___
 # Iniciando com o Appium
 
 Depois de tudo configurado, é hora de iniciarmos com o Appium Desktop.
+Assim que abrimos o Appium Desktop, esta é a carinha inicial que temos contato:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumFirstScreen.png">
+</p>
+
+Observe que de cara já temos 2 campos preenchidos:<br>
+**HOST:** 0.0.0.0<br>
+**Port:** 4723
+
+Estes são valores padrões do Appium e indicam que sempre que você começar a realizar requições (lembra que o Appium é baseado em servidor HTTP?), o Appium irá utilizar o Host 0.0.0.0 e o serviço irá funcionar na porta 4723. Caso você queira mudar estes valores (quando algum outro serviço já está alocado para esta porta, por exemplo), é só você realizar a customização dessa configuração manualmente clicando no botão **Advanced**, que fica ao lado do já selecionado **Simple**. Você também pode salvar suas configurações personalizadas e exportá-las através do button **Presets**. Eu, particularmente, nunca precisei utilizar nenhuma das configurações além das que já vem por padrão. Também não vi nenhum material pela internet em que fosse necessário customizar a configuração. Se quer um conselho, siga com essa configuração padrão que tudo vai funcionar bem :)
+
+Explicada essa tela inicial, agora podemos clicar em **Start Server** e observar já a segunda tela do Appium: uma escuta da chamada HTTP. Observe que ele indica aí exatamente o endereço onde o serviço está sendo executado (que são inseridos nos campos de <i>Host</i> e <i>Port</i> da tela anterior, onde deixamos os valores padrões).
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/AppiumStarted2.png">
+</p>
+
+Agora podemos ir para a tela seguinte do Appium, onde vamos começar iniciar uma sessão (essa é a expressão utilizada quando vamos iniciar o uso do Appium), e pra isso vamos clicar no ícone da lupa, onde diz: **Start Inspector Session** (como a imagem abaixo).
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/startsession.png">
+</p>
+
+Agora podemos ver uma tela com vários campos para o Appium, mas aqui podemos seguir na aba <i>Custom Server</i>, que já vem escolhida por padrão. Observamos também os seguintes campos já preenchidos:<br>
+**Remote Host:**  127.0.0.1<br>
+**Remote Path:** /wd/hub<br>
+**Remote Port:** 4327<br>
+
+O **Remote Port** já falamos anteriormente. **Remote Host** tá com o valor de <i>localhost</i> para o serviço, mais uma vez você pode alterar caso já tenha algum serviço rodando local. Caso contrário, pode deixar esse valor mesmo. **Remote Path** também é um valor padrão do Appium e nunca precisei alterar, sempre deixo esse mesmo valor.
+
+**Agora chegou o momento de aprendermos um dos pontos mais importantes quando começamos a usar o Appium: entender o funcionamento dos Desired Capabilities** (abaixo eu deixo o link oficial listando todos os valores que podemos usar nos desired capabilitites). <i>Desired Capabilities</i> pode ser grosseiramente traduzido por "Configurações desejadas". É onde você vai informar ao Appium o que é pra ele fazer exatamente.
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumscreen3.png">
+</p>
+
+Como citado mais acima, o Appium funciona através de requisições HTTP e, como padrão deste tipo de comunicação, utilizamos arquivos em JSON para indicar qualquer mensagem. O appium nos traz uma interface gráfica com campos de entrada de texto mas, após preenchermos os campos de texto, ao lado ele já converte o que digitamos em um arquivo JSON. Você pode editar diretamente no JSON ou usar o campo de texto, como quiser. As duas formas funcionam bem.
+
+Para iniciarmos uma sessão vamos precisar de pelo menos 2 campos, que são:
+
+```bash
+{
+    'platformName': 'Android',
+    'deviceName': '<InserirOnomeAqui>'
+}
+```
+
+Os nomes são bem intuitivos, e aí estou criando um dicionário com a chave <i>'platformName'</i> para indicar a plataforma que irei utilizar, que pode ser: Android, Windows, iOS. 
+Já o identificador do dispositivo móvel iremos inserir em <i>'deviceName'</i>, e podemos obter esse valor através do comando adb <i>'adb devices'</i> que já explicamos mais acima. Assim fica um exemplo de preenchimento destes campos básicos e ao lado já o retorno do conteúdo em JSON: [VER SE FICA LEGAL MESMO DEIXAR ESSA PARTE DO ADB DEVICES POR AQUI E EXPLICAR COMO PEGAR]
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/desiredcap1.png">
+</p>
+
+
+[TIRAR ESSA PARTE DAQUI E JOGAR MAIS ADIANTE]
+Se quisermos estabelecer uma sessão de forma mais direcionada e detalhada, podemos utilizar mais chaves neste dicionário, como:
+
+```bash
+{
+    'platformName': 'Android',
+    'deviceName': 'HAHEHHAHE'
+    '': '',
+    '': ''
+}
+```
+
+Mas, para deixarmos nosso aprendizado mais flúido e simples, mas optar inicialmente pelo uso de apenas 2 chaves que não podem faltar: 'platformName' e 'deviceName'.
+
+**Página oficial do Appium listando todos os Desired Capabilities:** http://appium.io/docs/en/writing-running-appium/caps/
 
 ___
 
@@ -302,11 +381,10 @@ ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é
 
 Como o assunto sobre comandos ADB merece maior aprofundamento e dedicação, criei um repositório à parte para falar mais sobre o tema: [repo comandosadb](https://github.com/clarabez/comandosadb)
 
-**Links importantes desta seção:**
-
-**Um pouco mais sobre comandos ADB:** https://developer.android.com/studio/command-line/adb?hl=pt-br
-**Um pouco Python Script:** https://realpython.com/run-python-scripts/
-**Meu Repositório sobre Comandos ADB:** https://github.com/clarabez/comandosadb
+**Links importantes desta seção:**<br>
+**Um pouco mais sobre comandos ADB:** https://developer.android.com/studio/command-line/adb?hl=pt-br<br>
+**Um pouco Python Script:** https://realpython.com/run-python-scripts/<br>
+**Meu Repositório sobre Comandos ADB:** https://github.com/clarabez/comandosadb<br>
 
 ___
 # Emulando um dispositivo Android através do Android Studio
@@ -352,34 +430,7 @@ adb install nome-do-apk
 
 ___
 # Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium
-Um dos pontos mais importantes quando começamos a usar o Appium é entender o funcionamento dos Desired Capabilities (abaixo eu deixo o link oficial listando todos os valores que podemos usar nos desired capabilitites). Desired Capabilities pode ser grosseiramente traduzido por "Configurações desejadas", mas prefiro seguir com a expressão "Desired Capabilities" por achar que essa nossa tradução não funcionou tão bem para essa expressão :) peço desculpas por isso!
 
-Como citado acima, o Appium funciona através de requisições HTTP e, como padrão deste tipo de comunicação, utilizamos arquivos em JSON para indicar qualquer mensagem. O appium nos traz uma interface gráfica com campos de entrada de texto mas, após preenchermos os campos de texto, ao lado ele já converte o que digitamos em um arquivo JSON. Você pode editar diretamente no JSON ou usar o campo de texto. As duas formas funcionam bem.
-
-Para iniciarmos uma sessão vamos precisar de pelo menos 2 campos, que são:
-
-```bash
-{
-    'platformName': 'Android',
-    'deviceName': 'HAHEHHAHE'
-}
-```
-
-Os nomes são bem intuitivos, e aí estou criando um dicionário com a chave 'platformName' para indicar a plataforma que irei utilizar, que pode ser: Android, Windows, iOS. Já o identificador do dispositivo móvel iremos inserir em 'deviceName', e podemos obter esse valor através do comando adb 'adb devices' que já explicamos mais acima.
-
-Se quisermos estabelecer uma sessão de forma mais direcionada e detalhada, podemos utilizar mais chaves neste dicionário, como:
-```bash
-{
-    'platformName': 'Android',
-    'deviceName': 'HAHEHHAHE'
-    '': '',
-    '': ''
-}
-```
-
-Mas, para deixarmos nosso aprendizado mais flúido e simples, mas optar inicialmente pelo uso de apenas 2 chaves que não podem faltar: 'platformName' e 'deviceName'.
-
-**Página oficial do Appium listando todos os Desired Capabilities:** http://appium.io/docs/en/writing-running-appium/caps/
 ___
 # Tutorial 3: Identificando os elementos da nossa aplicação
 
