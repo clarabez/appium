@@ -2,12 +2,43 @@
 <img src="https://github.com/clarabez/appium/blob/master/images/appiumwithpython.png">
 </p>
 
-Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes em dispositivos móveis. Aqui você vai: 
+Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Aqui você vai: 
 1. Entender como funciona a ferramenta Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;
 2. Como instanciar um dispositivo Android emulado através do Android Studio;
 3. Como instalar um aplicativo da PlayStore em seu dispositivo emulado; 
 4. Como fazer mapeamento de elementos de uma aplicação em seu dispositivo;
 5. Como iniciar testes de UI em sua aplicação através do Appium com a linguagem de programação Python.
+___
+
+**A organização do tutorial se dá nas seguintes seções:**
+- Introdução
+- Setup do ambiente
+    - Download de tudo que precisa
+    - Configuração Windows
+    - Configuração Linux
+    - Configuração Mac
+    - Setup simplificado para todos os SOs
+    - Instalação do Appium
+- Appium Doctor: como validar se tá tudo configurado?
+- Checklist
+- Iniciando o Appium
+- Comandos ADB
+- Emulando um dispositivo Android através do Android Studio
+___
+
+**Tutoriais**
+
+- Tutorial 1: Instalando um apk no meu dispositivo Android emulado
+- Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium
+- Tutorial 3: Identificando os elementos da nossa aplicação
+- Tutorial 4: Realizando atividades de GESTOS via Appium
+- Tutorial 5: Realizando um fluxo simples de teste funcional
+- Tutorial 6: Gravando nossas ações e transformando isso em código
+- Tutorial 7: Operações aritméticas com a Calculadora nativa do Android
+- Tutorial 8: Replicando tudo o que fiz utilizando apenas Python
+- Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2
+- Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
+___
 
 Este documento sofrerá ajustes e complementos ao longo do tempo :)
 
