@@ -364,10 +364,54 @@ Mas, para deixarmos nosso aprendizado mais flúido e simples, mas optar inicialm
 **Página oficial do Appium listando todos os Desired Capabilities:** http://appium.io/docs/en/writing-running-appium/caps/
 
 ___
+# Emulando um dispositivo Android através do Android Studio
+Podemos usar o Appium em dispositivos reais, dispositivos emulados ou até mesmo em farms de dispositivos da Amazon, que funcionam com o mesmo conceito de computação em nuvem, onde você aloca recursos sob demanda e paga apenas o que for consumido.
+Durante nossos estudos podemos utilizar dispositivos emulados para a realização dos nossos testes. Isso nos dá grande versatilidade pela possibilidade de escolher o tipo de dispositivo e a versão de Android que iremos utilizar. Desta forma, é possível validar o mesmo apk em cenários diversos apenas alterando configurações, onde atingimos uma característica muito forte no Android que é a granularidade de versões: https://developer.android.com/about/dashboards?hl=pt-br
+
+**Antes de tudo... o que é um dispositivo emulado?**<br>
+É a instanciação (criação) de um dispositivo que simula um celular real, só que ele é emulado a partir dos recursos da sua máquina. É como se fosse uma máquina virtual, só que o Sistema Operacional (imagem) utilizado será alguma versão oficial do Android e o formato da máquina será uma réplica do celular de verdade, inclusive sob aspectos de tamanho das telas.
+
+Vamos utilizar um recurso do próprio <i>Android Studio</i> para instanciarmos nosso dispotivo emulado: o <i>Android Virtual Device Manager</i>. Para acessá-lo, basta abrir o seu <i>Android Studio</i> e seguir até o seguinte ícone:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/avdmanager.png">
+</p>
+
+Assim que você clicar no ícone do <i>AVD Manager</i>, o seguinte popup vai abrir e você vai clicar em <i>+ Create Virtual Device...</i> para criar o seu novo dispositivo emulado, como na imagem a seguir:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/avdmanager2.png">
+</p>
+
+Nesta nova tela, podemos escolher qual o tipo de dispositivo que queremos: TV, Phone, Wear OS, Tablet; além da marca do produto, tamanho e resoluções de tela e também a densidade. Você pode emular qualquer variação desses produtos. Vamos focar em **phone** e eu gosto bastante de utilizar o produto <i>Pixel 2</i> em meus estudos, já que é um produto da Google e que tem um ótimo tamanho de tela, mas você fique à vontade de utilizar a variação de Phone que você achar melhor. Escolhido isso, é só clicar em <i>Next</i>.
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/avdmanager3.png">
+</p>
+
+Escolhido o produto que você quer prosseguir em seus estudos, agora é hora de escolher a versão do Android que você irá emular em seu produto. Veja que existe uma lista com várias versões anteriores do Android disponíveis para download. Neste exato momento, estamos na versão do **Android Q** no mercado e o Android R já está com sua versão Beta disponível para download. Usei algumas vezes o Android Q mas não achei a imagem tão completa em termos de recursos como o **Android P**, que é minha versão favorita atualmente. Vou prosseguir nos testes com o Android P, mas fique à vontade para baixar a versão que você quiser. Ah, você pode criar dispositivos com versões de Android diferentes e ir usando pra ver qual versão você acha que atende melhor às suas necessidades. Caso a imagem ainda não esteja disponível para você, clique em download. Caso já tenha baixado, é só selecionar a imagem e clicar em <i>Next</i>
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/avdmanager4.png">
+</p>
+
+Estou usando a seguinte configuração para meu dispositivo emulado:<br>
+**Modelo de Device:** Pixel 2<br>
+**Versão de Android:** Android P<br>
+
+Dispositivo criado, tente realizar algumas ações nele como abrir aplicativos, utilizar botões de acesso como Home, Back, Recent Apps.
+
+Um mundo de possibilidades que também podemos explorar com dispositivos Android é que podemos usar comandos ADB no nosso dispositivo emulado e já ver que ele responde da mesma maneira que um dispositivo real. A próxima seção vai falar um pouco sobre isso.
+
+**Alguns pontos importantes sobre este tópico:**<br>
+- Em breve farei um material falando como emular um dispositivo iOS.<br>
+- Existem outras ferramentas que emulam dispositivos Androids mas, das que testei, nenhuma é tão boa quando a do Android Studio. Por esse motivo prefiro me manter nele e recomendo o uso.<br>
 
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/adb.png">
 </p>
+
+___
 
 # Comandos ADB
 ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é uma ferramenta que faz uma "ponte" de comunicação entre o seu computador e o seu dispositivo móvel Android através de linhas de comando. Através do ADB, é possível que possamos manipular o dispositvo através de comandos, de forma muito prática, como:
@@ -387,46 +431,50 @@ Como o assunto sobre comandos ADB merece maior aprofundamento e dedicação, cri
 **Meu Repositório sobre Comandos ADB:** https://github.com/clarabez/comandosadb<br>
 
 ___
-# Emulando um dispositivo Android através do Android Studio
-Podemos usar o Appium em dispositivos reais, dispositivos emulados ou até mesmo em farms de dispositivos da Amazon, que funcionam com o mesmo conceito de computação em nuvem, onde você aloca recursos sob demanda e paga apenas o que for consumido.
-Durante nossos estudos podemos utilizar dispositivos emulados para a realização dos nossos testes. Isso nos dá grande versatilidade pela possibilidade de escolher o tipo de dispositivo e a versão de Android que iremos utilizar. Desta forma, é possível validar o mesmo apk em cenários diversos apenas alterando configurações, onde atingimos uma característica muito forte no Android que é a granularidade de versões: https://developer.android.com/about/dashboards?hl=pt-br
-
-Vamos utilizar um recurso do próprio Android Studio para instanciarmos nosso dispotivo emulado: o Android Virtual Device Manager. Para acessá-lo, basta abrir o seu Android Studio e seguir até o seguinte ícone:
-
-Podemos usar comandos ADB no nosso dispositivo emulado e já ver que ele responde da mesma maneira que um dispositivo real. Tenta os seguintes comandos em seu terminal com seu dispositivo emulado ativo:
-Para litar o dispositivo e obter seu identificador:
-```bash
-adb devices
-```
-
-Ou dar um reboot (reiniciar) via terminal:
-```bash
-adb reboot
-```
-
-Alguns pontos importantes sobre este tópico:
-- Em breve farei um material falando como emular um dispositivo iOS.
-- Existem outras ferramentas que emulam dispositivos Androids mas, das que testei, nenhuma é tão boa quando a do Android Studio. Por esse motivo prefiro me manter nele e recomendo o uso.
-
-___
 # Tutorial 1: instalando um apk no meu dispositivo Android emulado
-O primeiro de tudo é escolher algum APK disponível na Play Store para a realização dos estudos. Ultimamente tenho utilizado o APK das Casas Bahia, pois tem boa parte de seus elementos mapeados e também porque tem diversos menus, itens e uma excelente usabilidade, o que facilita no processo de aprendizado. 
-A seguir estão os passos para você baixar uma aplicação e fazer a instação dela no seu dispositivo:
-1. Escolha o APK a ser estudado;
-2. Busque o APK no Google Play Store;
-3. Copie o link da Play Store do apk (o link do perfil do aplicativo);
-4. Cole o link do APK no site Evozi (link abaixo) para fazer o download do apk escolhido;
-5. Salve o apk numa pasta de sua escolha;
-6. Abra o seu Android Emulado e aguarde que ele fique na tela inicial (home screen);
-7. Agora arraste o APK que vc baixou para a página inicial do seu dispositivo emulado.
-8. Pode abrir o apk diretamente no dispositivo :) 
-8.1. Se desejar fazer via linha de comando, é só abrir o terminal na pasta que está sua aplicação e usar o seguinte comando ADB:
+
+**Para realizar este tutorial é preciso que você tenha:**
+<ul>
+    <li>Dispositivo emulado ativo</li>
+    <li>ADB configurado e funcionando em seu terminal</li>
+    <li>Conta na Play Store</li>
+</ul>
+
+O primeiro de tudo é escolher algum aplicativo disponível na <i>Play Store</i> para a realização dos estudos. Ultimamente tenho utilizado o aplicativo das **Casas Bahia**, pois tem boa parte de seus elementos mapeados e também porque tem diversos menus, itens e uma excelente usabilidade, o que facilita no processo de aprendizado. Daí, vamos procurar pelo aplicativo das Casas Bahia na Play Store e vamos chegar na página do aplicativo que deve parecer como esta abaixo:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/casasbahia.png">
+</p>
+
+Agora, é só copiar a URL da página principal do aplicativo, que no meu caso é o seguinte valor:
+
+https://play.google.com/store/apps/details?id=com.novapontocom.casasbahia
+
+Agora vamos acessar um site chamado Evozi, que tem como objetivo baixar qualquer aplicativo da Play Store tendo como base apenas o endereço URL da aplicação da Play Store, como mostro a seguir:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/evozi.png">
+</p>
+
+Agora é só clicar em **Generate Download Link** e realizar o download da sua aplicação. Veja que ela será baixada no formato <i>.apk</i>. Agora é só salvar em alguma pasta do seu computador e vamos instalar essa aplicação em seu dispositivo emulado, e isso podemos fazer de duas maneiras: segurando e arrastando o aplicativo; utilizando comando ADB. Vou ensinar as duas formas.
+
+**Segurando e arrastando:**<br>
+Essa forma é super simples, basta que você esteja com seu dispositivo emulado ativo e em paralelo abra a pasta que sua aplicação está. Agora, segure o seu aplicativo e arraste até o seu dispositivo móvel e, quando chegar no dispositivo, pode soltar. Você verá que vai aparecer uma imagem de <i>instalando...</i> e em poucos segundos sua aplicação estará disponível em seu dispositivo. É só acessar via menu e utilizar para ver que funciona direitinho.
+
+**Através de comandos ADB:**<br>
+Esta forma é mais elegante. É só você abrir o terminal, ir até a pasta que está sua aplicação (via terminal mesmo) e utilizar o seguinte comando:<br>
 ```bash
 adb install nome-do-apk
 ```
 
-**Evozi - APK Downloader:** https://apps.evozi.com/apk-downloader/
-**Google Play Store:** https://play.google.com/store/apps?hl=pt_BR
+Com isso, o aplicativo deve ser instalado corretamente e já aparecer disponível na lista de aplicações do seu dispositivo.
+
+**Observação:**<br>
+Aplicações na Play Store normalmente são bem ativas e constantemente sofrem alguma atualização de versão. Nessas atualizações, pode ser que alguma aplicação pare de funcionar em seu dispositivo. Por exemplo, já me aconteceu de a aplicação das Casas Bahia não mais funcionar em meu dispositivo porque deixou de ser compatível com a arquitetura dos dispositivos emulados. Isso pode acontecer. Caso isso aconteça com você, é só escolher uma outra aplicação para seguir seus estudos.
+
+**Links utilizados neste tutorial:**<br>
+**Evozi - APK Downloader:** https://apps.evozi.com/apk-downloader/<br>
+**Google Play Store:** https://play.google.com/store/apps?hl=pt_BR<br>
 
 ___
 # Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium
