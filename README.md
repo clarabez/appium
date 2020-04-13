@@ -49,15 +49,13 @@ ___
 - Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
 ___
 
-<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-
-Este documento sofrerá ajustes e complementos ao longo do tempo <i class="em em-grinning" aria-role="presentation" aria-label="GRINNING FACE"></i>
+Este documento sofrerá ajustes e complementos ao longo do tempo <i>&#128513;</i>
 
 Em breve irei disponibilizar o mesmo conteúdo em inglês e também uma solução usando o Docker, visando tornar mais prática a etapa de configuração - e também a adição de mais tecnologias aqui.
 
-Qualquer sugestão de melhoria ou correção, por favor entrar em contato <i class="em em-hearts" aria-role="presentation" aria-label="BLACK HEART SUIT"></i>
+Qualquer sugestão de melhoria ou correção, por favor entrar em contato <i>&#128525;</i>
 
-Iniciei a elaboração deste tutorial porque pra aprender essa ferramenta tive que recorrer a diferentes fontes e tive que praticar muito pra ter dicas, criar tutoriais, entender melhor a dinâmica, etc. Espero que este documento seja muito útil pra você e te incentivo a também compartilhar o que você for aprendendo <i class="em em-computer" aria-role="presentation" aria-label="PERSONAL COMPUTER"></i>
+Iniciei a elaboração deste tutorial porque pra aprender essa ferramenta tive que recorrer a diferentes fontes e tive que praticar muito pra ter dicas, criar tutoriais, entender melhor a dinâmica, etc. Espero que este documento seja muito útil pra você e te incentivo a também compartilhar o que você for aprendendo <i>&#129304;</i>
 
 ___
 
