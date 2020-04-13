@@ -2,28 +2,37 @@
 <img src="https://github.com/clarabez/appium/blob/master/images/appiumwithpython.png">
 </p>
 
-Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Aqui você vai: 
-1. Entender como funciona a ferramenta Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;
-2. Como instanciar um dispositivo Android emulado através do Android Studio;
-3. Como instalar um aplicativo da PlayStore em seu dispositivo emulado; 
-4. Como fazer mapeamento de elementos de uma aplicação em seu dispositivo;
-5. Como iniciar testes de UI em sua aplicação através do Appium com a linguagem de programação Python.
+Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentro outros aprendizados, destaco os seguintes pontos como principais aprendizados:
+
+<ul>
+    <li>Entender como funciona a ferramenta Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;</li>
+    <li>Como instanciar um dispositivo Android emulado através do Android Studio;</li>
+    <li>Como instalar um aplicativo da PlayStore em seu dispositivo emulado;</li>
+    <li>Como fazer mapeamento de elementos de uma aplicação em seu dispositivo;</li>
+    <li>Como iniciar testes de UI em sua aplicação através do Appium com a linguagem de programação Python.</li>
+</ul>
+
 ___
 
 **A organização do tutorial se dá nas seguintes seções:**
-- Introdução
-- Setup do ambiente
-    - Download de tudo que precisa
-    - Configuração Windows
-    - Configuração Linux
-    - Configuração Mac
-    - Setup simplificado para todos os SOs
-    - Instalação do Appium
-- Appium Doctor: como validar se tá tudo configurado?
-- Checklist
-- Iniciando o Appium
-- Comandos ADB
-- Emulando um dispositivo Android através do Android Studio
+<ul>
+    <li>Introdução</li>
+    <li>Setup do ambiente</li>
+    <ul>
+        <li>Download de tudo que precisa</li>
+        <li>Configuração Windows</li>
+        <li>Configuração Linux</li>
+        <li>Configuração Mac</li>
+        <li>Setup simplificado para todos os SOs</li>
+        <li>Instalação do Appium</li>
+    </ul>
+    <li>Appium Doctor: como validar se tá tudo configurado?</li>
+    <li>Checklist</li>
+    <li>Iniciando o Appium</li>
+    <liComandos ADB></li>
+    <li>Emulando um dispositivo Android através do Android Studio</li>
+</ul>
+
 ___
 
 **Tutoriais**
@@ -45,6 +54,8 @@ Este documento sofrerá ajustes e complementos ao longo do tempo :)
 Em breve irei disponibilizar o mesmo conteúdo em inglês e também uma solução usando o Docker, visando tornar mais prática a etapa de configuração.
 
 Qualquer sugestão de melhoria ou correção, por favor entrar em contato <3
+
+___
 
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/intro.png">
