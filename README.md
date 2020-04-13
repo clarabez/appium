@@ -479,19 +479,57 @@ Aplicações na Play Store normalmente são bem ativas e constantemente sofrem a
 ___
 # Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium
 
+**Para realizar este tutorial é preciso que você tenha:**<br>
+<ul>
+    <li>Dispositivo emulado ativo - passo a passo na seção anterior</li>
+    <li>ADB configurado e funcionando em seu terminal</li>
+    <li>Aplicação da Play Store já instalada no dispositivo</li>
+    <li>Appium Desktop configurado e funcionando</li>
+</ul>
+
+Caso você ainda não tenha lido a seção **Iniciando com o Appium**, recomendo que você dê um pulo lá para ler alguns conceitos que vai ajudar bastante neste segundo tutorial, especialmente porque fala da importância que são os <i>Desired Capabilites</i> para o Appium.
+
+```bash
+{
+    'platformName': 'Android',
+    'deviceName': 'HAHEHHAHE'
+    '': '',
+    '': ''
+}
+```
+
+**Links Importantes para este tutorial:**<br>
+Página oficial do Appium com os Desired Capabilities listados: http://appium.io/docs/en/writing-running-appium/caps/
+
 [EM BREVE]
 ___
 # Tutorial 3: Identificando os elementos da nossa aplicação
 
+**Para realizar este tutorial é preciso que você tenha:**<br>
+<ul>
+    <li>Realizado o Tutorial 2</li>
+</ul>
+
 [EM BREVE]
 ___
 # Tutorial 4: Realizando atividades de GESTOS via Appium
+
+**Para realizar este tutorial é preciso que você tenha:**<br>
+<ul>
+    <li>Dispositivo emulado ativo - passo a passo na seção anterior</li>
+    <li>ADB configurado e funcionando em seu terminal</li>
+    <li>Aplicação da Play Store já instalada no dispositivo</li>
+    <li>Appium Desktop configurado e funcionando</li>
+</ul>
+
 Uma das características mais marcantes quando estamos trabalhando com Android é o uso de GESTOS. Inclusive, no Android Q uma das grandes mudanças que observamos foi a inclusão de mais gestos nas atividades principais desta plataforma. Via código não é uma tarefa simples simular o arrastar de dedos do usuário para encerrar uma aplicação, por exemplo. Uma das vantagens do Appium é que ele já traz uma funcionalidade que realiza alguns gestos e os traduz em código pra gente <3 Com essa funcionalidade podemos: [DETALHAR MAIS AQUI]
 
 [EM BREVE]
 
 ___
 # Tutorial 5: Realizando um fluxo simples de teste funcional
+
+
 
 [EM BREVE]
 ___
