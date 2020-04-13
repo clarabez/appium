@@ -431,11 +431,11 @@ Como o assunto sobre comandos ADB merece maior aprofundamento e dedicação, cri
 **Meu Repositório sobre Comandos ADB:** https://github.com/clarabez/comandosadb<br>
 
 ___
-# Tutorial 1: instalando um apk no meu dispositivo Android emulado
+# Tutorial 1: instalando uma aplicação no meu dispositivo Android emulado
 
 **Para realizar este tutorial é preciso que você tenha:**
 <ul>
-    <li>Dispositivo emulado ativo</li>
+    <li>Dispositivo emulado ativo - passo a passo na seção anterior</li>
     <li>ADB configurado e funcionando em seu terminal</li>
     <li>Conta na Play Store</li>
 </ul>
@@ -479,29 +479,40 @@ Aplicações na Play Store normalmente são bem ativas e constantemente sofrem a
 ___
 # Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium
 
+[EM BREVE]
 ___
 # Tutorial 3: Identificando os elementos da nossa aplicação
 
+[EM BREVE]
 ___
 # Tutorial 4: Realizando atividades de GESTOS via Appium
 Uma das características mais marcantes quando estamos trabalhando com Android é o uso de GESTOS. Inclusive, no Android Q uma das grandes mudanças que observamos foi a inclusão de mais gestos nas atividades principais desta plataforma. Via código não é uma tarefa simples simular o arrastar de dedos do usuário para encerrar uma aplicação, por exemplo. Uma das vantagens do Appium é que ele já traz uma funcionalidade que realiza alguns gestos e os traduz em código pra gente <3 Com essa funcionalidade podemos: [DETALHAR MAIS AQUI]
 
+[EM BREVE]
+
 ___
 # Tutorial 5: Realizando um fluxo simples de teste funcional
 
+[EM BREVE]
 ___
 # Tutorial 6: Gravando nossas ações e transformando isso em código
 
+[EM BREVE]
 ___
 # Tutorial 7: Operações aritméticas com a Calculadora nativa do Android
 
 A partir daqui, considero que o nível de dificuldade de uso e interação com o Appium cresce um pouco e passamos a trabalhar com tutoriais um pouco mais avançados.
 
+[EM BREVE]
 ___
 # Tutorial 8: Replicando tudo o que fiz utilizando apenas Python
 
+[EM BREVE]
 ___
 # Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2
 
+[EM BREVE]
 ___
 # Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
+
+[EM BREVE]
