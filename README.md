@@ -38,7 +38,7 @@ ___
 **Tutoriais contidos aqui**
 
 - [Tutorial 1: Instalando uma aplicação no meu dispositivo Android emulado](https://github.com/clarabez/appium/blob/master/README.md#tutorial-1-instalando-uma-aplica%C3%A7%C3%A3o-no-meu-dispositivo-android-emulado)
-- [Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium](https://github.com/clarabez/appium/blob/master/README.md#tutorial-2-desired-capabilities-o-que-s%C3%A3o-e-como-iniciar-uma-sess%C3%A3o-com-o-appium)
+- [Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium](https://github.com/clarabez/appium/blob/master/README.md#tutorial-2-desired-capabilities-como-iniciar-uma-sess%C3%A3o-com-o-appium)
 - Tutorial 3: Identificando os elementos da nossa aplicação
 - Tutorial 4: Realizando atividades de GESTOS via Appium
 - Tutorial 5: Realizando um fluxo simples de teste funcional
