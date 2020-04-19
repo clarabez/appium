@@ -472,12 +472,15 @@ Com isso, o aplicativo deve ser instalado corretamente e já aparecer disponíve
 **Observação:**<br>
 Aplicações na Play Store normalmente são bem ativas e constantemente sofrem alguma atualização de versão. Nessas atualizações, pode ser que alguma aplicação pare de funcionar em seu dispositivo. Por exemplo, já me aconteceu de a aplicação das Casas Bahia não mais funcionar em meu dispositivo porque deixou de ser compatível com a arquitetura dos dispositivos emulados. Isso pode acontecer. Caso isso aconteça com você, é só escolher uma outra aplicação para seguir seus estudos.
 
+**Sugestão de exercícios:**<br>
+Tente baixar outras aplicações de sua preferência e tente instalar em seu dispositivo via comando ADB e também arrastando o pacote até seu dispositivo.
+
 **Links utilizados neste tutorial:**<br>
 **Evozi - APK Downloader:** https://apps.evozi.com/apk-downloader/<br>
 **Google Play Store:** https://play.google.com/store/apps?hl=pt_BR<br>
 
 ___
-# Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium
+# Tutorial 2: Desired Capabilities: como iniciar uma sessão com o Appium
 
 **Para realizar este tutorial é preciso que você tenha:**<br>
 <ul>
@@ -487,21 +490,122 @@ ___
     <li>Appium Desktop configurado e funcionando</li>
 </ul>
 
-Caso você ainda não tenha lido a seção **Iniciando com o Appium**, recomendo que você dê um pulo lá para ler alguns conceitos que vai ajudar bastante neste segundo tutorial, especialmente porque fala da importância que são os <i>Desired Capabilites</i> para o Appium.
+Caso você ainda não tenha lido a seção [**Iniciando com o Appium**](https://github.com/clarabez/appium/blob/master/README.md#tutorial-2-desired-capabilities-o-que-s%C3%A3o-e-como-iniciar-uma-sess%C3%A3o-com-o-appium), recomendo que você dê um pulo lá para ler alguns conceitos que vai ajudar bastante neste segundo tutorial, especialmente porque fala da importância que são os <i>Desired Capabilites</i> para o Appium. Reforçando o que foi dito por lá, os <i>Desired Capabilites</i> são uma parte muito especial e importante quando estamos trabalhando com Appium. É a partir deles que vamos dizer o que queremos fazer exatamente utilizando o Appium.
+
+Como mostra a [documentação oficial do Appium sobre os Desired Capabilites](http://appium.io/docs/en/writing-running-appium/caps/), temos uma extensa lista de opções de uso e podemos partir de um uso mais genérico até um uso mais específico. Aqui vamos realizar a ação destas nesses dois formatos.
+
+**Desired Capabilities - forma genérica**
+
+Para isso, vamos precisar identificar apenas qual o <i>platformName</i> e o <i>deviceName</i>, que querem dizer o a plataforma (Android, iOS, Windows) e o nome do produto (serial number), respectivamente. O primeiro valor é bastante simples de saber, basta indicar a plataforma que você está usando no seu estudo - durante este tutorial irei usar Android. Para saber o <i>Serial Number</i> do seu celular, é só utilizar o seguinte comando ADB em seu terminal:
+
+```bash
+{
+    adb devices
+}
+```
+
+O comando irá retornar algo mais ou menos assim:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/adb%20devices.png">
+</p>
+
+Assim que dou o comando <i>adb devices</i> o serviço ADB é iniciado e em seguida o valor de identificação do meu celular é retornado, que no caso foi: **emulator-5554**. É este o valor que vamos usar no campo <i>deviceName</i>. 
+
+**Uma informação importante:** <br>Estou utilizando um celular emulado, portanto este é o valor padrão do <i>Android Device Manager</i> do <i>Android Studio</i> para 1 dispositivo emulado. Se você estiver utilizando um dispositivo real, este valor será bem diferente do que foi retornado pra mim.
+
+Segue então valores que irei utiliar para o <i>Desired Capabilities</i>:
 
 ```bash
 {
     'platformName': 'Android',
-    'deviceName': 'HAHEHHAHE'
-    '': '',
-    '': ''
+    'deviceName': 'emulator-5554'
 }
 ```
+
+Agora com os valores identificados, podemos abrir o Appium até chegarmos na tela que temos a aba de <i>Desired Capabilites</i> e preencher os campos como mostra a imagem a seguir:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/desired_generic.png">
+</p>
+
+Repare que eu insiro o valor apenas na aba <i>Desired Capabilities</i> e automaticamente o Appium converte tudo em JSON na tela ao lado, onde aponto com uma seta. Uma dica que acrescento é a de salvar essa sua configuração, pois ela será a base de alguns outros tutoriais que vamos fazer. Para isso, é só clicar em **Save As**. Para acessar qualquer capability já salva, é só acessar a aba <i>Save Capability Sets</i>, que fica ao lado da aba <i>Desired Capabilities</i>.
+
+Agora, é só clicar no botão **Start Session** que o Appium irá iniciar uma sessão com base nas informações que indicamos. Com os campos corretos e identificados (ou seja, celular detectado e compatível com o que você informou), agora podemos ver a seguinte tela:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumstarted1.png">
+</p>
+
+Esta é a tela de início de atividades com o Appium, que veremos nos próximos tutoriais. Aqui já é possível ver que o Appium tirou um <i>screenshot</i> da tela em que estava o nosso celular no momento em que demos início à sessão. Essa é uma das características do Appium: ele espelha a tela exatamente de onde você inicou a sessão - em casos de uso genérico do <i>Desired Capabilities</i>. Além disso, também já vemos novos botões e novas seções. Agora vamos ver como podemos iniciar uma sessão sendo mais específicos com as informações que queremos que o Appium trate.
+
+**Desired Capabilities - forma específica**
+
+Vimos anteriormente como criamos uma sessão genérica com o <i>Appium</i> e conhecemos também algumas telas e algumas características à medida que fomos avançando as ações.
+A finalidade de você iniciar uma sessão de forma mais específica é que vc indica ao <i>Appium</i> **exatamente** a tela que ele deve iniciar a sessão.
+
+**Exemplo:**<br>
+Vamos querer automatizar nossa calculadora nativa do Android. Como já sabemos que nosso foco será essa aplicação específica, podemos ir direto para ela, pulando o fluxo em que chamamos a aplicação através de interface gráfica. Para isso, vamos incrementar os valores de <i>Desired Capabilities</i> que já tínhamos preparado no passo anterior, só que agora precisamos dos valores para as chaves: <i>appPackage</i> e <i>appActivity</i>. Segue explicação para cada um dos campos:
+
+**appPackage:**
+<br>
+É o nome do pacote da sua aplicação. Isso é definido à nível de desenvolvimento da aplicação.
+
+**appActivity:**
+<br>
+Uma tela em desenvolvimento Android é chamada de activity. Este valor é basicamente para indicar em qual tela da aplicação você quer estar quando a sessão for iniciada.
+
+**E como obter estes valores?**
+<br>
+Através de comando ADB! <3 Para isso, vamos para nosso celular em teste (emulado ou real) e vamos abrir a aplicação que queremos testar e vamos deixar exatamente na tela que queremos fazer nossos teses. Depois disso, vamos usar o seguinte comando no terminal:
+
+```bash
+{
+    adb shell dumpsys window windows | grep -E 'mCurrentFocus'
+}
+```
+
+Visualmente fica assim:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/adbcurrentfocus.png">
+</p>
+
+Note que deixo em destaque o seguinte trecho do que foi retornado na estrutura:
+
+```bash
+com.android.calculator2/com.android.calculator2.Calculator
+```
+
+Ess é trecho em que temos tanto o valor de <i>appPackage</i> quanto o de <i>appActivity</i>. A divisão entre os dois campos se dá pela / (barra) que existe bem no meio do trecho. Sempre o que tiver antes da barra será o valor do package. O que tiver depois será o do activity da sua aplicação. Agora é só copiar e preencher nos campos com mostro a seguir:
+
+```bash
+{
+    'platformName': 'Android',
+    'deviceName': 'emulator-5554'
+    'appPackage': 'com.android.calculator2',
+    'appActivity': 'com.android.calculator2.Calculator'
+}
+```
+
+Visualmente fica assim (em destaque no JSON o que eu acrescentei):
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/desireddetailed.png">
+</p>
+
+Agora, com todos os valores preenchidos, você pode salvar novamente esta configuração clicando em <i>Save As...<> e em seguida podemos iniciar nossa sessão clicando em <i>Start Session</i>. Quando a sessão for iniciada, você verá que agora o print da tela será direto da aplicação Calculadora, que foi a que indiquei nos campos de <i>appPackage</i> e de <i>appActivity</i>. Veja que no seu dispositivo (emulado ou real) também vai estar na mesma tela que você indicou:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumdetailed.png">
+</p>
+
+**Sugestão de exercícios:**<br>
+Tente utilizar o comando ADB deste tutorial para identificar pacote e activity em aplicações diferentes, inclusive alguma que você baixou no Tutorial 1.
 
 **Links Importantes para este tutorial:**<br>
 Página oficial do Appium com os Desired Capabilities listados: http://appium.io/docs/en/writing-running-appium/caps/
 
-[EM BREVE]
 ___
 # Tutorial 3: Identificando os elementos da nossa aplicação
 
@@ -509,6 +613,7 @@ ___
 <ul>
     <li>Realizado o Tutorial 2</li>
 </ul>
+
 
 [EM BREVE]
 ___
@@ -528,8 +633,6 @@ Uma das características mais marcantes quando estamos trabalhando com Android �
 
 ___
 # Tutorial 5: Realizando um fluxo simples de teste funcional
-
-
 
 [EM BREVE]
 ___
