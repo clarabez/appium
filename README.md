@@ -499,9 +499,7 @@ Como mostra a [documentação oficial do Appium sobre os Desired Capabilites](ht
 Para isso, vamos precisar identificar apenas qual o <i>platformName</i> e o <i>deviceName</i>, que querem dizer o a plataforma (Android, iOS, Windows) e o nome do produto (serial number), respectivamente. O primeiro valor é bastante simples de saber, basta indicar a plataforma que você está usando no seu estudo - durante este tutorial irei usar Android. Para saber o <i>Serial Number</i> do seu celular, é só utilizar o seguinte comando ADB em seu terminal:
 
 ```bash
-{
     adb devices
-}
 ```
 
 O comando irá retornar algo mais ou menos assim:
@@ -534,7 +532,7 @@ Repare que eu insiro o valor apenas na aba <i>Desired Capabilities</i> e automat
 Agora, é só clicar no botão **Start Session** que o Appium irá iniciar uma sessão com base nas informações que indicamos. Com os campos corretos e identificados (ou seja, celular detectado e compatível com o que você informou), agora podemos ver a seguinte tela:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumstarted1.png">
+<img src="https://github.com/clarabez/appium/blob/master/images/appimstarted1.png">
 </p>
 
 Esta é a tela de início de atividades com o Appium, que veremos nos próximos tutoriais. Aqui já é possível ver que o Appium tirou um <i>screenshot</i> da tela em que estava o nosso celular no momento em que demos início à sessão. Essa é uma das características do Appium: ele espelha a tela exatamente de onde você inicou a sessão - em casos de uso genérico do <i>Desired Capabilities</i>. Além disso, também já vemos novos botões e novas seções. Agora vamos ver como podemos iniciar uma sessão sendo mais específicos com as informações que queremos que o Appium trate.
@@ -560,9 +558,7 @@ Uma tela em desenvolvimento Android é chamada de activity. Este valor é basica
 Através de comando ADB! <3 Para isso, vamos para nosso celular em teste (emulado ou real) e vamos abrir a aplicação que queremos testar e vamos deixar exatamente na tela que queremos fazer nossos teses. Depois disso, vamos usar o seguinte comando no terminal:
 
 ```bash
-{
     adb shell dumpsys window windows | grep -E 'mCurrentFocus'
-}
 ```
 
 Visualmente fica assim:
@@ -594,7 +590,7 @@ Visualmente fica assim (em destaque no JSON o que eu acrescentei):
 <img src="https://github.com/clarabez/appium/blob/master/images/desireddetailed.png">
 </p>
 
-Agora, com todos os valores preenchidos, você pode salvar novamente esta configuração clicando em <i>Save As...<> e em seguida podemos iniciar nossa sessão clicando em <i>Start Session</i>. Quando a sessão for iniciada, você verá que agora o print da tela será direto da aplicação Calculadora, que foi a que indiquei nos campos de <i>appPackage</i> e de <i>appActivity</i>. Veja que no seu dispositivo (emulado ou real) também vai estar na mesma tela que você indicou:
+Agora, com todos os valores preenchidos, você pode salvar novamente esta configuração clicando em <i>Save As...</i> e em seguida podemos iniciar nossa sessão clicando em <i>Start Session</i>. Quando a sessão for iniciada, você verá que agora o print da tela será direto da aplicação Calculadora, que foi a que indiquei nos campos de <i>appPackage</i> e de <i>appActivity</i>. Veja que no seu dispositivo (emulado ou real) também vai estar na mesma tela que você indicou:
 
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/appiumdetailed.png">
