@@ -610,8 +610,56 @@ ___
     <li>Realizado o Tutorial 2</li>
 </ul>
 
+Realizar a identificação de elementos é muito fácil quando estamos trabalhando com ferramentas/frameworks que tem o <i>webDriver</i> como base. Inclusive, a simples ação de **mapear elementos** de aplicações móveis também pode ser realizada através do UIAutomator, que é uma funcionalidade nativa também do <i>Android Studio</i>. Se você já trabalhou com Selenium, sabe que para mapearmos elementos de uma página web, basta clicar com o botão direito do mouse e selecionarmos a opção "inspecionar elementos" ou "inspecionar".
 
-[EM BREVE]
+Com falei mais acima, identificar elementos é **relativamente simples**, **porém, o grande desafio** do mapeamento de elementos está em mapear de maneira inteligente e eficiente, de maneira que seu código não vá quebrar e, além disso, de maneira que a manutenabilidade do seu código não seja comprometida.
+<br>
+**Qual a melhor prática?** <br>
+No mundo perfeito, todos os elementos de uma aplicação/página web estão identificados seguindo boas práticas de desenvolvimento, com IDs intuitivos e únicos. Outro excelente caminho é se você tem acesso aos desenvolvedores da aplicação e consegue solicitar esse tipo de ajuste a eles. Porém, sabemos que essa é uma realidade muito específica e que não estará presente na maioria das aplicações que formos interagir - especialmente agora na nossa fase de estudos.
+
+Uma ótima prática é utilizar partes estáticas quando temos IDs dinâmicos. No caso de usar IDs dinâmicos, os seus valores serão atualizados a cada acesso, ação normalmente realizada pelo framework utilizado em nível de desenvolvimento. Uma boa dica para isso? CSS Selector.
+
+Em algums casos você vai ter que trabalhar com hierarquia dos seus elementos. Nestas condições, opte sempre pela hierarquia mais próxima ao elemento em foco e, melhor ainda, se o elemento pai/filho possuir IDs únicos.
+
+Outra dica, já acompanhada de um exemplo para tornar o entendimento mais claro, é poder dividir os valores (muitas vezes gigantes) que você pode encontrar por XPATH, tornoando-os mais curtos:
+
+```bash
+<button type=“submit” class=“signup-button button--black button--active”>Signup Here!</button>
+```
+
+Diante deste exemplo simples de XPATH, onde vemos um valor grande, podemos tratá-lo da seguinte maneira:
+
+```bash
+WebElement signupXPath = browser.findElement(By.xpath(“//button[contains(@id, ‘signup-button’)]”));
+```
+
+Também, de forma muito similar, podemos realizar a identificação do elemento a partir de CSS Selector:
+
+```bash
+WebElement signupCSS = browser.findElement(By.cssSelector(“button[class*=‘signup-button’]”));
+```
+
+Destas formas seu elemento será sendo identificado da mesma maneira, só que agora de forma mais legível e com menor vulnerabilidade de quebra futura :)
+
+**Qual a prática devemos evitar?** <br>
+A prática ruim mais comum que vejo acontecer é o uso de XPATH longos, sem tratamentos, e uso de identificadores dinâmicos, que deixam de fazer sentido numa segunda execução - visto que ele muda a cada load da página.
+
+**Agora identificando elementos no Appium**<br>
+Para realizar a identificação de elementos, basta dar um clique no elemento que você deseja mapear e, na barra lateral direita, irá aparecer uma lista de opções de valores que você pode utilizar no seu mapeamento:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumIdentifyElements.png">
+</p>
+<br>
+
+No meu print, utilizei o elemento "9" e me foi retornado 2 opções: id, xpath. Como o número 9 tem ID e vejo que ele é único (clicando nos demais elementos pude perceber isso), então decidi que o valor de ID é a melhor abordagem para eu seguir na identificação dos elementos da minha calculadora.
+
+No meu print, utilizei o elemento "9" e me foi retornado 2 opções: id, xpath. Como o número 9 tem ID e vejo que ele é único (clicando nos demais elementos pude perceber isso), então decidi que o valor de ID é a melhor abordagem para eu seguir na identificação dos elementos da minha calculadora.
+<br>
+**Sugestão de exercício:**
+<br>
+Para praticar um pouco mais, sugiro que você vá observando a diferença entre elementos da sua aplicação. Tente também mapear elementos de alguma outra aplicação e observar se você tem o campo de ID e XPath.
+
 ___
 # Tutorial 4: Realizando atividades de GESTOS via Appium
 
@@ -622,11 +670,27 @@ ___
     <li>Aplicação da Play Store já instalada no dispositivo</li>
     <li>Appium Desktop configurado e funcionando</li>
 </ul>
+<br>
+Uma das características mais marcantes quando estamos trabalhando com Android é o uso de **GESTOS**. Inclusive, no Android Q uma das grandes mudanças que observamos foi a inclusão de mais gestos nas atividades principais desta plataforma. Via código, puramente, não é uma tarefa tão simples simular o arrastar de dedos do usuário para encerrar uma aplicação, por exemplo. Uma das vantagens do Appium é que ele já traz uma funcionalidade nativa que realiza alguns gestos e os traduz em código pra gente <3
 
-Uma das características mais marcantes quando estamos trabalhando com Android é o uso de GESTOS. Inclusive, no Android Q uma das grandes mudanças que observamos foi a inclusão de mais gestos nas atividades principais desta plataforma. Via código não é uma tarefa simples simular o arrastar de dedos do usuário para encerrar uma aplicação, por exemplo. Uma das vantagens do Appium é que ele já traz uma funcionalidade que realiza alguns gestos e os traduz em código pra gente <3 Com essa funcionalidade podemos: [DETALHAR MAIS AQUI]
+Vamos dividir este tutorial para cada uma das funcionalidades: <i>Swipe by Coordinates</i> e <i>Tap by Coordinates</i>.
 
-[EM BREVE]
+**Swipe by Coordinates - deslizar o dedo numa coordenada especíica**
+<br>
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/SwipeByCoordinates.png">
+</p>
+<br>
 
+<br>
+**Tap by Coordinates - Clicar numa posição específica da tela**
+<br>
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/TapByCoordinates.png">
+</p>
+<br>
+
+<br>
 ___
 # Tutorial 5: Realizando um fluxo simples de teste funcional
 
