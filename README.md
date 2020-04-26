@@ -39,8 +39,8 @@ ___
 
 - [Tutorial 1: Instalando uma aplicação no meu dispositivo Android emulado](https://github.com/clarabez/appium/blob/master/README.md#tutorial-1-instalando-uma-aplica%C3%A7%C3%A3o-no-meu-dispositivo-android-emulado)
 - [Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium](https://github.com/clarabez/appium/blob/master/README.md#tutorial-2-desired-capabilities-como-iniciar-uma-sess%C3%A3o-com-o-appium)
-- Tutorial 3: Identificando os elementos da nossa aplicação
-- Tutorial 4: Realizando atividades de GESTOS via Appium
+- [Tutorial 3: Identificando os elementos da nossa aplicação](https://github.com/clarabez/appium/blob/master/README.md#tutorial-3-identificando-os-elementos-da-nossa-aplica%C3%A7%C3%A3o)
+- [Tutorial 4: Realizando atividades de GESTOS via Appium](https://github.com/clarabez/appium/blob/master/README.md#tutorial-4-realizando-atividades-de-gestos-via-appium)
 - Tutorial 5: Realizando um fluxo simples de teste funcional
 - Tutorial 6: Gravando nossas ações e transformando isso em código
 - Tutorial 7: Operações aritméticas com a Calculadora nativa do Android
@@ -676,44 +676,216 @@ Uma das características mais marcantes quando estamos trabalhando com Android �
 Vamos dividir este tutorial para cada uma das funcionalidades: <i>Swipe by Coordinates</i> e <i>Tap by Coordinates</i>.
 
 **Swipe by Coordinates - deslizar o dedo numa coordenada especíica**
-<br>
+
+Esta funcionalidade de fazer <i>swipe</i>, ou melhor, de deslizar o dedo na tela em uma direção é muito utilizada (especialmente no Android) para abrir menu suspenso (inferior ou superior) mudar de tela, encerrar aplicações, inserir senha personalizada de desbloquear tela, etc. No Appium, para utilizar esta funcionalidade, é só clicar no botão que está em destaque na imagem abaixo:
+
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/SwipeByCoordinates.png">
 </p>
-<br>
 
-<br>
+Para exemplificar o uso dessa funcionalidade, vou realizar a ação de baixar o menu suspenso superior do dispositivo Android. Com minha sessão do Appium iniciada para o meu Android emulado, irei realizar o gesto de deslizar o dedo a partir do topo da tela até mais ou menos a metade.
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/gifcoordinates.gif.png">
+</p>
+
+Note que quando posicionamos o cursor do mouse na tela com a funcionalidade de <i>Swipe</i>, o canto superior esquerdo nos diz a posição do cursor em X e Y. Isso significa a localização que você está na tela e esses valores podem variar de acordo com o tamanho da sua tela. De ação, cliquei bem na margem superior no meio da tela e daí já dá pra ver um ponto indicando a localização do clique. Depois, vou um pouco pra metade pra baixo da dela e realizo outro clique. Em seguida o Appium executa a ação e o menu superior aparece no Appium e no dispositivo emulado.
+
 **Tap by Coordinates - Clicar numa posição específica da tela**
-<br>
+
+É indiscutível a importância do gesto de toque na tela em um dispositivo móvel :) Como se trata de algo dependente de posição (X, Y) na tela, às vezes isso pode ser um desafio de tratar em automação. Esta funcionalidade também está presente no Appium e pode ser encontrara através do botão que destaco a seguir:
+
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/TapByCoordinates.png">
 </p>
-<br>
 
-<br>
+Para exemplificar esta funcionalidade, irei realizar a ação de abrir um aplicativo que estiver em minha tela inicial, simplesmente tocando na exata posição que ele está na tela. Vamos ao gif demonstrativo:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/tapcoordinategif.gif">
+</p>
+
+Essa ação é composta por menos passos que o de coordenadas, visto que ele é realiza através de um único clique. Da mesma maneira, os valores de X e Y são atualizados à medida que eu vou andando com o cursor na tela. Dei um clique na localização de onde está o aplicativo Dialer (chamadas) e em seguida ele foi executado sem nenuma ação extra.
+
+**Sugestão de exercícios:**
+
+Tentar utilizar os funcionalidades <i>swipe</i> e <i>tap</i> em outras telas, menus e aplicações.
+
 ___
 # Tutorial 5: Realizando um fluxo simples de teste funcional
 
-[EM BREVE]
+Agora que já sabemos mexer bastante com as principais funcionalidades do Appium, é hora realizarmos um fluxo bem simples de teste funcional em uma aplicação. Como estamos iniciando, vou realizar este tutorial através da aplicação Calculadora nativa do Android emulado. Como estamos falando de um teste funcional, irei estruturar o teste aqui:
+
+<b>Cenário de teste:</b><br>
+Realizar operações aritiméticas
+
+Caso de teste:
+<br>
+<table style="width:100%">
+  <caption>Caso de Teste 1 - Realizar operação de soma com 2 valores de entrada</caption>
+  <tr>
+    <th>Setup</th>
+    <th>Passo a passo</th>
+    <th>Resultado esperado</th>
+  </tr>
+  <tr>
+    <td>Dispositivo conectado (real ou emulado)<br>
+        Sessão de Appium iniciada<br>
+        Aplicação Calculadora iniciada<br>
+    </td>
+    <td>Insira 1 entrada numérica válida<br>
+        Aplique a operação de soma<br>
+        Insira outra entrada numérica válida<br>
+        Checar resultado
+    </td>
+    <td>
+        Número é inserido corretamente<br>
+        Operação inserida corretamente<br>
+        Número inserido corretamente<br>
+        O resultado condiz com os elementos inseridos.
+    </td>
+  </tr>
+</table>
+
+O caso de teste é bastante simples, vou realizar a soma dos números 2 e 3:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/soma_gif.gif">
+</p>
+
+Não tem mistério, é só clicar nos elementos seguindo o fluxo definido e verificar que no final ele retorna o resultado de forma correta. Depois vamos fazer um tutorial para validar isso através de códgio :)
+
 ___
 # Tutorial 6: Gravando nossas ações e transformando isso em código
 
-[EM BREVE]
+**Para realizar este tutorial é preciso que você tenha:**<br>
+<ul>
+    <li>Tenha um dispositivo (real ou emulado) ativo</li>
+    <li>Uma sessão iniciada no Appium</li>
+    <li>Calculadora inicializada</li>
+</ul>
+
+Agora é hora de conhecermos uma outra funcionalidade muito boa que o Appium traz, que é o de converter em **código de programação** qualquer ação que você realizar em seu dispositivo, seja ele apenas um o início de uma aplicação ou ações mais elaboradas e interessantes como os que vimos mais acima: <i>swipe</i> e <i>tap coordinates</i>.
+
+Considero essa função uma das que torna o Appium uma excelente aplicação para automação, especialmente se você está iniciando neste mundo ou ainda não tem muito contato com alguma linguagem de programação - de forma geral ou em alguma linguagem específica. O Appium consegue converter código para as seguintes linguagens: Python, JAVA, Ruby, RobotFramework e JS.
+
+A funcionalidade de gravar as ações fica disponível com o seguinte ícone na aplicação:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/StartRecordingIcone.png">
+</p>
+
+É só clicar neste ícone e deixar também ativa a função "Select elements", que fica ao lado esquerdo do botão <i>swipe</i>. Vou deixar em destaque na próxima imagem. Ao clicar em cada um dos ícones do teste, teremos que clicar também no botão <i>Tap</i>, que irá realizar a ação de clique no elemento. Este botão também deixo em destaque na imagem que segue: 
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/RecordTap1.png">
+</p>
+
+Agora é só realizar alguma ação e irei repetir o fluxo que fizemos no tutorial anterior, só que agora vamos gravar cada uma das ações que realizarmos:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/recordsomagif.gif">
+</p>
+
+Observe que à medida que nós vamos inserindo os dígitos na nossa calculadora, o código vai sendo gerado no campo **Recorder** que fica ao lado direito :) veja que o código já faz atribuições às variáveis que ele mesmo cria para receber elementos e assim facilitar acções como o <i>.click</i>. O código gerado será assim para Python:
+
+```bash
+el1 = driver.find_element_by_id("com.android.calculator2:id/digit_2")
+el1.click()
+el2 = driver.find_element_by_accessibility_id("plus")
+el2.click()
+el3 = driver.find_element_by_id("com.android.calculator2:id/digit_3")
+el3.click()
+el4 = driver.find_element_by_accessibility_id("equals")
+el4.click()
+
+```
+
+É um código que trata apenas das interações que você faz e abstrai imports e demais recursos que você iria precisar para iniciar um projeto de automação. Porém, é possível também obter esse nível de código através do botão <i>BoilerPlate Code</i> como mostramos na imagem a seguir:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/boilerplatecode.png">
+</p>
+
+Através desta funcionalidade podemos obter todo o código gerado, inclusive com todos os imports e recursos necessários. O código fica assim para Python:
+
+```bash
+# This sample code uses the Appium python client
+# pip install Appium-Python-Client
+# Then you can paste this into a file and simply run with Python
+
+from appium import webdriver
+
+caps = {}
+caps["platformName"] = "Android"
+caps["deviceName"] = "AppiumP"
+caps["appPackage"] = "com.android.calculator2"
+caps["appActivity"] = "com.android.calculator2.Calculator"
+
+driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
+
+el1 = driver.find_element_by_id("com.android.calculator2:id/digit_2")
+el1.click()
+el2 = driver.find_element_by_accessibility_id("plus")
+el2.click()
+el3 = driver.find_element_by_id("com.android.calculator2:id/digit_3")
+el3.click()
+el4 = driver.find_element_by_accessibility_id("equals")
+el4.click()
+
+driver.quit()
+```
+
+Desta forma fica muito mais tranquilo de gerar um código inicial através do Appium e depois aproveitar muita coisa que foi gerada adicionando ou alterando as partes que quisermos.
+
+Nos tutoriais seguintes iremos focar mais no código, então vamos explicar melhor algumas partes particulares do Appium em Python.
+
+**Sugestão de exercícios:**
+Agora que você já conhece também a funcionalidade de gravar suas ações e tranformá-las em código, você pode realizar outros fluxos na calculadora ou até utilizar qualquer outra aplicação para gerar ações com gestos, por exemplo. Depois é só exportar o código e fazer alterações de acordo da maneira que você desejar.
+
 ___
 # Tutorial 7: Operações aritméticas com a Calculadora nativa do Android
 
 A partir daqui, considero que o nível de dificuldade de uso e interação com o Appium cresce um pouco e passamos a trabalhar com tutoriais um pouco mais avançados.
 
+**Para realizar este tutorial é preciso que você tenha:**<br>
+<ul>
+    <li>Tenha um dispositivo (real ou emulado) ativo</li>
+    <li>Uma sessão iniciada no Appium</li>
+    <li>Calculadora inicializada</li>
+</ul>
+
 [EM BREVE]
 ___
 # Tutorial 8: Replicando tudo o que fiz utilizando apenas Python
+
+**Para realizar este tutorial é preciso que você tenha:**<br>
+<ul>
+    <li>Tenha um dispositivo (real ou emulado) ativo</li>
+    <li>Uma sessão iniciada no Appium</li>
+    <li>Calculadora inicializada</li>
+</ul>
 
 [EM BREVE]
 ___
 # Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2
 
+**Para realizar este tutorial é preciso que você tenha:**<br>
+<ul>
+    <li>Tenha um dispositivo (real ou emulado) ativo</li>
+    <li>Uma sessão iniciada no Appium</li>
+    <li>Calculadora inicializada</li>
+</ul>
+
 [EM BREVE]
 ___
 # Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
+
+**Para realizar este tutorial é preciso que você tenha:**<br>
+<ul>
+    <li>Tenha um dispositivo (real ou emulado) ativo</li>
+    <li>Uma sessão iniciada no Appium</li>
+    <li>Calculadora inicializada</li>
+</ul>
 
 [EM BREVE]
