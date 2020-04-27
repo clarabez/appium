@@ -41,9 +41,9 @@ ___
 - [Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium](https://github.com/clarabez/appium/blob/master/README.md#tutorial-2-desired-capabilities-como-iniciar-uma-sess%C3%A3o-com-o-appium)
 - [Tutorial 3: Identificando os elementos da nossa aplicação](https://github.com/clarabez/appium/blob/master/README.md#tutorial-3-identificando-os-elementos-da-nossa-aplica%C3%A7%C3%A3o)
 - [Tutorial 4: Realizando atividades de GESTOS via Appium](https://github.com/clarabez/appium/blob/master/README.md#tutorial-4-realizando-atividades-de-gestos-via-appium)
-- Tutorial 5: Realizando um fluxo simples de teste funcional
-- Tutorial 6: Gravando nossas ações e transformando isso em código
-- Tutorial 7: Operações aritméticas com a Calculadora nativa do Android
+- [Tutorial 5: Realizando um fluxo simples de teste funcional](https://github.com/clarabez/appium/blob/master/README.md#tutorial-5-realizando-um-fluxo-simples-de-teste-funcional)
+- [Tutorial 6: Gravando nossas ações e transformando isso em código](https://github.com/clarabez/appium/blob/master/README.md#tutorial-6-gravando-nossas-a%C3%A7%C3%B5es-e-transformando-isso-em-c%C3%B3digo)
+- [Tutorial 7: Operações aritméticas com a Calculadora nativa do Android](https://github.com/clarabez/appium/blob/master/README.md#tutorial-7-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android)
 - Tutorial 8: Replicando tudo o que fiz utilizando apenas Python
 - Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2
 - Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
@@ -675,7 +675,7 @@ Uma das características mais marcantes quando estamos trabalhando com Android �
 
 Vamos dividir este tutorial para cada uma das funcionalidades: <i>Swipe by Coordinates</i> e <i>Tap by Coordinates</i>.
 
-**Swipe by Coordinates - deslizar o dedo numa coordenada especíica**
+**Swipe by Coordinates - deslizar o dedo numa coordenada específica**
 
 Esta funcionalidade de fazer <i>swipe</i>, ou melhor, de deslizar o dedo na tela em uma direção é muito utilizada (especialmente no Android) para abrir menu suspenso (inferior ou superior) mudar de tela, encerrar aplicações, inserir senha personalizada de desbloquear tela, etc. No Appium, para utilizar esta funcionalidade, é só clicar no botão que está em destaque na imagem abaixo:
 
@@ -686,7 +686,7 @@ Esta funcionalidade de fazer <i>swipe</i>, ou melhor, de deslizar o dedo na tela
 Para exemplificar o uso dessa funcionalidade, vou realizar a ação de baixar o menu suspenso superior do dispositivo Android. Com minha sessão do Appium iniciada para o meu Android emulado, irei realizar o gesto de deslizar o dedo a partir do topo da tela até mais ou menos a metade.
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/gifcoordinates.gif.png">
+<img src="https://github.com/clarabez/appium/blob/master/images/gifcoordinates.gif">
 </p>
 
 Note que quando posicionamos o cursor do mouse na tela com a funcionalidade de <i>Swipe</i>, o canto superior esquerdo nos diz a posição do cursor em X e Y. Isso significa a localização que você está na tela e esses valores podem variar de acordo com o tamanho da sua tela. De ação, cliquei bem na margem superior no meio da tela e daí já dá pra ver um ponto indicando a localização do clique. Depois, vou um pouco pra metade pra baixo da dela e realizo outro clique. Em seguida o Appium executa a ação e o menu superior aparece no Appium e no dispositivo emulado.
@@ -718,8 +718,6 @@ Agora que já sabemos mexer bastante com as principais funcionalidades do Appium
 
 <b>Cenário de teste:</b><br>
 Realizar operações aritiméticas
-
-Caso de teste:
 <br>
 <table style="width:100%">
   <caption>Caso de Teste 1 - Realizar operação de soma com 2 valores de entrada</caption>
@@ -729,20 +727,20 @@ Caso de teste:
     <th>Resultado esperado</th>
   </tr>
   <tr>
-    <td>Dispositivo conectado (real ou emulado)<br>
-        Sessão de Appium iniciada<br>
-        Aplicação Calculadora iniciada<br>
+    <td>1. Dispositivo conectado (real ou emulado)<br>
+        2. Sessão de Appium iniciada<br>
+        3. Aplicação Calculadora iniciada<br>
     </td>
-    <td>Insira 1 entrada numérica válida<br>
-        Aplique a operação de soma<br>
-        Insira outra entrada numérica válida<br>
-        Checar resultado
+    <td>1. Insira 1 entrada numérica válida<br>
+        2. Aplique a operação de soma<br>
+        3. Insira outra entrada numérica válida<br>
+        4. Checar resultado
     </td>
     <td>
-        Número é inserido corretamente<br>
-        Operação inserida corretamente<br>
-        Número inserido corretamente<br>
-        O resultado condiz com os elementos inseridos.
+        1. Número é inserido corretamente<br>
+        2. Operação inserida corretamente<br>
+        3. Número inserido corretamente<br>
+        4. O resultado condiz com os elementos inseridos.
     </td>
   </tr>
 </table>
@@ -753,7 +751,7 @@ O caso de teste é bastante simples, vou realizar a soma dos números 2 e 3:
 <img src="https://github.com/clarabez/appium/blob/master/images/soma_gif.gif">
 </p>
 
-Não tem mistério, é só clicar nos elementos seguindo o fluxo definido e verificar que no final ele retorna o resultado de forma correta. Depois vamos fazer um tutorial para validar isso através de códgio :)
+Não tem mistério, é só clicar nos elementos seguindo o fluxo definido e verificar que no final ele retorna o resultado de forma correta. Depois vamos fazer um tutorial para validar isso através de linguagem de programação :)
 
 ___
 # Tutorial 6: Gravando nossas ações e transformando isso em código
@@ -765,7 +763,7 @@ ___
     <li>Calculadora inicializada</li>
 </ul>
 
-Agora é hora de conhecermos uma outra funcionalidade muito boa que o Appium traz, que é o de converter em **código de programação** qualquer ação que você realizar em seu dispositivo, seja ele apenas um o início de uma aplicação ou ações mais elaboradas e interessantes como os que vimos mais acima: <i>swipe</i> e <i>tap coordinates</i>.
+Agora é hora de conhecermos uma outra funcionalidade muito boa que o Appium traz, que é o de converter em **código de programação** qualquer ação que você realizar em seu dispositivo, seja esta ação apenas para inicializar uma aplicação, ou até para ações mais elaboradas e interessantes como os que vimos mais acima: <i>swipe</i> e <i>tap coordinates</i>.
 
 Considero essa função uma das que torna o Appium uma excelente aplicação para automação, especialmente se você está iniciando neste mundo ou ainda não tem muito contato com alguma linguagem de programação - de forma geral ou em alguma linguagem específica. O Appium consegue converter código para as seguintes linguagens: Python, JAVA, Ruby, RobotFramework e JS.
 
@@ -855,7 +853,67 @@ A partir daqui, considero que o nível de dificuldade de uso e interação com o
     <li>Calculadora inicializada</li>
 </ul>
 
-[EM BREVE]
+No **"Tutorial 5: Realizando um fluxo simples de teste funcional"** vimos um fluxo bem simples da operação de soma com dois números inteiros. Agora que sabemos como converter ações em código, vamos começar a elaborar um pouco mais estas ações e dar continuidade ao uso da Calculadora aplicando as demais operações aritiméticas: subtração, divisão e multiplicação.
+
+Para isso, vou mais uma vez utilizar a funcionalidade **Record** do Appium, visto que quero gerar o código destas ações através de Python. Segue gif para representar a sequência que realizei:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/oparitimeticas.gif">
+</p>
+
+Note que, como estou usando a função **Record**, o código em Python foi sendo gerado dinamicamente e ao final ficamos com o seguinte código:
+
+```bash
+# This sample code uses the Appium python client
+# pip install Appium-Python-Client
+# Then you can paste this into a file and simply run with Python
+
+from appium import webdriver
+
+caps = {}
+caps["platformName"] = "Android"
+caps["deviceName"] = "AppiumP"
+caps["appPackage"] = "com.android.calculator2"
+caps["appActivity"] = "com.android.calculator2.Calculator"
+
+driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
+
+el1 = driver.find_element_by_id("com.android.calculator2:id/digit_1")
+el1.click()
+el2 = driver.find_element_by_accessibility_id("plus")
+el2.click()
+el3 = driver.find_element_by_id("com.android.calculator2:id/digit_3")
+el3.click()
+el4 = driver.find_element_by_accessibility_id("equals")
+el4.click()
+el5 = driver.find_element_by_accessibility_id("multiply")
+el5.click()
+el6 = driver.find_element_by_id("com.android.calculator2:id/digit_2")
+el6.click()
+el7 = driver.find_element_by_accessibility_id("equals")
+el7.click()
+el8 = driver.find_element_by_accessibility_id("minus")
+el8.click()
+el9 = driver.find_element_by_id("com.android.calculator2:id/digit_1")
+el9.click()
+el10 = driver.find_element_by_accessibility_id("equals")
+el10.click()
+el11 = driver.find_element_by_accessibility_id("divide")
+el11.click()
+el12 = driver.find_element_by_id("com.android.calculator2:id/digit_2")
+el12.click()
+el13 = driver.find_element_by_accessibility_id("equals")
+el13.click()
+
+driver.quit()
+```
+
+Agora temos uma boa parte de código que nos dá uma ideia de como nosso projeto para automação da Calculadora deve seguir. Já temos alguns botões mapeados e também todos os operadores aritiméticos.
+
+**Sugestão de exercício:**
+<br><br>
+Você pode continuar mapeando os demais elementos restantes da calculadora até ter o código de todos os elementos existentes na sua aplicação.
+
 ___
 # Tutorial 8: Replicando tudo o que fiz utilizando apenas Python
 
@@ -866,26 +924,294 @@ ___
     <li>Calculadora inicializada</li>
 </ul>
 
-[EM BREVE]
+Brincamos bastante com o Appium ao longo dos tutoriais e conhecemos as principais funcionalidades gráficas que conseguimos acessar com muita facilidade, basicamente clicando nos elementos e coletando os códigos gerados.
+
+Agora, podemos ir direto pra IDE de sua escolha (eu estou utilizando o PyCharm durante este documento) para replicarmos tudo que já fizemos, só que agora sem interarir diretamente com o Appium. Vamos utilizá-lo agora apenas para mapear elementos que ainda não mapeamos :)
+
+Como estou utilizando o PyCharm, então criei um novo projeto, então um novo arquivo Python e instalei os seguintes pacotes no terminal do projeto:
+
+1. Selenium:
+
+```bash
+pip install selenium
+```
+
+2. Appium:
+
+```bash
+npm install -g appium
+```
+
+O prinício se dá importando a biblioteca necessária para que a gente possa utilizar os recursos do Appium em qualquer linguagem de programação. Lembram que já citamos acima que o Appium e o Selenium tem muita coisa em comum? Aqui a gente vê de forma mais explícita que tanto o Appium quanto o Selenium utilizam recursos da biblioteca <i>webdriver</i>, e ele que iremos importar pra dar início ao nosso projeto:
+
+```bash
+from appium import webdriver
+```
+
+Como já vimos por aqui na seção [Iniciando com o Appium](https://github.com/clarabez/appium/blob/master/README.md#iniciando-com-o-appium), o **Desired Capabilities** é uma parte super importante no Appium pois é através dele que faremos a conexão HTTP entre o Appium e o nosso disposito, além de indicarmos se queremos apenas iniciar o dispositivo ou se equeremos iniciar numa aplicação em especial, através do uso das chaves: <i>appPackage</i> e <i>appActivity</i>. Nos exemplos anteriores já tivemos uma ideia de como isso acontece, que é através de um dicionário contendo as chaves e valores que precisamos:
+
+```bash
+caps = {}
+caps["platformName"] = "Android"
+caps["deviceName"] = "AppiumP"
+caps["appPackage"] = "com.android.calculator2"
+caps["appActivity"] = "com.android.calculator2.Calculator"
+```
+
+Foi criado um dicionário chamado <i>caps</i> indicando a plataforma, o nome do dispositivo e as informações da aplicação Calculadora. Lembrando que isso foi gerado pelo Appium, apenas copiei e colei, ainda não fizemos ajustes.
+
+Outro ponto importante é como a conexão é estabelecida. O Appium nos retorna essa solução:
+
+```bash
+driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
+```
+
+É aí que começamos a utilizar os recursos da biclioteca <i>WebDriver</i>. Criamos uma variável chamada **driver** e dentro dela armazenamos a instância de uma nova conexão, que se dá através da chamada do recurso <i>Remote</i>. Passamos 2 parâmetros para essa chamada:
+1. Localização do nosso serviço: <i>"http://127.0.0.1:4723/wd/hub"</i>, que é composto pelos valores que já conhecemos via interface do Appium. Aí está uma junção dos campos que são preenchidos de forma padrão: Remote Host + Remote Port + Remote Path.
+2. <i>Desired capabilities:</i> Como já explicamos anteriormente, nós criamos um dicionário para armazenarmos as chaves e valores do que queremos que o Appium trate. Aqui é só passar o nome deste dicionário.
+
+A partir do código gerado do Appium, fiz alguns ajustes e o começo do meu código ficou assim:
+
+```bash
+from appium import webdriver
+
+desired_cap = {
+    "platformName": "Android",
+    "deviceName": "AppiumP",
+    "appPackage": "com.android.calculator2",
+    "appActivity": "com.android.calculator2.Calculator"
+}
+
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_cap)
+```
+
+Com isso apenas já é possível estabelecer uma sessão com o Appium utilizando o Python. Uma imagem do meu projeto inicial:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/python1.png">
+</p>
+
+Veja que assim que pedi para executar este código, em paralelo o <i>listenning</i> do Appium já abriu e começou a consumir o que eu tinha informado via código.
+
+Em seguida, veja que o código do PyCharm finalizou a execução e, no Appium, me foi retornado o <i>status code</i> 200, que indica que obtive sucesso na minha requisição - lembre-se que no final das contas o Appium trabalha com requisições HTTP e isso fica bem explícito quando analisamos via estes logs:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/python2.png">
+</p>
+
+Como resultado destas operações, é só observarmos o nosso dispositivo (real ou emulado) que, na tela, estará presente a aplicação que estamos testando - neste caso segue sendo a Calculadora nativa do Android:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/python3.png">
+</p>
+
+Por fim, veja que com poucas linhas de código em Python nós conseguimos iniciar uma sessão do Appium em um dispositivo indo diretamente para a tela da aplicação Calculadora.
+
+**Sugestão de exercício:**
+<br><br>
+Tente explocar alguns recursos existentes na biblioteca webdriver. Caso você não a conheça, recomendo que faça uma pesquisa sobre ela e tente explorar mais funcionalidades que ela pode oferecer ao seu projeto.
+
 ___
 # Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2
 
 **Para realizar este tutorial é preciso que você tenha:**<br>
 <ul>
     <li>Tenha um dispositivo (real ou emulado) ativo</li>
-    <li>Uma sessão iniciada no Appium</li>
-    <li>Calculadora inicializada</li>
+    <li>Projeto do Tutorial 8</li>
 </ul>
 
-[EM BREVE]
+
+No tutorial anterior vimos como funciona a parte inicial do código em Python para o Appium: <i>imports, desired capabilities, webdriver</i>. Este início é basicamente igual (em termos de estrutura) para todos os projetos que você irá fazer utilizando Appium. Agora, vamos ver o mapeamento dos nossos elementos como números e operadores. 
+
+Com os códigos gerados pelo Appium, obtivemos o seguinte código, bem geral:
+
+```bash
+el1 = driver.find_element_by_id("com.android.calculator2:id/digit_1")
+el1.click()
+el2 = driver.find_element_by_accessibility_id("plus")
+el2.click()
+el3 = driver.find_element_by_id("com.android.calculator2:id/digit_3")
+el3.click()
+el4 = driver.find_element_by_accessibility_id("equals")
+el4.click()
+el5 = driver.find_element_by_accessibility_id("multiply")
+el5.click()
+el6 = driver.find_element_by_id("com.android.calculator2:id/digit_2")
+el6.click()
+el7 = driver.find_element_by_accessibility_id("equals")
+el7.click()
+el8 = driver.find_element_by_accessibility_id("minus")
+el8.click()
+el9 = driver.find_element_by_id("com.android.calculator2:id/digit_1")
+el9.click()
+el10 = driver.find_element_by_accessibility_id("equals")
+el10.click()
+el11 = driver.find_element_by_accessibility_id("divide")
+el11.click()
+el12 = driver.find_element_by_id("com.android.calculator2:id/digit_2")
+el12.click()
+el13 = driver.find_element_by_accessibility_id("equals")
+el13.click()
+```
+
+Agora é hora de organizarmos esse código e aproveitarmos para identificarmos todos os elementos restantes da nossa aplicação. **Uma dica muito importante:** como a aplicação da Calculadora é pequena, eu tomei a decisão de mapear todos os elementos. Porém, num projeto de automação, onde normalmente você tem aplicações e páginas complexas com muitos fluxos e elementos, faça o mapeamento apenas daquilo que você irá precisar. Caso contrário, seu trabalho será 80% focado em mapear elementos, e isso não é eficiente =)
+
+Depois de fazer alguns ajustes, deixei meu código organizado da seguinte maneira:
+
+```bash
+from appium import webdriver
+
+desired_cap = {
+    "platformName": "Android",
+    "deviceName": "emulator-5554",
+    "appPackage": "com.android.calculator2",
+    "appActivity": "com.android.calculator2.Calculator"
+}
+
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_cap)
+
+# numbers
+num1 = driver.find_element_by_id("com.android.calculator2:id/digit_1")
+num2 = driver.find_element_by_id("com.android.calculator2:id/digit_2")
+num3 = driver.find_element_by_id("com.android.calculator2:id/digit_3")
+num4 = driver.find_element_by_id("com.android.calculator2:id/digit_4")
+num5 = driver.find_element_by_id("com.android.calculator2:id/digit_5")
+num6 = driver.find_element_by_id("com.android.calculator2:id/digit_6")
+num7 = driver.find_element_by_id("com.android.calculator2:id/digit_7")
+num8 = driver.find_element_by_id("com.android.calculator2:id/digit_8")
+num9 = driver.find_element_by_id("com.android.calculator2:id/digit_9")
+num0 = driver.find_element_by_id("com.android.calculator2:id/digit_0")
+
+# operators
+op_mais = driver.find_element_by_accessibility_id("plus")
+op_multi = driver.find_element_by_accessibility_id("multiply")
+op_menos = driver.find_element_by_accessibility_id("minus")
+op_div = driver.find_element_by_accessibility_id("divide")
+
+# common
+op_igual = driver.find_element_by_accessibility_id("equals")
+```
+
+Já temos os elementos mapeados, mas como podemos realizar as operaões em si? A opção mais simples e básica, é reproduzir o comportamento do teste de maneira sequencial, como deixo abaixo o exemplo de uma adição:
+
+```bash
+num1.click()
+op_mais.click()
+num2.click()
+op_igual.click()
+
+print('O resultado da soma foi: ', result.text)
+```
+
+Agora vimos que é possível adicionar o início de uma validação, que começamos com o print na tela do que a calculadora nos retornou no resultado da tela. Sendo assim, agora podemos comparar se o valor resultado em tela é condizente com o valor da realização da soma feita em Python. De forma simples, fiz dessa maneira:
+
+```bash
+somapython = int(num1.text) + int(num2.text)
+somaappium = int(result.text)
+
+print('O resultado da soma via Appium foi: ', somaappium)
+print('O resultado da soma via Python foi: ', somapython)
+
+assert somapython == int(result.text), 'Resultados divergentes entre o python e o Appium'
+```
+
+Minha resolução foi criar uma variável para armazenar a soma dos operadores em Python (<i>somapython</i>) e outra variável para armazenar o resultado encontrado no campo de resultado da calculadora através do Appium (<i>somaappium</i>).
+
+Em seguida imprimo na tela o resultado dos dois campos e em seguida utilizo um <i>assert</i> para comparar os resultados. Se os resultados são iguais, a validação está OK e nada é retornado na tela. Caso contrário, isto é, se os valores forem divergentes, uma mensagem de erro é retornada no terminal: **'Resultados divergentes entre o python e o Appium'**.
+
+O uso de <i>assertions</i> em projetos de automação para qualidade de <i>software</i> é extremamente importante. Sem o uso de <i>assertions</i> não é possível comparar o resultado obtido com o resultado esperado, ou seja, não temos como validar se o comportamento observado está de acordo com o esperado ou se é um <i>bug</i>.
+
+**Sugestão de exercício:**<br><br>
+Agora que estamos trabalhando de forma mais direta com o código, sugiro que você complemente o código que já alcançamos até aqui, adicionando as outras operações como subtração, divisão e multiplicação. Não se esqueça de aplicar <i>assertions</i> e, aproeitando, também sugiro que você faça algumas pesquisas sobre isso e a importância do uso deste recurso em automação de teste de <i>software</i>.
+
 ___
 # Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
 
 **Para realizar este tutorial é preciso que você tenha:**<br>
 <ul>
-    <li>Tenha um dispositivo (real ou emulado) ativo</li>
-    <li>Uma sessão iniciada no Appium</li>
-    <li>Calculadora inicializada</li>
+    <li>Projeto do Tutorial 9</li>
 </ul>
 
-[EM BREVE]
+
+**Nota importante:**<br>
+Todo o código gerado neste tutorial está commitado neste repositório :)
+
+
+Até agora chegamos a um código legal, mas sem nenhum tipo de padrão. Esse tipo de código chamamos de <i>espaguette</i> já que ele é bem escorrido :)
+
+Agora vamos organizar um pouco nosso código, separando algumas partes do que programamos e utilizando Classes, construtores e alguns conceitos de Python e Programação Orientada à Objetos.
+
+A primeira coisa que irei fazer, é começar a utilizar alguns conceitos de padrão de projetos (não irei entrar em detalhes de padrões de projeto aqui) para tornar nosso código mais legível, mais bem estruturado para receber automação e de fácil manutenabilidade. Pra isso, irei separar o código responsável pela conexão do appium, isolando-o num arquivo único, o qual chamarei de <i>webdriver.py</i>, que ficará numa pasta de mesmo nome:
+
+```bash
+from appium import webdriver
+
+
+class Driver:
+    def __init__(self):
+        desired_cap = {
+            'platformName': 'Android',
+            'deviceName': 'AppiumP',
+            'appPackage': 'com.android.calculator2',
+            'appActivity': 'com.android.calculator2.Calculator'
+        }
+        self.instance = webdriver.Remote('http://localhost:4723/wd/hub', desired_cap)
+
+```
+
+Neste código eu apenas criei uma classe com o nome de **Driver** e dentro desta classe criei o construtor **__init__** que é onde adiciono as características dos objetos que vamos instanciar a partir desta classe. Em seguida, modifico a forma que inicio o serviço alterando de 'drive' para 'instance', assim fica mais intuitivo de mostrar que sempre que estivermos iniciando o serviço, na verdade estaremos instanciando um objeto da classe Driver.
+
+Agora, vou criar uma pasta chamada 'pageobjects' e nesta pasta vou criar um arquivo Calc.py, onde irei registrar todos os elementos e as ações que são possíveis de serem realizadas na tela principal da aplicação Calculadora. Caso a aplicação Calculadora tivesse mais telas (ou <i>activities</i>), iríamos criar um arquivo para cada uma das telas para mantermos o código mais bem organizado.
+
+Irei começar o arquivo Calc.py fazendo uso de mais recursos da biblioteca do Selenium, através dos seguintes <i>imports</i>:
+
+```bash
+from webdriver.webdriver import Driver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+from appium.webdriver.common.mobileby import MobileBy
+```
+
+<i>Expected conditions</i>, o qual atribuo o apelido de EC - já que é uma expressão longa, é utilizado para indicar que a condição esperada irá acontecer diante da condição que eu atrelar a este recurso.<br>
+<i>WebDriverWait</i> é uma excelente solução para eliminarmos o famoso uso do <i>time.sleep(10)</i> do nosso código. É um recurso que basicamente fica no aguardo da presença de algum elemento e que pode receber um valor de <i>timeout</i> indicado por você. Gosto de usar o valor 10.<br>
+<i>MobileBy</i> é o recurso responsável por indicar que estamos em um contexto de dispositivo móvel, daí então podemos acessar tipos de IDs relacionados a este contexto.
+
+Depois dos imports, é hora de criarmos uma classe, a qual dei o nome de Calculadora. Para esta classe também criei um construtor para identificarmos os elementos que caracterizam a nossa classe e, consequentemente, os objetos que iremos instanciar a partir dela. Além dos elementos, também iremos criar os métodos relacionados aos comportamentos da nossa classe que, para a nossa calculadora, iremos definir que são as acões de somar, subtrair, multiplicar e dividir.
+
+Antes de iniciar a reestruturação da identificação dos nossos elementos, vale dizer que todos os nossos dígitos numéricos (do 0 ao 9) possuem a mesma estrutura, mudando apenas o último dígito do valor do elemento. Com isso, podemos tentar usar uma estratégia diferente para otimizar isso. Então, decidi criar um método para tratar disso. Portanto, irei mapear agora apenas os elementos de operações e os mais gerais como o de resultado. Nosso mapeamento fica assim:
+
+```bash
+class Calculadora:
+    def __init__(self, driver):
+        self.driver = driver
+        self.result = WebDriverWait(self.driver.instance, 10).until(EC.presence_of_element_located(
+            MobileBy.ID, 'com.android.calculator2:id/result'
+        ))
+        self.soma = WebDriverWait(self.driver.instance, 10).until(EC.presence_of_element_located(
+            MobileBy.ACCESSIBILITY_ID, 'plus'
+        ))
+        self.divisao = WebDriverWait(self.driver.instance, 10).until(EC.presence_of_element_located(
+            MobileBy.ACCESSIBILITY_ID, 'divide'
+        ))
+        self.multiplicacao = WebDriverWait(self.driver.instance, 10).until(EC.presence_of_element_located(
+            MobileBy.ACCESSIBILITY_ID, 'multiply'
+        ))
+        self.subtracao = WebDriverWait(self.driver.instance, 10).until(EC.presence_of_element_located(
+            MobileBy.ACCESSIBILITY_ID, 'minus'
+        ))
+```
+
+Depois de mapeados os elementos, é hora de iniciarmos a elaboração dos métodos da nossa Calculadora. Como falei mais acima, também irei utilizar um método para tratar a identificação dos dígitos, visto que a estrutura de todos são idênticas, mudando apenas o último dígito. Meu código ficou assim:
+
+```bash
+
+```
+
+
+**Exercícios sugeridos:**
+<br><br>
+- Como não entramos em detalhes do que são padrões de projeto e quais os padrões especificamente devemos usar, eu deixo como sugestão a pesquisa sobre padrões de projeto em Python, especialmente para automação de teste de <i>software</i>.
+- Explorar os recursos existentes na biblioteca Selenium.
+- Com base no método que deixei para a soma, você pode criar ou demais métodos para os outros operadores como multiplicação, divisão e multiplicação.
+- Gostaria de de ampliar seu projeto e realizar a automação do modelo Calculadora Científica? Esse é o momento! =)
+- Gostaria de aplicar estes conceitos a alguma aplicação que vc baixou na PlayStore? Esta também é uma excelente oportunidade! Não se esqueça de compartilhar seu projeto com a comunidade <3
