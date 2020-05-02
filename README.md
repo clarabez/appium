@@ -1,7 +1,7 @@
 
 
 <div align="center">
-<img src="/images/adb.png">
+<img src="/images/appiumwithpython.png">
 </div>
 
 Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentro outros aprendizados, destaco os seguintes pontos como principais aprendizados:
