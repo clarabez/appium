@@ -4,10 +4,6 @@
 <img src="/images/adb.png">
 </div>
 
-<center><img src=""></center>
-
-![](images/adb.png)
-
 Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentro outros aprendizados, destaco os seguintes pontos como principais aprendizados:
 
 <ul>
@@ -294,6 +290,11 @@ Se você chegou até aqui, significa que provavelmente o seu setup está pronto 
 - Configuração de variáveis de ambiente **✔**
 
 ___
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumIniciando.png">
+</p>
+
 # Iniciando com o Appium
 
 Depois de tudo configurado, é hora de iniciarmos com o Appium Desktop.
@@ -401,11 +402,11 @@ Um mundo de possibilidades que também podemos explorar com dispositivos Android
 - Em breve farei um material falando como emular um dispositivo iOS.<br>
 - Existem outras ferramentas que emulam dispositivos Androids mas, das que testei, nenhuma é tão boa quando a do Android Studio. Por esse motivo prefiro me manter nele e recomendo o uso.<br>
 
+___
+
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/adb.png">
 </p>
-
-___
 
 # Comandos ADB
 ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é uma ferramenta que faz uma "ponte" de comunicação entre o seu computador e o seu dispositivo móvel Android através de linhas de comando. Através do ADB, é possível que possamos manipular o dispositivo através de comandos, de forma muito prática, como:
@@ -425,6 +426,11 @@ Como o assunto sobre comandos ADB merece maior aprofundamento e dedicação, cri
 **Meu Repositório sobre Comandos ADB:** https://github.com/clarabez/comandosadb<br>
 
 ___
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumtutoriais.png">
+</p>
+
 # Tutorial 1: instalando uma aplicação no meu dispositivo Android emulado
 
 **Para realizar este tutorial é preciso que você tenha:**
