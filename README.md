@@ -1,6 +1,12 @@
-<p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumwithpython.png">
-</p>
+
+
+<div align="center">
+<img src="/images/adb.png">
+</div>
+
+<center><img src=""></center>
+
+![](images/adb.png)
 
 Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentro outros aprendizados, destaco os seguintes pontos como principais aprendizados:
 
@@ -29,7 +35,7 @@ ___
     <li>Appium Doctor: como validar se tá tudo configurado?</li>
     <li>Checklist</li>
     <li>Iniciando o Appium</li>
-    <liComandos ADB></li>
+    <li>Comandos ADB></li>
     <li>Emulando um dispositivo Android através do Android Studio</li>
 </ul>
 
@@ -44,9 +50,9 @@ ___
 - [Tutorial 5: Realizando um fluxo simples de teste funcional](https://github.com/clarabez/appium/blob/master/README.md#tutorial-5-realizando-um-fluxo-simples-de-teste-funcional)
 - [Tutorial 6: Gravando nossas ações e transformando isso em código](https://github.com/clarabez/appium/blob/master/README.md#tutorial-6-gravando-nossas-a%C3%A7%C3%B5es-e-transformando-isso-em-c%C3%B3digo)
 - [Tutorial 7: Operações aritméticas com a Calculadora nativa do Android](https://github.com/clarabez/appium/blob/master/README.md#tutorial-7-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android)
-- Tutorial 8: Replicando tudo o que fiz utilizando apenas Python
-- Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2
-- Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
+- [Tutorial 8: Replicando tudo o que fiz utilizando apenas Python](https://github.com/clarabez/appium/blob/master/README.md#tutorial-8-replicando-tudo-o-que-fiz-utilizando-apenas-python)
+- [Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2](https://github.com/clarabez/appium/blob/master/README.md#tutorial-9-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-2)
+- [Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional](https://github.com/clarabez/appium/blob/master/README.md#tutorial-10-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-3-organizando-o-c%C3%B3digo-com-padr%C3%B5es-de-projeto-e-realizando-fluxo-de-teste-funcional)
 ___
 
 Este documento sofrerá ajustes e complementos ao longo do tempo <i>&#128513;</i>
@@ -65,9 +71,9 @@ ___
 
 # Um pouco sobre Appium
 
-Appium é uma ferramenta open-source e multi-plataforma (isso quer dizer que funciona em Windows, Linux e Mac) e cujo foco é de interações via UI em dispositivos móveis, possibilitando a automação de aplicações: nativas, híbridas e sites mobile para as plataformas Android e iOS.
+_Appium_ é uma ferramenta open-source e multi-plataforma (isso quer dizer que funciona em Windows, Linux e Mac) e cujo foco é de interações via UI em dispositivos móveis, possibilitando a automação de aplicações: nativas, híbridas e sites mobile para as plataformas Android e iOS.
 
-Considero Appium uma excelente ferramenta para quem quer começar a aprender automação em dispositivos móveis ou para quem já é da área de mobile e gostaria de se aprofundar mais sobre o assunto.
+Considero _Appium_ uma excelente ferramenta para quem quer começar a aprender automação em dispositivos móveis ou para quem já é da área de mobile e gostaria de se aprofundar mais sobre o assunto.
 
 
 **Links importantes para esta seção:**
@@ -76,7 +82,7 @@ Considero Appium uma excelente ferramenta para quem quer começar a aprender aut
 
 [Página oficial do repo do Appium no GitHub](https://github.com/appium/)
 
-Como dito mais acima, a finalidade do Appium é testar aplicações em dispositivos móveis, e aplicações podem ser classificadas em três diferentes naturezas : nativas, híbridas e móveis. Qual a diferença entre elas?
+Como dito mais acima, a finalidade do _Appium_ é testar aplicações em dispositivos móveis, e aplicações podem ser classificadas em três diferentes naturezas : nativas, híbridas e móveis. Qual a diferença entre elas?
   - **Nativas:** aquelas aplicações que foram desenvolvidas especificamente para Android ou iOS, ou seja, a partir de seus específicos SDKs.
   - **Híbridas:** aquelas que são desenvolvidas em HTML, CSS, JavaScript e que são compatíveis com qualquer plataforma (Android, iOS, Windows).
   - **Móveis:** aquelas que podemos acessar através de um link, via página web.
@@ -96,12 +102,12 @@ Digo o que fazer para cada sistema operacional, mas você também pode optar por
 
 # Download de tudo que vai ser necessário
 
-Durante o nosso workshop vamos utlizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas, que são comuns para Windows, MAC ou Linux:
+Durante o nosso workshop vamos utilizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas, que são comuns para Windows, MAC ou Linux:
   - **Appium Desktop:** é a interface da ferramenta Appium que será o foco do nosso workshop. O download está [disponível aqui:](https://github.com/appium/appium-desktop/releases/tag/v1.13.0) (aqui tem um acervo para vários Sistemas Operacionais. Baixe apenas aquele que for direcionado para o seu SO.)
   
   - **JDK (JAVA Development Kit):** https://www.java.com/pt_BR/download/ 
 
-  - **Android Studio:** é um pacote do Android Studio que possibilita que possamos instaciar dispositivos móveis de várias configurações e modelos de forma emulada e em vários níveis de API. Para isso, é preciso baixar o Android Studio e, durante o setup, marcar a opção de instalar também o AVD: https://developer.android.com/studio/index.html?hl=pt-br
+  - **Android Studio:** é um pacote do Android Studio que possibilita que possamos instanciar dispositivos móveis de várias configurações e modelos de forma emulada e em vários níveis de API. Para isso, é preciso baixar o Android Studio e, durante o setup, marcar a opção de instalar também o AVD: https://developer.android.com/studio/index.html?hl=pt-br
   
   - **IDE:**
   Escolha uma IDE de sua preferência para desenvolver os testes na linguagem escolhida. Como vamos focar em Python, sugiro PyCharm ou VSCode. Links abaixo para download:
@@ -113,7 +119,7 @@ Durante o nosso workshop vamos utlizar algumas ferramentas essenciais para a pr�
   
 # Variáveis de ambiente - Mac:
 
-Depois de realizadas as instalações do Appium Desktop, JAVA, Android Studio e da sua IDE, é hora de setarmos as variáveis de ambiente para que seu sistema operacional identifique os processos  e as aplicações de forma mais rápida e prática.
+Depois de realizadas as instalações do Appium Desktop, JAVA, Android Studio e da sua IDE, é hora de configurarmos as variáveis de ambiente para que seu sistema operacional identifique os processos  e as aplicações de forma mais rápida e prática.
 Para isso, abra o seu terminal, identifique a localização de instalação dos pacotes e os exporte para a variável PATH.
 Após identificar a localização de onde foi instalado o seu Android, copie o caminho da pasta.
 Por exemplo, para macOS a localização normalmente fica em:
@@ -143,7 +149,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 Após o download (link acima) e instalação do JDK do seu ambiente Windows, é hora de configurar as variáveis de ambiente. Para isso, siga as opções de menu:
 1. Propriedades do Sistema >> Configurações avançadas do sistema >> Variáveis de ambiente >> Variáveis de usuário >> Novo.
 2. Insira o nome da variável como "JAVA_HOME" e insira como valor a localização exata do seu arquivo jre, por exemplo, "C:\Arquivos de Programa\Java\jdk1.2.2_2\jre".
-3. Na seção de variáveis de sistema, dê um clique duplo em "Path" e adicione a expressão "%JAVA_HOME%\bin". Isto significa que você está adicionando o mesmo valor criado para JAVA_HOME, só que também contuando para a pasta \bin.
+3. Na seção de variáveis de sistema, dê um clique duplo em "Path" e adicione a expressão "%JAVA_HOME%\bin". Isto significa que você está adicionando o mesmo valor criado para JAVA_HOME, só que também para a pasta \bin.
 4. É só clicar OK e aplicar as mudanças de configuração.
 
 Agora, para baixar (link acima) e instalar o Android SDK, siga os passos:
@@ -216,7 +222,7 @@ ___
 
 # Instalando o Appium
 
-A instalação do Appium é bastante simples e não requer configuração adicional - além da do Android e do JDK. Basta baixar o Appium Desktop na página oficial do Appium(como no link do começo do documento) ou via linha de comando atráves do terminal:
+A instalação do Appium é bastante simples e não requer configuração adicional - além da do Android e do JDK. Basta baixar o Appium Desktop na página oficial do Appium(como no link do começo do documento) ou via linha de comando através do terminal:
 
 ```bash
 npm install -g appium
@@ -242,7 +248,7 @@ npm install -g appium-doctor --android
 ```
 
 **Dica:**
-Estamos usando a flag **--android** para indicar a plataforma que vamos usar o Appium. Caso fóssemos usar o iOS, usaríamos a flag **--ios--**.
+Estamos usando a flag **--android** para indicar a plataforma que vamos usar o Appium. Caso fôssemos usar o iOS, usaríamos a flag **--ios--**.
 
 Depois de instalado o <em>Appium-doctor</em>, é só fazer a chamada via terminal:
 
@@ -280,7 +286,7 @@ O pacote do **Xcode** é específico para iOS, então, para Android, não devemo
 ___
 # Checklist de tudo o que fizemos até agora
 
-Se você chegou até aqui, significa que provavelmente o seu setup está pronto e agora você já pode usar todos os recursos do Appium! Só para checar, instalamos e configuramnos:
+Se você chegou até aqui, significa que provavelmente o seu setup está pronto e agora você já pode usar todos os recursos do Appium! Só para checar, instalamos e configuramos:
 - Appium Desktop **✔**
 - Android Studio (pacote AVD) **✔**
 - JAVA **✔**
@@ -301,7 +307,7 @@ Observe que de cara já temos 2 campos preenchidos:<br>
 **HOST:** 0.0.0.0<br>
 **Port:** 4723
 
-Estes são valores padrões do Appium e indicam que sempre que você começar a realizar requições (lembra que o Appium é baseado em servidor HTTP?), o Appium irá utilizar o Host 0.0.0.0 e o serviço irá funcionar na porta 4723. Caso você queira mudar estes valores (quando algum outro serviço já está alocado para esta porta, por exemplo), é só você realizar a customização dessa configuração manualmente clicando no botão **Advanced**, que fica ao lado do já selecionado **Simple**. Você também pode salvar suas configurações personalizadas e exportá-las através do button **Presets**. Eu, particularmente, nunca precisei utilizar nenhuma das configurações além das que já vem por padrão. Também não vi nenhum material pela internet em que fosse necessário customizar a configuração. Se quer um conselho, siga com essa configuração padrão que tudo vai funcionar bem :)
+Estes são valores padrões do Appium e indicam que sempre que você começar a realizar requisições (lembra que o Appium é baseado em servidor HTTP?), o Appium irá utilizar o Host 0.0.0.0 e o serviço irá funcionar na porta 4723. Caso você queira mudar estes valores (quando algum outro serviço já está alocado para esta porta, por exemplo), é só você realizar a customização dessa configuração manualmente clicando no botão **Advanced**, que fica ao lado do já selecionado **Simple**. Você também pode salvar suas configurações personalizadas e exportá-las através do button **Presets**. Eu, particularmente, nunca precisei utilizar nenhuma das configurações além das que já vem por padrão. Também não vi nenhum material pela internet em que fosse necessário customizar a configuração. Se quer um conselho, siga com essa configuração padrão que tudo vai funcionar bem :)
 
 Explicada essa tela inicial, agora podemos clicar em **Start Server** e observar já a segunda tela do Appium: uma escuta da chamada HTTP. Observe que ele indica aí exatamente o endereço onde o serviço está sendo executado (que são inseridos nos campos de <i>Host</i> e <i>Port</i> da tela anterior, onde deixamos os valores padrões).
 
@@ -335,33 +341,21 @@ Para iniciarmos uma sessão vamos precisar de pelo menos 2 campos, que são:
 ```bash
 {
     'platformName': 'Android',
-    'deviceName': '<InserirOnomeAqui>'
+    'deviceName': '<InserirOnomeDoSeuDispositivoAqui>'
 }
 ```
 
+**Atenção:** para entender como obter o valor do nome do seu dispositivo, você vai precisar ler a seção mais adiante sobre [comandos ADB](https://github.com/clarabez/appium/blob/master/README.md#comandos-adb).
+
 Os nomes são bem intuitivos, e aí estou criando um dicionário com a chave <i>'platformName'</i> para indicar a plataforma que irei utilizar, que pode ser: Android, Windows, iOS. 
-Já o identificador do dispositivo móvel iremos inserir em <i>'deviceName'</i>, e podemos obter esse valor através do comando adb <i>'adb devices'</i> que já explicamos mais acima. Assim fica um exemplo de preenchimento destes campos básicos e ao lado já o retorno do conteúdo em JSON: [VER SE FICA LEGAL MESMO DEIXAR ESSA PARTE DO ADB DEVICES POR AQUI E EXPLICAR COMO PEGAR]
+Já o identificador do dispositivo móvel iremos inserir em <i>'deviceName'</i>, e podemos obter esse valor através do comando adb <i>'adb devices'</i> que já explicamos mais acima. Assim fica um exemplo de preenchimento destes campos básicos e ao lado já o retorno do conteúdo em JSON:
 
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/desiredcap1.png">
 </p>
 
 
-[TIRAR ESSA PARTE DAQUI E JOGAR MAIS ADIANTE]
-Se quisermos estabelecer uma sessão de forma mais direcionada e detalhada, podemos utilizar mais chaves neste dicionário, como:
-
-```bash
-{
-    'platformName': 'Android',
-    'deviceName': 'HAHEHHAHE'
-    '': '',
-    '': ''
-}
-```
-
-Mas, para deixarmos nosso aprendizado mais flúido e simples, mas optar inicialmente pelo uso de apenas 2 chaves que não podem faltar: 'platformName' e 'deviceName'.
-
-**Página oficial do Appium listando todos os Desired Capabilities:** http://appium.io/docs/en/writing-running-appium/caps/
+**Página oficial do Appium listando todos os Desired Capabilities:** <br>http://appium.io/docs/en/writing-running-appium/caps/
 
 ___
 # Emulando um dispositivo Android através do Android Studio
@@ -371,7 +365,7 @@ Durante nossos estudos podemos utilizar dispositivos emulados para a realizaçã
 **Antes de tudo... o que é um dispositivo emulado?**<br>
 É a instanciação (criação) de um dispositivo que simula um celular real, só que ele é emulado a partir dos recursos da sua máquina. É como se fosse uma máquina virtual, só que o Sistema Operacional (imagem) utilizado será alguma versão oficial do Android e o formato da máquina será uma réplica do celular de verdade, inclusive sob aspectos de tamanho das telas.
 
-Vamos utilizar um recurso do próprio <i>Android Studio</i> para instanciarmos nosso dispotivo emulado: o <i>Android Virtual Device Manager</i>. Para acessá-lo, basta abrir o seu <i>Android Studio</i> e seguir até o seguinte ícone:
+Vamos utilizar um recurso do próprio <i>Android Studio</i> para instanciarmos nosso dispositivo emulado: o <i>Android Virtual Device Manager</i>. Para acessá-lo, basta abrir o seu <i>Android Studio</i> e seguir até o seguinte ícone:
 
 <p align="center">
 <img src="https://github.com/clarabez/appium/blob/master/images/avdmanager.png">
@@ -414,12 +408,12 @@ Um mundo de possibilidades que também podemos explorar com dispositivos Android
 ___
 
 # Comandos ADB
-ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é uma ferramenta que faz uma "ponte" de comunicação entre o seu computador e o seu dispositivo móvel Android através de linhas de comando. Através do ADB, é possível que possamos manipular o dispositvo através de comandos, de forma muito prática, como:
-- Instalar/desintalar aplicativos;
+ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é uma ferramenta que faz uma "ponte" de comunicação entre o seu computador e o seu dispositivo móvel Android através de linhas de comando. Através do ADB, é possível que possamos manipular o dispositivo através de comandos, de forma muito prática, como:
+- Instalar/desinstalar aplicativos;
 - Mudar configurações internas, como: tempo de desligar tela, bloqueio/desbloqueio de tela, etc.
 - Habilitar/desabilitar funções de conexões, como: wifi, dados, modo avião.
-- Transfência/manipulação de arquivos;
-- Rebootar e desligar o dispositivo - não funciona para ligá-lo (mas isso pode ser resolvido através de frameworks).
+- Transferência/manipulação de arquivos;
+- Reiniciar e desligar o dispositivo - não funciona para ligá-lo (mas isso pode ser resolvido através de frameworks).
 
 É também possível automatizar algumas atividades de rotina combinando comandos ADB e Python Script.
 
@@ -535,7 +529,7 @@ Agora, é só clicar no botão **Start Session** que o Appium irá iniciar uma s
 <img src="https://github.com/clarabez/appium/blob/master/images/appimstarted1.png">
 </p>
 
-Esta é a tela de início de atividades com o Appium, que veremos nos próximos tutoriais. Aqui já é possível ver que o Appium tirou um <i>screenshot</i> da tela em que estava o nosso celular no momento em que demos início à sessão. Essa é uma das características do Appium: ele espelha a tela exatamente de onde você inicou a sessão - em casos de uso genérico do <i>Desired Capabilities</i>. Além disso, também já vemos novos botões e novas seções. Agora vamos ver como podemos iniciar uma sessão sendo mais específicos com as informações que queremos que o Appium trate.
+Esta é a tela de início de atividades com o Appium, que veremos nos próximos tutoriais. Aqui já é possível ver que o Appium tirou um <i>screenshot</i> da tela em que estava o nosso celular no momento em que demos início à sessão. Essa é uma das características do Appium: ele espelha a tela exatamente de onde você iniciou a sessão - em casos de uso genérico do <i>Desired Capabilities</i>. Além disso, também já vemos novos botões e novas seções. Agora vamos ver como podemos iniciar uma sessão sendo mais específicos com as informações que queremos que o Appium trate.
 
 **Desired Capabilities - forma específica**
 
@@ -621,7 +615,7 @@ Uma ótima prática é utilizar partes estáticas quando temos IDs dinâmicos. N
 
 Em algums casos você vai ter que trabalhar com hierarquia dos seus elementos. Nestas condições, opte sempre pela hierarquia mais próxima ao elemento em foco e, melhor ainda, se o elemento pai/filho possuir IDs únicos.
 
-Outra dica, já acompanhada de um exemplo para tornar o entendimento mais claro, é poder dividir os valores (muitas vezes gigantes) que você pode encontrar por XPATH, tornoando-os mais curtos:
+Outra dica, já acompanhada de um exemplo para tornar o entendimento mais claro, é poder dividir os valores (muitas vezes gigantes) que você pode encontrar por XPATH, tornando-os mais curtos:
 
 ```bash
 <button type=“submit” class=“signup-button button--black button--active”>Signup Here!</button>
@@ -654,8 +648,6 @@ Para realizar a identificação de elementos, basta dar um clique no elemento qu
 
 No meu print, utilizei o elemento "9" e me foi retornado 2 opções: id, xpath. Como o número 9 tem ID e vejo que ele é único (clicando nos demais elementos pude perceber isso), então decidi que o valor de ID é a melhor abordagem para eu seguir na identificação dos elementos da minha calculadora.
 
-No meu print, utilizei o elemento "9" e me foi retornado 2 opções: id, xpath. Como o número 9 tem ID e vejo que ele é único (clicando nos demais elementos pude perceber isso), então decidi que o valor de ID é a melhor abordagem para eu seguir na identificação dos elementos da minha calculadora.
-<br>
 **Sugestão de exercício:**
 <br>
 Para praticar um pouco mais, sugiro que você vá observando a diferença entre elementos da sua aplicação. Tente também mapear elementos de alguma outra aplicação e observar se você tem o campo de ID e XPath.
@@ -705,7 +697,7 @@ Para exemplificar esta funcionalidade, irei realizar a ação de abrir um aplica
 <img src="https://github.com/clarabez/appium/blob/master/images/tapcoordinategif.gif">
 </p>
 
-Essa ação é composta por menos passos que o de coordenadas, visto que ele é realiza através de um único clique. Da mesma maneira, os valores de X e Y são atualizados à medida que eu vou andando com o cursor na tela. Dei um clique na localização de onde está o aplicativo Dialer (chamadas) e em seguida ele foi executado sem nenuma ação extra.
+Essa ação é composta por menos passos que o de coordenadas, visto que ele é realiza através de um único clique. Da mesma maneira, os valores de X e Y são atualizados à medida que eu vou andando com o cursor na tela. Dei um clique na localização de onde está o aplicativo Dialer (chamadas) e em seguida ele foi executado sem nenhuma ação extra.
 
 **Sugestão de exercícios:**
 
@@ -717,7 +709,7 @@ ___
 Agora que já sabemos mexer bastante com as principais funcionalidades do Appium, é hora realizarmos um fluxo bem simples de teste funcional em uma aplicação. Como estamos iniciando, vou realizar este tutorial através da aplicação Calculadora nativa do Android emulado. Como estamos falando de um teste funcional, irei estruturar o teste aqui:
 
 <b>Cenário de teste:</b><br>
-Realizar operações aritiméticas
+Realizar operações aritméticas
 <br>
 <table style="width:100%">
   <caption>Caso de Teste 1 - Realizar operação de soma com 2 valores de entrada</caption>
@@ -839,7 +831,7 @@ Desta forma fica muito mais tranquilo de gerar um código inicial através do Ap
 Nos tutoriais seguintes iremos focar mais no código, então vamos explicar melhor algumas partes particulares do Appium em Python.
 
 **Sugestão de exercícios:**
-Agora que você já conhece também a funcionalidade de gravar suas ações e tranformá-las em código, você pode realizar outros fluxos na calculadora ou até utilizar qualquer outra aplicação para gerar ações com gestos, por exemplo. Depois é só exportar o código e fazer alterações de acordo da maneira que você desejar.
+Agora que você já conhece também a funcionalidade de gravar suas ações e transformá-las em código, você pode realizar outros fluxos na calculadora ou até utilizar qualquer outra aplicação para gerar ações com gestos, por exemplo. Depois é só exportar o código e fazer alterações de acordo da maneira que você desejar.
 
 ___
 # Tutorial 7: Operações aritméticas com a Calculadora nativa do Android
@@ -853,7 +845,7 @@ A partir daqui, considero que o nível de dificuldade de uso e interação com o
     <li>Calculadora inicializada</li>
 </ul>
 
-No **"Tutorial 5: Realizando um fluxo simples de teste funcional"** vimos um fluxo bem simples da operação de soma com dois números inteiros. Agora que sabemos como converter ações em código, vamos começar a elaborar um pouco mais estas ações e dar continuidade ao uso da Calculadora aplicando as demais operações aritiméticas: subtração, divisão e multiplicação.
+No **"Tutorial 5: Realizando um fluxo simples de teste funcional"** vimos um fluxo bem simples da operação de soma com dois números inteiros. Agora que sabemos como converter ações em código, vamos começar a elaborar um pouco mais estas ações e dar continuidade ao uso da Calculadora aplicando as demais operações aritméticas: subtração, divisão e multiplicação.
 
 Para isso, vou mais uma vez utilizar a funcionalidade **Record** do Appium, visto que quero gerar o código destas ações através de Python. Segue gif para representar a sequência que realizei:
 
@@ -908,7 +900,7 @@ el13.click()
 driver.quit()
 ```
 
-Agora temos uma boa parte de código que nos dá uma ideia de como nosso projeto para automação da Calculadora deve seguir. Já temos alguns botões mapeados e também todos os operadores aritiméticos.
+Agora temos uma boa parte de código que nos dá uma ideia de como nosso projeto para automação da Calculadora deve seguir. Já temos alguns botões mapeados e também todos os operadores aritméticos.
 
 **Sugestão de exercício:**
 <br><br>
@@ -926,7 +918,7 @@ ___
 
 Brincamos bastante com o Appium ao longo dos tutoriais e conhecemos as principais funcionalidades gráficas que conseguimos acessar com muita facilidade, basicamente clicando nos elementos e coletando os códigos gerados.
 
-Agora, podemos ir direto pra IDE de sua escolha (eu estou utilizando o PyCharm durante este documento) para replicarmos tudo que já fizemos, só que agora sem interarir diretamente com o Appium. Vamos utilizá-lo agora apenas para mapear elementos que ainda não mapeamos :)
+Agora, podemos ir direto pra IDE de sua escolha (eu estou utilizando o PyCharm durante este documento) para replicarmos tudo que já fizemos, só que agora sem interagir diretamente com o Appium. Vamos utilizá-lo agora apenas para mapear elementos que ainda não mapeamos :)
 
 Como estou utilizando o PyCharm, então criei um novo projeto, então um novo arquivo Python e instalei os seguintes pacotes no terminal do projeto:
 
@@ -942,13 +934,13 @@ pip install selenium
 npm install -g appium
 ```
 
-O prinício se dá importando a biblioteca necessária para que a gente possa utilizar os recursos do Appium em qualquer linguagem de programação. Lembram que já citamos acima que o Appium e o Selenium tem muita coisa em comum? Aqui a gente vê de forma mais explícita que tanto o Appium quanto o Selenium utilizam recursos da biblioteca <i>webdriver</i>, e ele que iremos importar pra dar início ao nosso projeto:
+O princípio se dá importando a biblioteca necessária para que a gente possa utilizar os recursos do Appium em qualquer linguagem de programação. Lembram que já citamos acima que o Appium e o Selenium tem muita coisa em comum? Aqui a gente vê de forma mais explícita que tanto o Appium quanto o Selenium utilizam recursos da biblioteca <i>webdriver</i>, e ele que iremos importar pra dar início ao nosso projeto:
 
 ```bash
 from appium import webdriver
 ```
 
-Como já vimos por aqui na seção [Iniciando com o Appium](https://github.com/clarabez/appium/blob/master/README.md#iniciando-com-o-appium), o **Desired Capabilities** é uma parte super importante no Appium pois é através dele que faremos a conexão HTTP entre o Appium e o nosso disposito, além de indicarmos se queremos apenas iniciar o dispositivo ou se equeremos iniciar numa aplicação em especial, através do uso das chaves: <i>appPackage</i> e <i>appActivity</i>. Nos exemplos anteriores já tivemos uma ideia de como isso acontece, que é através de um dicionário contendo as chaves e valores que precisamos:
+Como já vimos por aqui na seção [Iniciando com o Appium](https://github.com/clarabez/appium/blob/master/README.md#iniciando-com-o-appium), o **Desired Capabilities** é uma parte super importante no Appium pois é através dele que faremos a conexão HTTP entre o Appium e o nosso dispositivo, além de indicarmos se queremos apenas iniciar o dispositivo ou se queremos iniciar numa aplicação em especial, através do uso das chaves: <i>appPackage</i> e <i>appActivity</i>. Nos exemplos anteriores já tivemos uma ideia de como isso acontece, que é através de um dicionário contendo as chaves e valores que precisamos:
 
 ```bash
 caps = {}
@@ -966,7 +958,7 @@ Outro ponto importante é como a conexão é estabelecida. O Appium nos retorna 
 driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
 ```
 
-É aí que começamos a utilizar os recursos da biclioteca <i>WebDriver</i>. Criamos uma variável chamada **driver** e dentro dela armazenamos a instância de uma nova conexão, que se dá através da chamada do recurso <i>Remote</i>. Passamos 2 parâmetros para essa chamada:
+É aí que começamos a utilizar os recursos da biblioteca <i>WebDriver</i>. Criamos uma variável chamada **driver** e dentro dela armazenamos a instância de uma nova conexão, que se dá através da chamada do recurso <i>Remote</i>. Passamos 2 parâmetros para essa chamada:
 1. Localização do nosso serviço: <i>"http://127.0.0.1:4723/wd/hub"</i>, que é composto pelos valores que já conhecemos via interface do Appium. Aí está uma junção dos campos que são preenchidos de forma padrão: Remote Host + Remote Port + Remote Path.
 2. <i>Desired capabilities:</i> Como já explicamos anteriormente, nós criamos um dicionário para armazenarmos as chaves e valores do que queremos que o Appium trate. Aqui é só passar o nome deste dicionário.
 
@@ -1009,7 +1001,7 @@ Por fim, veja que com poucas linhas de código em Python nós conseguimos inicia
 
 **Sugestão de exercício:**
 <br><br>
-Tente explocar alguns recursos existentes na biblioteca webdriver. Caso você não a conheça, recomendo que faça uma pesquisa sobre ela e tente explorar mais funcionalidades que ela pode oferecer ao seu projeto.
+Tente explorar alguns recursos existentes na biblioteca webdriver. Caso você não a conheça, recomendo que faça uma pesquisa sobre ela e tente explorar mais funcionalidades que ela pode oferecer ao seu projeto.
 
 ___
 # Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2
@@ -1092,7 +1084,7 @@ op_div = driver.find_element_by_accessibility_id("divide")
 op_igual = driver.find_element_by_accessibility_id("equals")
 ```
 
-Já temos os elementos mapeados, mas como podemos realizar as operaões em si? A opção mais simples e básica, é reproduzir o comportamento do teste de maneira sequencial, como deixo abaixo o exemplo de uma adição:
+Já temos os elementos mapeados, mas como podemos realizar as operações em si? A opção mais simples e básica, é reproduzir o comportamento do teste de maneira sequencial, como deixo abaixo o exemplo de uma adição:
 
 ```bash
 num1.click()
@@ -1122,7 +1114,7 @@ Em seguida imprimo na tela o resultado dos dois campos e em seguida utilizo um <
 O uso de <i>assertions</i> em projetos de automação para qualidade de <i>software</i> é extremamente importante. Sem o uso de <i>assertions</i> não é possível comparar o resultado obtido com o resultado esperado, ou seja, não temos como validar se o comportamento observado está de acordo com o esperado ou se é um <i>bug</i>.
 
 **Sugestão de exercício:**<br><br>
-Agora que estamos trabalhando de forma mais direta com o código, sugiro que você complemente o código que já alcançamos até aqui, adicionando as outras operações como subtração, divisão e multiplicação. Não se esqueça de aplicar <i>assertions</i> e, aproeitando, também sugiro que você faça algumas pesquisas sobre isso e a importância do uso deste recurso em automação de teste de <i>software</i>.
+Agora que estamos trabalhando de forma mais direta com o código, sugiro que você complemente o código que já alcançamos até aqui, adicionando as outras operações como subtração, divisão e multiplicação. Não se esqueça de aplicar <i>assertions</i> e, aproveitando, também sugiro que você faça algumas pesquisas sobre isso e a importância do uso deste recurso em automação de teste de <i>software</i>.
 
 ___
 # Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional
@@ -1141,7 +1133,7 @@ Até agora chegamos a um código legal, mas sem nenhum tipo de padrão. Esse tip
 
 Agora vamos organizar um pouco nosso código, separando algumas partes do que programamos e utilizando Classes, construtores e alguns conceitos de Python e Programação Orientada à Objetos.
 
-A primeira coisa que irei fazer, é começar a utilizar alguns conceitos de padrão de projetos (não irei entrar em detalhes de padrões de projeto aqui) para tornar nosso código mais legível, mais bem estruturado para receber automação e de fácil manutenabilidade. Pra isso, irei separar o código responsável pela conexão do appium, isolando-o num arquivo único, o qual chamarei de <i>webdriver.py</i>, que ficará numa pasta de mesmo nome:
+A primeira coisa que irei fazer, é começar a utilizar alguns conceitos de padrão de projetos (não irei entrar em detalhes de padrões de projeto aqui) para tornar nosso código mais legível, mais bem estruturado para receber automação e de fácil manutenabilidade. Pra isso, irei separar o código responsável pela conexão do Appium, isolando-o num arquivo único, o qual chamarei de <i>webdriver.py</i>, que ficará numa pasta de mesmo nome:
 
 ```bash
 from appium import webdriver
@@ -1176,7 +1168,7 @@ from appium.webdriver.common.mobileby import MobileBy
 <i>WebDriverWait</i> é uma excelente solução para eliminarmos o famoso uso do <i>time.sleep(10)</i> do nosso código. É um recurso que basicamente fica no aguardo da presença de algum elemento e que pode receber um valor de <i>timeout</i> indicado por você. Gosto de usar o valor 10.<br>
 <i>MobileBy</i> é o recurso responsável por indicar que estamos em um contexto de dispositivo móvel, daí então podemos acessar tipos de IDs relacionados a este contexto.
 
-Depois dos imports, é hora de criarmos uma classe, a qual dei o nome de Calculadora. Para esta classe também criei um construtor para identificarmos os elementos que caracterizam a nossa classe e, consequentemente, os objetos que iremos instanciar a partir dela. Além dos elementos, também iremos criar os métodos relacionados aos comportamentos da nossa classe que, para a nossa calculadora, iremos definir que são as acões de somar, subtrair, multiplicar e dividir.
+Depois dos imports, é hora de criarmos uma classe, a qual dei o nome de Calculadora. Para esta classe também criei um construtor para identificarmos os elementos que caracterizam a nossa classe e, consequentemente, os objetos que iremos instanciar a partir dela. Além dos elementos, também iremos criar os métodos relacionados aos comportamentos da nossa classe que, para a nossa calculadora, iremos definir que são as ações de somar, subtrair, multiplicar e dividir.
 
 Antes de iniciar a reestruturação da identificação dos nossos elementos, vale dizer que todos os nossos dígitos numéricos (do 0 ao 9) possuem a mesma estrutura, mudando apenas o último dígito do valor do elemento. Com isso, podemos tentar usar uma estratégia diferente para otimizar isso. Então, decidi criar um método para tratar disso. Portanto, irei mapear agora apenas os elementos de operações e os mais gerais como o de resultado. Nosso mapeamento fica assim:
 
@@ -1204,14 +1196,31 @@ class Calculadora:
 Depois de mapeados os elementos, é hora de iniciarmos a elaboração dos métodos da nossa Calculadora. Como falei mais acima, também irei utilizar um método para tratar a identificação dos dígitos, visto que a estrutura de todos são idênticas, mudando apenas o último dígito. Meu código ficou assim:
 
 ```bash
-
+    def clicknumber(self, numero):
+        _num = str(numero)
+        self.driver.instance.find_element(MobileBy.ID, 'com.android.calculator2:id/digit_' + _num).click()
+        assert _num in self.result.text, 'Resultado no result não é o esperado com o valor inserido'
 ```
 
+Esta solução é uma sugestão para termos um código mais enxuto. Você pode fazer algo parecido para aplicarmos o operador.
+
+Agora, também irei utilizar a biblioteca _unitTest_ para controlarmos o fluxo de testes da nossa aplicação. Através desta biblioteca iremos utilizar os métodos _setUp()_ e _tearDown()_. São métodos que fazem muito sentido em projetos de testes, pois o setUp tem por objetivo preparar o que é necessário para iniciarmos os testes, enquanto que o tearDown finaliza a execução encerrando os serviços que foram iniciados durante a execução.
+Para organizar isso em um padrão de projetos, irei criar uma pasta chamada "tests" e, dentro desta pasta irei criar um arquivo Python de nome CalculadoraTestes.py, onde farei os imports dos arquivos que fazem parte do meu projeto e, na construção da classe irei definir que esta classe será do tipo casos de teste (unittest.TestCase). Este arquivo será muito simples e nele faremos o setUp, o tearDown e (atenção para esta parte) criaremos métodos que irão realizar nossos testes. Todo método que começar com "test" será executado já que inserimos a biblioteca unitTest. A ordem de execução será de acordo com a distribuição dos métodos neste arquivo.
+
+Bem, em resumo, nossa estrutura terá as seguintes pastas:
+- Webdriver: Aqui iremos isolar a conexão do nosso serviço.
+
+- PageObjects: Aqui será o mapeamento da nossa aplicação. Para cada página, uma classe dedicada - não necessariamente em arquivos separados. Todos os elementos e todas as funcionalidades da página serão identificados e trabalhados aqui.
+
+- Tests: Aqui iremos criar nossos métodos de inicialização, finalização e elaboração dos nossos testes. SetUp é o método responsável por inicializar a execução. Setup é o responsável por finalizar a execução. Todo método iniciado com "test" será executado como teste. Essas funcionalidades são abstraídas graças ao uso da biblioteca _unitTest_.
+
+Desta maneira, finalizamos os tutoriais do início do uso do Appium testando nossa aplicação Calculadora nativa do Android.
 
 **Exercícios sugeridos:**
-<br><br>
+
 - Como não entramos em detalhes do que são padrões de projeto e quais os padrões especificamente devemos usar, eu deixo como sugestão a pesquisa sobre padrões de projeto em Python, especialmente para automação de teste de <i>software</i>.
 - Explorar os recursos existentes na biblioteca Selenium.
+- Explorar os recursos e o uso da biblioteca unitTest.
 - Com base no método que deixei para a soma, você pode criar ou demais métodos para os outros operadores como multiplicação, divisão e multiplicação.
 - Gostaria de de ampliar seu projeto e realizar a automação do modelo Calculadora Científica? Esse é o momento! =)
 - Gostaria de aplicar estes conceitos a alguma aplicação que vc baixou na PlayStore? Esta também é uma excelente oportunidade! Não se esqueça de compartilhar seu projeto com a comunidade <3
