@@ -2,11 +2,9 @@
 
 <div align="center">
 <img src="/images/appiumwithpython.png">
-</div>
 
-<center>
-    <i>Material recomendado pela <a href="https://github.com/appium/appium/tree/master/sample-code/python#tutorial">documentação oficial do Appium</a>.</i>
-</center>
+<i>Material recomendado pela <a href="https://github.com/appium/appium/tree/master/sample-code/python#tutorial">documentação oficial do Appium</a>.</i>
+</div>
 
 Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentro outros aprendizados, destaco os seguintes pontos como principais aprendizados:
 
