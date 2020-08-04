@@ -18,7 +18,7 @@ Este material é um guia para o setup do ambiente de configuração e uso do App
 
 ___
 
-**A organização do tutorial se dá nas seguintes seções:**
+🗂 **A organização do tutorial se dá nas seguintes seções:**
 <ul>
     <li>Introdução</li>
     <li>Setup do ambiente</li>
@@ -39,7 +39,7 @@ ___
 
 ___
 
-**Tutoriais contidos aqui**
+✏️ **Tutoriais contidos aqui**
 
 - [Tutorial 1: Instalando uma aplicação no meu dispositivo Android emulado](https://github.com/clarabez/appium/blob/master/README.md#tutorial-1-instalando-uma-aplica%C3%A7%C3%A3o-no-meu-dispositivo-android-emulado)
 - [Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium](https://github.com/clarabez/appium/blob/master/README.md#tutorial-2-desired-capabilities-como-iniciar-uma-sess%C3%A3o-com-o-appium)
@@ -53,7 +53,7 @@ ___
 - [Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional](https://github.com/clarabez/appium/blob/master/README.md#tutorial-10-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-3-organizando-o-c%C3%B3digo-com-padr%C3%B5es-de-projeto-e-realizando-fluxo-de-teste-funcional)
 ___
 
-Este documento sofrerá ajustes e complementos ao longo do tempo <i>&#128513;</i>
+🚧 Este documento sofrerá ajustes e complementos ao longo do tempo <i>&#128513;</i>
 
 Em breve irei disponibilizar o mesmo conteúdo em inglês e também uma solução usando o Docker, visando tornar mais prática a etapa de configuração - e também a adição de mais tecnologias aqui.
 
@@ -94,11 +94,11 @@ ___
 Nesta seção vamos ver os passos para realizarmos o setup do ambiente para Windows, Linux e Mac. Todos os meus projetos faço utilizando o Mac, então tendo a passar informações mais detalhadas para este SO.
 
 
-**Uma dica muito importante:**
+✨ **Uma dica muito importante:**
 
 Digo o que fazer para cada sistema operacional, mas você também pode optar por uma configuração mais simples (e efetiva da mesma forma) e que vai te poupar de muito tempo e dor de cabeça - confie em mim :) Se você quiser ir por esse caminho, pode pular direto para o tópico "Forma simplificada para Windows/Linux/Mac". O mesmo procedimento é utilizado para qualquer sistema operacional.
 
-# Download de tudo que vai ser necessário
+# 📥 Download de tudo que vai ser necessário
 
 Durante o nosso workshop vamos utilizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas, que são comuns para Windows, MAC ou Linux:
   - **Appium Desktop:** é a interface da ferramenta Appium que será o foco do nosso workshop. O download está [disponível aqui:](https://github.com/appium/appium-desktop/releases/tag/v1.13.0) (aqui tem um acervo para vários Sistemas Operacionais. Baixe apenas aquele que for direcionado para o seu SO.)
@@ -183,14 +183,14 @@ export JAVA_HOME=/your/path/to/jdk1.8.0_112.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
-**Dica - Windows/Linux/Mac:**
+✨ **Dica - Windows/Linux/Mac:**
 Para identificar onde está a sua pasta para JAVA_HOME, é só usar o seguinte comando no terminal:
 ```bash
 which java
 ```
 Deverá ser retornado o caminho até seu pacote JAVA.
 
-**Dica 2 - Linux/Mac:**
+✨ **Dica 2 - Linux/Mac:**
 Para evitar que suas variáveis de ambiente percam os valores, salve o conteúdo da variável no seu arquivo bashrc (Linux) ou bash_profile (macOS). Após salvar os valores, não esqueça de "compilar" o arquivo para as mudanças serem refletidas:
 Para macOS:
 ```bash
@@ -227,7 +227,7 @@ npm install -g appium
 ```
 **ATENÇÃO:** Não instale o Appium com sudo.
 
-**Dica - O que é npm?**
+✨ **Dica - O que é npm?**
 
 Npm é o gerenciador de downloads para pacotes node.js. 
 
@@ -245,7 +245,7 @@ Uma funcionalidade bem legal que o Appium oferece é o pacote <em>Appium-doctor<
 npm install -g appium-doctor --android
 ```
 
-**Dica:**
+✨ **Dica:**
 Estamos usando a flag **--android** para indicar a plataforma que vamos usar o Appium. Caso fôssemos usar o iOS, usaríamos a flag **--ios--**.
 
 Depois de instalado o <em>Appium-doctor</em>, é só fazer a chamada via terminal:
@@ -348,7 +348,7 @@ Para iniciarmos uma sessão vamos precisar de pelo menos 2 campos, que são:
 }
 ```
 
-**Atenção:** para entender como obter o valor do nome do seu dispositivo, você vai precisar ler a seção mais adiante sobre [comandos ADB](https://github.com/clarabez/appium/blob/master/README.md#comandos-adb).
+🚦 **Atenção:** para entender como obter o valor do nome do seu dispositivo, você vai precisar ler a seção mais adiante sobre [comandos ADB](https://github.com/clarabez/appium/blob/master/README.md#comandos-adb).
 
 Os nomes são bem intuitivos, e aí estou criando um dicionário com a chave <i>'platformName'</i> para indicar a plataforma que irei utilizar, que pode ser: Android, Windows, iOS. 
 Já o identificador do dispositivo móvel iremos inserir em <i>'deviceName'</i>, e podemos obter esse valor através do comando adb <i>'adb devices'</i> que já explicamos mais acima. Assim fica um exemplo de preenchimento destes campos básicos e ao lado já o retorno do conteúdo em JSON:
@@ -474,7 +474,7 @@ Com isso, o aplicativo deve ser instalado corretamente e já aparecer disponíve
 **Observação:**<br>
 Aplicações na Play Store normalmente são bem ativas e constantemente sofrem alguma atualização de versão. Nessas atualizações, pode ser que alguma aplicação pare de funcionar em seu dispositivo. Por exemplo, já me aconteceu de a aplicação das Casas Bahia não mais funcionar em meu dispositivo porque deixou de ser compatível com a arquitetura dos dispositivos emulados. Isso pode acontecer. Caso isso aconteça com você, é só escolher uma outra aplicação para seguir seus estudos.
 
-**Sugestão de exercícios:**<br>
+📝 **Sugestão de exercícios:**<br>
 Tente baixar outras aplicações de sua preferência e tente instalar em seu dispositivo via comando ADB e também arrastando o pacote até seu dispositivo.
 
 **Links utilizados neste tutorial:**<br>
@@ -598,7 +598,7 @@ Agora, com todos os valores preenchidos, você pode salvar novamente esta config
 <img src="https://github.com/clarabez/appium/blob/master/images/appiumdetailed.png">
 </p>
 
-**Sugestão de exercícios:**<br>
+📝 **Sugestão de exercícios:**<br>
 Tente utilizar o comando ADB deste tutorial para identificar pacote e activity em aplicações diferentes, inclusive alguma que você baixou no Tutorial 1.
 
 **Links Importantes para este tutorial:**<br>
@@ -656,7 +656,7 @@ Para realizar a identificação de elementos, basta dar um clique no elemento qu
 
 No meu print, utilizei o elemento "9" e me foi retornado 2 opções: id, xpath. Como o número 9 tem ID e vejo que ele é único (clicando nos demais elementos pude perceber isso), então decidi que o valor de ID é a melhor abordagem para eu seguir na identificação dos elementos da minha calculadora.
 
-**Sugestão de exercício:**
+📝 **Sugestão de exercício:**
 <br>
 Para praticar um pouco mais, sugiro que você vá observando a diferença entre elementos da sua aplicação. Tente também mapear elementos de alguma outra aplicação e observar se você tem o campo de ID e XPath.
 
@@ -707,7 +707,7 @@ Para exemplificar esta funcionalidade, irei realizar a ação de abrir um aplica
 
 Essa ação é composta por menos passos que o de coordenadas, visto que ele é realiza através de um único clique. Da mesma maneira, os valores de X e Y são atualizados à medida que eu vou andando com o cursor na tela. Dei um clique na localização de onde está o aplicativo Dialer (chamadas) e em seguida ele foi executado sem nenhuma ação extra.
 
-**Sugestão de exercícios:**
+📝 **Sugestão de exercícios:**
 
 Tentar utilizar os funcionalidades <i>swipe</i> e <i>tap</i> em outras telas, menus e aplicações.
 
@@ -838,7 +838,7 @@ Desta forma fica muito mais tranquilo de gerar um código inicial através do Ap
 
 Nos tutoriais seguintes iremos focar mais no código, então vamos explicar melhor algumas partes particulares do Appium em Python.
 
-**Sugestão de exercícios:**
+📝 **Sugestão de exercícios:**
 Agora que você já conhece também a funcionalidade de gravar suas ações e transformá-las em código, você pode realizar outros fluxos na calculadora ou até utilizar qualquer outra aplicação para gerar ações com gestos, por exemplo. Depois é só exportar o código e fazer alterações de acordo da maneira que você desejar.
 
 ___
@@ -910,7 +910,7 @@ driver.quit()
 
 Agora temos uma boa parte de código que nos dá uma ideia de como nosso projeto para automação da Calculadora deve seguir. Já temos alguns botões mapeados e também todos os operadores aritméticos.
 
-**Sugestão de exercício:**
+📝 **Sugestão de exercício:**
 <br><br>
 Você pode continuar mapeando os demais elementos restantes da calculadora até ter o código de todos os elementos existentes na sua aplicação.
 
@@ -1007,7 +1007,7 @@ Como resultado destas operações, é só observarmos o nosso dispositivo (real 
 
 Por fim, veja que com poucas linhas de código em Python nós conseguimos iniciar uma sessão do Appium em um dispositivo indo diretamente para a tela da aplicação Calculadora.
 
-**Sugestão de exercício:**
+📝 **Sugestão de exercício:**
 <br><br>
 Tente explorar alguns recursos existentes na biblioteca webdriver. Caso você não a conheça, recomendo que faça uma pesquisa sobre ela e tente explorar mais funcionalidades que ela pode oferecer ao seu projeto.
 
@@ -1121,7 +1121,7 @@ Em seguida imprimo na tela o resultado dos dois campos e em seguida utilizo um <
 
 O uso de <i>assertions</i> em projetos de automação para qualidade de <i>software</i> é extremamente importante. Sem o uso de <i>assertions</i> não é possível comparar o resultado obtido com o resultado esperado, ou seja, não temos como validar se o comportamento observado está de acordo com o esperado ou se é um <i>bug</i>.
 
-**Sugestão de exercício:**<br><br>
+📝 **Sugestão de exercício:**<br><br>
 Agora que estamos trabalhando de forma mais direta com o código, sugiro que você complemente o código que já alcançamos até aqui, adicionando as outras operações como subtração, divisão e multiplicação. Não se esqueça de aplicar <i>assertions</i> e, aproveitando, também sugiro que você faça algumas pesquisas sobre isso e a importância do uso deste recurso em automação de teste de <i>software</i>.
 
 ___
@@ -1224,7 +1224,7 @@ Bem, em resumo, nossa estrutura terá as seguintes pastas:
 
 Desta maneira, finalizamos os tutoriais do início do uso do Appium testando nossa aplicação Calculadora nativa do Android.
 
-**Exercícios sugeridos:**
+📝 **Exercícios sugeridos:**
 
 - Como não entramos em detalhes do que são padrões de projeto e quais os padrões especificamente devemos usar, eu deixo como sugestão a pesquisa sobre padrões de projeto em Python, especialmente para automação de teste de <i>software</i>.
 - Explorar os recursos existentes na biblioteca Selenium.
