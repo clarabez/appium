@@ -16,6 +16,7 @@ Este material é um guia para o setup do ambiente de configuração e uso do App
     <li>Como iniciar testes de UI em sua aplicação através do Appium com a linguagem de programação Python.</li>
 </ul>
 
+A versão em inglês deste tutorial está aqui em [appium-en](https://github.com/clarabez/appium-en).
 ___
 
 🗂 **A organização do tutorial se dá nas seguintes seções:**
