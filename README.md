@@ -6,6 +6,8 @@
 <i>Material recomendado pela <a href="https://github.com/appium/appium/tree/master/sample-code/python#tutorial">documentação oficial do Appium</a>.</i>
 </div>
 
+Se este tutorial te ajudou, não esquece de deixar uma estrelinha ⭐️ 🌟
+ 
 Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentro outros aprendizados, destaco os seguintes pontos como principais aprendizados:
 
 <ul>
