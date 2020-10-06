@@ -403,6 +403,13 @@ Dispositivo criado, tente realizar algumas ações nele como abrir aplicativos, 
 
 Um mundo de possibilidades que também podemos explorar com dispositivos Android é que podemos usar comandos ADB no nosso dispositivo emulado e já ver que ele responde da mesma maneira que um dispositivo real. A próxima seção vai falar um pouco sobre isso.
 
+**Lembra quando falamos dos Desired Capabilities?** Agora podemos adicionar a configuração para abrir o emulador em conjunto com a requisição de servidor do Appium. 
+Faremos isso a partir do nome que demos ao Virtual Device que cadastramos anteriormente. Assim:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumAvd.png">
+</p>
+
 **Alguns pontos importantes sobre este tópico:**<br>
 - Em breve farei um material falando como emular um dispositivo iOS.<br>
 - Existem outras ferramentas que emulam dispositivos Androids mas, das que testei, nenhuma é tão boa quando a do Android Studio. Por esse motivo prefiro me manter nele e recomendo o uso.<br>
