@@ -2,6 +2,7 @@ from appium import webdriver
 
 desired_cap = {
     "platformName": "Android",
+    "avd": "AppiumP",
     "deviceName": "emulator-5554",
     "appPackage": "com.android.calculator2",
     "appActivity": "com.android.calculator2.Calculator"
