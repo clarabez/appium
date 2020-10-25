@@ -6,6 +6,7 @@ class Driver:
         desired_cap = {
             'platformName': 'Android',
             'deviceName': 'AppiumP',
+            'avd': 'AppiumP',
             'appPackage': 'com.android.calculator2',
             'appActivity': 'com.android.calculator2.Calculator'
         }

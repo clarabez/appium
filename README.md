@@ -136,8 +136,19 @@ Então será a partir desta pasta que vamos identificar os outros caminhos neces
 /Users/user_name/Library/Android/sdk/build-tools
 ```
 
-Quando você identificar estes caminhos em sua máquina, é hora de exportar esses valores para a variável PATH, como sugere o exemplo a seguir:
+Quando você identificar estes caminhos em sua máquina, é hora de exportar esses valores para a variável PATH.
+Para isso, confira se no diretório "/Users/user_name" existe o arquivo ".bash_profile".
+Caso não exista, crie:
+```bash
+touch .bash_profile
+```
 
+O próximo passo é abrir o editor de texto do arquivo:
+```bash
+open -e ~/.bash_profile
+```
+
+Digite os comandos como sugere o exemplo a seguir e salve o arquivo:
 ```bash
 export ANDROID_HOME=/your/path/to/Android/sdk 
 export PATH=$ANDROID_HOME/platform-tools:$PATH 
@@ -146,6 +157,7 @@ export PATH=$ANDROID_HOME/build-tools:$PATH
 export JAVA_HOME=/your/path/to/jdk1.8.0_112.jdk/Contents/Home 
 export PATH=$JAVA_HOME/bin:$PATH
 ```
+
 # Variáveis de ambiente - Windows:
 Após o download (link acima) e instalação do JDK do seu ambiente Windows, é hora de configurar as variáveis de ambiente. Para isso, siga as opções de menu:
 1. Propriedades do Sistema >> Configurações avançadas do sistema >> Variáveis de ambiente >> Variáveis de usuário >> Novo.
@@ -197,7 +209,7 @@ Deverá ser retornado o caminho até seu pacote JAVA.
 Para evitar que suas variáveis de ambiente percam os valores, salve o conteúdo da variável no seu arquivo bashrc (Linux) ou bash_profile (macOS). Após salvar os valores, não esqueça de "compilar" o arquivo para as mudanças serem refletidas:
 Para macOS:
 ```bash
-source ~./bash_profile
+source ~/.bash_profile
 ```
 
 Para Linux:
@@ -403,6 +415,13 @@ Dispositivo criado, tente realizar algumas ações nele como abrir aplicativos, 
 
 Um mundo de possibilidades que também podemos explorar com dispositivos Android é que podemos usar comandos ADB no nosso dispositivo emulado e já ver que ele responde da mesma maneira que um dispositivo real. A próxima seção vai falar um pouco sobre isso.
 
+**Lembra quando falamos dos Desired Capabilities?** Agora podemos adicionar a configuração para abrir o emulador em conjunto com a requisição de servidor do Appium. 
+Faremos isso a partir do nome que demos ao Virtual Device que cadastramos anteriormente. Assim:
+
+<p align="center">
+<img src="https://github.com/clarabez/appium/blob/master/images/appiumAvd.png">
+</p>
+
 **Alguns pontos importantes sobre este tópico:**<br>
 - Em breve farei um material falando como emular um dispositivo iOS.<br>
 - Existem outras ferramentas que emulam dispositivos Androids mas, das que testei, nenhuma é tão boa quando a do Android Studio. Por esse motivo prefiro me manter nele e recomendo o uso.<br>
@@ -522,7 +541,8 @@ Segue então valores que irei utiliar para o <i>Desired Capabilities</i>:
 ```bash
 {
     'platformName': 'Android',
-    'deviceName': 'emulator-5554'
+    'deviceName': 'emulator-5554',
+    'avd': 'AppiumP'
 }
 ```
 
@@ -583,7 +603,8 @@ Ess é trecho em que temos tanto o valor de <i>appPackage</i> quanto o de <i>app
 ```bash
 {
     'platformName': 'Android',
-    'deviceName': 'emulator-5554'
+    'deviceName': 'emulator-5554',
+    'avd': 'AppiumP',
     'appPackage': 'com.android.calculator2',
     'appActivity': 'com.android.calculator2.Calculator'
 }
@@ -820,6 +841,7 @@ from appium import webdriver
 caps = {}
 caps["platformName"] = "Android"
 caps["deviceName"] = "AppiumP"
+caps["avd"] = "AppiumP"
 caps["appPackage"] = "com.android.calculator2"
 caps["appActivity"] = "com.android.calculator2.Calculator"
 
@@ -876,6 +898,7 @@ from appium import webdriver
 caps = {}
 caps["platformName"] = "Android"
 caps["deviceName"] = "AppiumP"
+caps["avd"] = "AppiumP"
 caps["appPackage"] = "com.android.calculator2"
 caps["appActivity"] = "com.android.calculator2.Calculator"
 
@@ -957,6 +980,7 @@ Como já vimos por aqui na seção [Iniciando com o Appium](https://github.com/c
 caps = {}
 caps["platformName"] = "Android"
 caps["deviceName"] = "AppiumP"
+caps["avd"] = "AppiumP"
 caps["appPackage"] = "com.android.calculator2"
 caps["appActivity"] = "com.android.calculator2.Calculator"
 ```
@@ -981,6 +1005,7 @@ from appium import webdriver
 desired_cap = {
     "platformName": "Android",
     "deviceName": "AppiumP",
+    "avd": "AppiumP",
     "appPackage": "com.android.calculator2",
     "appActivity": "com.android.calculator2.Calculator"
 }
@@ -1067,6 +1092,7 @@ from appium import webdriver
 desired_cap = {
     "platformName": "Android",
     "deviceName": "emulator-5554",
+    "avd": "AppiumP",
     "appPackage": "com.android.calculator2",
     "appActivity": "com.android.calculator2.Calculator"
 }
@@ -1155,6 +1181,7 @@ class Driver:
         desired_cap = {
             'platformName': 'Android',
             'deviceName': 'AppiumP',
+            'avd': 'AppiumP',
             'appPackage': 'com.android.calculator2',
             'appActivity': 'com.android.calculator2.Calculator'
         }
