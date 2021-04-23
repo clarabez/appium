@@ -1,0 +1,1 @@
+Aplicativo Hacker News
