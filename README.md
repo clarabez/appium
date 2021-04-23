@@ -9,9 +9,10 @@ Este material é um guia para o setup do ambiente de configuração e uso do App
 <ul>
     <li>Entender como funciona a ferramenta Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;</li>
     <li>Como instanciar um dispositivo Android emulado através do Android Studio;</li>
-    <li>Como instalar um aplicativo da PlayStore em seu dispositivo emulado;</li>
     <li>Como fazer mapeamento de elementos de uma aplicação em seu dispositivo;</li>
-    <li>Como iniciar testes de UI em sua aplicação através do Appium com a linguagem de programação Python.</li>
+    <li>Como instalar um aplicativo da PlayStore em seu dispositivo emulado;</li>
+    <li>Como iniciar testes de UI em sua aplicação através do Appium com a linguagem de programação Python;</li>
+    <li>Conhecer sos e funcionalidades específicas do Appium.</li>
 </ul>
 
 ___
@@ -31,8 +32,9 @@ ___
     <li>Appium Doctor: como validar se tá tudo configurado?</li>
     <li>Checklist</li>
     <li>Iniciando o Appium</li>
-    <li>Comandos ADB></li>
+    <li>Comandos ADB</li>
     <li>Emulando um dispositivo Android através do Android Studio</li>
+    <li>Recursos específicos do Appium</li>
 </ul>
 
 ___
@@ -49,6 +51,15 @@ ___
 - [Tutorial 8: Replicando tudo o que fiz utilizando apenas Python](https://github.com/clarabez/appium/blob/master/README.md#tutorial-8-replicando-tudo-o-que-fiz-utilizando-apenas-python)
 - [Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2](https://github.com/clarabez/appium/blob/master/README.md#tutorial-9-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-2)
 - [Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional](https://github.com/clarabez/appium/blob/master/README.md#tutorial-10-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-3-organizando-o-c%C3%B3digo-com-padr%C3%B5es-de-projeto-e-realizando-fluxo-de-teste-funcional)
+
+**Parte 2**
+
+A parte 2 deste curso está relacionado a recursos e funcionalidades específicas do Appium. Os exemplos listados aqui serão em Python, mas quase todos os recursos usados aqui também existem em qualquer outra linguagem de programação que o Appium tenha suporte.
+
+- Comandos sobre o dispositivo
+- Interações
+- Controle de recursos de rede
+- Controle do sistema
 ___
 
 Este documento sofrerá ajustes e complementos ao longo do tempo <i>&#128513;</i>
@@ -1230,3 +1241,124 @@ Desta maneira, finalizamos os tutoriais do início do uso do Appium testando nos
 - Com base no método que deixei para a soma, você pode criar ou demais métodos para os outros operadores como multiplicação, divisão e multiplicação.
 - Gostaria de de ampliar seu projeto e realizar a automação do modelo Calculadora Científica? Esse é o momento! =)
 - Gostaria de aplicar estes conceitos a alguma aplicação que vc baixou na PlayStore? Esta também é uma excelente oportunidade! Não se esqueça de compartilhar seu projeto com a comunidade <3
+
+___
+# Parte 2 - Recursos e Funcionalidades do Appium
+
+Uma das vantagens de se utilizar um framework para resolver um problema, é o uso dos recursos que esse framework é capaz de prover ao seu ambiente de automação. O Appium traz muitos recursos poderosos que dão contexto mobile pros seus testes, e que podem ser utilizados de acordo com sua estratégia de testes.
+
+**Network - rede:**
+Considerar cenários e interações de rede é um dos itens obrigatórios quando estamos falando de testes para mobile. Aqui estão alguns dos comandos que podemos utilizar neste sentido:
+
+☎️ - Chamadas:
+
+Referência oficial do Appium [aqui.](https://appium.readthedocs.io/en/stable/en/commands/device/network/gsm-call/)
+Esse recurso é chamado de GSM Call. Sua estrutura espera 2 parâmetro: "phone_number" e "action", ambos são strings em Python, onde "phone_number" é o número a ter interações e "action" é a ação a ser feita, e pode ser: call (realizar a chamada), accept (aceitar a chamada), cancel (recusar a chamda) e hold (colocar a chamada em aguardo). 
+
+Receber uma chamada:
+Para aparecer a notificação de chegada de ligação. Por si só este comando não irá aceitar a chamada, apenas irá notificar a chegada de uma nova ligação.
+
+```python
+driver.make_gsm_call("123123", "call")
+```
+
+**Aceitar uma chamada:**
+Com o uso do comando acima, a chamada irá aparecer na sua tela. Para aceitá-la, é preciso utilizar o seguinte comando:
+
+```python
+driver.make_gsm_call("123123", "accept")
+```
+
+**Recusar uma chamada, ou finalizar uma chama estabelecida:**
+
+Porém, se você quiser recursar a chamada, basta utilizar o seguinte comando:
+
+```python
+driver.make_gsm_call("123123", "cancel")
+```
+
+Este comando também é utilizado para finalizar uma chamada em curso.
+
+**Colocar uma chamada em espera (on hold):**
+
+Uma vez que a chamada é estabelecida, você pode colocá-la em aguardo através do seguinte comando:
+
+```python
+driver.make_gsm_call("123123", "hold")
+```
+
+📜 **Receber um SMS:**
+
+```python
+driver.send_sms('1010101', 'hello wold')
+```
+
+**Interações com o dispositivo:**
+
+**Sistema e notificações:**
+
+- Mudar orientação da tela:
+
+A depender da disposição de tela do seu dispositivo, isso pode habilitar ou desabilitar nossas funcionalidades no sistema ou no aplicativo em teste. Um exemplo disso, é a Calculadora do Android que na posição "portrait" tem a Calculadora padrão, porém, quando na posição "landscape", a Calculadora se transforma em Calculadora Científica.
+
+Em alguns momentos do teste pode ser necessário você verificar a orientação corrente que está seu dispositivo, e com base nisso realizar alguma ação. Para identificar a orientação atual do dispositivo, utilize o seguinte recurso:
+
+```python
+driver.orientation()
+```
+
+**Deixar em modo "portrait":**
+
+Este é o modo na vertical, o que usamos como padrão.
+
+```python
+driver.orientation = "PORTRAIT"
+```
+
+**Deixar em modo "landscape":**
+
+Este é o modo de visão na horizontal.
+
+```python
+driver.orientation = "LANDSCAPE"
+```
+
+**Controle de carga e percentual de bateria:**
+
+- 🔋 Alterar o % de bateria do dispositivo:
+
+Este é um recurso super poderoso pois a depender do % de bateria do seu dispositivo podemos ver a presença de alguma notificação do sistema indicando nível crítico de bateria, ou até mesmo sugerindo que você entre no modo econômico de bateria. Tudo isso pode influenciar no estado do seu dispositivo e, consequentemente, influenciar na condução dos seus testes ou até mesmo sugerir uma suíte de testes voltada para esse tipo de validação.
+
+O recurso para isto é o set_power_capacity e apenas 1 parâmetro é passado, que é o valor de 0 a 100 para o valor do nível de bateria.
+
+```python
+driver.set_power_capacity(10)
+```
+
+- 🔌 Simular estar ligado no carregador:
+
+O recurso para isto é o set_power_ac, e aguarda apenas 1 parâmetro que é a string "on" para indicar que está em carga ou "off" para indicar que não está em carga.
+
+```python
+driver.set_power_ac("on")
+```
+
+- Verificar se um aplicativo está instalado no sistema:
+
+Testes de instalação também é algo muito presente no universo mobile. É muito frequente que a instalação/desinstalação de aplicativos seja uma realidade na rotina de quem utiliza um dispositivo móvel. E, se sua aplicação será lançada na Play Store, testar se o aplicativo foi instalado com sucesso será um dos primeiros testes que você deve considerar.
+
+O recurso para isto é o "is_app_installed" que retorna um booleano (True/False) para o valor do pacote que você deverá passar como parâmetro na chamada da função.
+
+```python
+driver.is_app_installed('com.example.appiumcurso')
+```
+
+**Identificar contexto:**
+
+Saber o contexto da sua aplicação é algo muito importante. Se for uma aplicação nativa, pode ser que você tenha que utilizar uma abordagem diferente dos casos de uma aplicação web, por exemplo. Apenas olhando um aplicativo muitas vezes não é possível dizer qual o tipo daquele aplicativo, mas o Appium fornece um recurso para nos ajudar com isso.
+
+```python
+driver.contexts
+```
+
+Este comando retorna uma string indicando se o aplicativo que estiver aberto na tela do dispositivo naquele momento é um aplicativo nativo, híbrido ou web.
