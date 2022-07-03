@@ -1,0 +1,4 @@
+selenium
+pytest-appium
+pytest
+Appium-Python-Client
