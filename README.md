@@ -11,7 +11,7 @@ Se este tutorial te ajudou, não esquece de deixar uma estrelinha ⭐️ 🌟
 Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentre outros aprendizados, destaco os seguintes pontos como principais aprendizados:
 
 <ul>
-    <li>Entender como funciona a ferramenta Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;</li>
+    <li>Entender como funciona o framework Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;</li>
     <li>Como instanciar um dispositivo Android emulado através do Android Studio;</li>
     <li>Como fazer mapeamento de elementos de uma aplicação em seu dispositivo;</li>
     <li>Como instalar um aplicativo da PlayStore em seu dispositivo emulado;</li>
@@ -57,7 +57,7 @@ ___
 - [Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2](https://github.com/clarabez/appium/blob/master/README.md#tutorial-9-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-2)
 - [Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional](https://github.com/clarabez/appium/blob/master/README.md#tutorial-10-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-3-organizando-o-c%C3%B3digo-com-padr%C3%B5es-de-projeto-e-realizando-fluxo-de-teste-funcional)
 
-**Parte 2**
+## Parte 2 - conhecendo métodos do Appium
 
 A parte 2 deste curso está relacionado a recursos e funcionalidades específicas do Appium. Os exemplos listados aqui serão em Python, mas quase todos os recursos usados aqui também existem em qualquer outra linguagem de programação que o Appium tenha suporte.
 
@@ -69,7 +69,7 @@ ___
 
 🚧 Este documento sofrerá ajustes e complementos ao longo do tempo <i>&#128513;</i>
 
-Em breve irei disponibilizar o mesmo conteúdo em inglês e também uma solução usando o Docker, visando tornar mais prática a etapa de configuração - e também a adição de mais tecnologias aqui.
+Este material também está em inglês e pode ser encontrado [aqui](https://github.com/clarabez/appium-en).
 
 Qualquer sugestão de melhoria ou correção, por favor entrar em contato <i>&#128525;</i>
 
@@ -909,7 +909,6 @@ from appium import webdriver
 caps = {}
 caps["platformName"] = "Android"
 caps["deviceName"] = "AppiumP"
-caps["avd"] = "AppiumP"
 caps["appPackage"] = "com.android.calculator2"
 caps["appActivity"] = "com.android.calculator2.Calculator"
 
