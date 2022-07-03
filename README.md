@@ -1278,12 +1278,11 @@ ___
 
 Uma das vantagens de se utilizar um framework para resolver um problema, é o uso dos recursos que esse framework é capaz de prover ao seu ambiente de automação. O Appium traz muitos recursos poderosos que dão contexto mobile pros seus testes, e que podem ser utilizados de acordo com sua estratégia de testes.
 
-**Network - rede:**
+## Network - rede
 Considerar cenários e interações de rede é um dos itens obrigatórios quando estamos falando de testes para mobile. Aqui estão alguns dos comandos que podemos utilizar neste sentido:
 
-☎️ - Chamadas:
+### ☎️ **Chamadas:**
 
-Referência oficial do Appium [aqui.](https://appium.readthedocs.io/en/stable/en/commands/device/network/gsm-call/)
 Esse recurso é chamado de GSM Call. Sua estrutura espera 2 parâmetro: "phone_number" e "action", ambos são strings em Python, onde "phone_number" é o número a ter interações e "action" é a ação a ser feita, e pode ser: call (realizar a chamada), accept (aceitar a chamada), cancel (recusar a chamda) e hold (colocar a chamada em aguardo). 
 
 Receber uma chamada:
@@ -1293,14 +1292,14 @@ Para aparecer a notificação de chegada de ligação. Por si só este comando n
 driver.make_gsm_call("123123", "call")
 ```
 
-**Aceitar uma chamada:**
+### **Aceitar uma chamada:**
 Com o uso do comando acima, a chamada irá aparecer na sua tela. Para aceitá-la, é preciso utilizar o seguinte comando:
 
 ```python
 driver.make_gsm_call("123123", "accept")
 ```
 
-**Recusar uma chamada, ou finalizar uma chama estabelecida:**
+## **Recusar uma chamada, ou finalizar uma chama estabelecida:**
 
 Porém, se você quiser recursar a chamada, basta utilizar o seguinte comando:
 
@@ -1310,7 +1309,7 @@ driver.make_gsm_call("123123", "cancel")
 
 Este comando também é utilizado para finalizar uma chamada em curso.
 
-**Colocar uma chamada em espera (on hold):**
+## **Colocar uma chamada em espera (on hold):**
 
 Uma vez que a chamada é estabelecida, você pode colocá-la em aguardo através do seguinte comando:
 
@@ -1318,15 +1317,17 @@ Uma vez que a chamada é estabelecida, você pode colocá-la em aguardo através
 driver.make_gsm_call("123123", "hold")
 ```
 
-📜 **Receber um SMS:**
+[Referência oficial do Appium](https://appium.readthedocs.io/en/stable/en/commands/device/network/gsm-call/)
+
+### 📜 **Receber um SMS:**
 
 ```python
 driver.send_sms('1010101', 'hello wold')
 ```
 
-**Interações com o dispositivo:**
+## **Interações com o dispositivo:**
 
-**Sistema e notificações:**
+### **Sistema e notificações:**
 
 - Mudar orientação da tela:
 
@@ -1338,7 +1339,7 @@ Em alguns momentos do teste pode ser necessário você verificar a orientação 
 driver.orientation()
 ```
 
-**Deixar em modo "portrait":**
+## **Deixar em modo "portrait":**
 
 Este é o modo na vertical, o que usamos como padrão.
 
@@ -1346,7 +1347,7 @@ Este é o modo na vertical, o que usamos como padrão.
 driver.orientation = "PORTRAIT"
 ```
 
-**Deixar em modo "landscape":**
+## **Deixar em modo "landscape":**
 
 Este é o modo de visão na horizontal.
 
@@ -1354,7 +1355,7 @@ Este é o modo de visão na horizontal.
 driver.orientation = "LANDSCAPE"
 ```
 
-**Controle de carga e percentual de bateria:**
+## **Controle de carga e percentual de bateria:**
 
 - 🔋 Alterar o % de bateria do dispositivo:
 
@@ -1384,7 +1385,7 @@ O recurso para isto é o "is_app_installed" que retorna um booleano (True/False)
 driver.is_app_installed('com.example.appiumcurso')
 ```
 
-**Identificar contexto:**
+### **Identificar contexto:**
 
 Saber o contexto da sua aplicação é algo muito importante. Se for uma aplicação nativa, pode ser que você tenha que utilizar uma abordagem diferente dos casos de uma aplicação web, por exemplo. Apenas olhando um aplicativo muitas vezes não é possível dizer qual o tipo daquele aplicativo, mas o Appium fornece um recurso para nos ajudar com isso.
 
