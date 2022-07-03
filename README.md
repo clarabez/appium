@@ -8,7 +8,7 @@
 
 Se este tutorial te ajudou, não esquece de deixar uma estrelinha ⭐️ 🌟
  
-Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentro outros aprendizados, destaco os seguintes pontos como principais aprendizados:
+Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentre outros aprendizados, destaco os seguintes pontos como principais aprendizados:
 
 <ul>
     <li>Entender como funciona a ferramenta Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;</li>
