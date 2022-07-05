@@ -1392,30 +1392,82 @@ Este comando retorna uma string indicando se o aplicativo que estiver aberto na 
 
 ### Lista de métodos:
 
+```python
 driver.AC_OFF
+```
+
+```python
 driver.AC_ON
+```
+
+```python
 driver.activate_app()
+```
+
+```python
 driver.activate_ime_engine()
+```
+
+```python
 driver.active_ime_engine
+```
+
+```python
 driver.add_cookie()
+```
+
+```python
 driver.add_credential()
+```
+
+```python
 driver.add_virtual_authenticator()
+```
+
+```python
 driver.all_sessions
+```
+
+```python
 driver.app_strings()
+```
+
+```python
 driver.application_cache
+```
+
+```python
 driver.available_ime_engines
+```
+
+```python
 driver.back()
+```
+
+```python
 driver.background_app()
+```
 
 #### Checar informação sobre bateria:
 ```python
 driver.battery_info
 ```
 
+```python
 driver.bidi_connection()
+```
+
+```python
 driver.capabilities
+```
+
+```python
 driver.caps
+```
+
+```python
 driver.close()
+```
 
 #### Fechar aplicativo específico:
 ```python
@@ -1425,11 +1477,20 @@ driver.close_app()
 ```python
 driver.close_app('com.example.cursoappium')
 ```
-
+```python
 driver.command_executor
+
+```python
 driver.context
+```
+
+```python
 driver.contexts
+```
+
+```python
 driver.create_web_element()
+```
 
 
 #### Retorna o nome da activity em primeiro plano da aplicação:
@@ -1513,15 +1574,25 @@ driver.is_app_installed()
 driver.is_app_installed('com.example.cursoappium')
 ```
 
+```python
 driver.is_ime_active()
+```
+
+```python
 driver.is_keyboard_shown()
+```
 
 #### Retorna se o dispositivo está com tela bloqueada ou não:
 ```python
 driver.is_locked()
 ```
 
+#### Enviar algum keyevent para o dispositivo:
+```python
 driver.keyevent()
+```
+A lista completa de todos os keyevents e seus respectivos valores pode ser encontrada na página oficial do [Android aqui](https://developer.android.com/reference/android/view/KeyEvent).
+
 
 #### Inicia uma aplicação já instalada no dispositivo:
 ```python
