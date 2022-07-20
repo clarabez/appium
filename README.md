@@ -57,6 +57,21 @@ ___
 - [Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2](https://github.com/clarabez/appium/blob/master/README.md#tutorial-9-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-2)
 - [Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional](https://github.com/clarabez/appium/blob/master/README.md#tutorial-10-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-3-organizando-o-c%C3%B3digo-com-padr%C3%B5es-de-projeto-e-realizando-fluxo-de-teste-funcional)
 
+
+**Projetos com Appium**
+
+| Nome do projeto | Linguagem | Framework de testes | Plataforma |
+|-----------------|-----------|---------------------|------------|
+|  Calculadora    |  Python   |       -             |  Android   |
+|  Calculadora    |  Python   |     Unittest        |  Android   |
+|  Calculadora    |  Python   |       Pytest        |  Android   |
+| [Resultados TSE](https://github.com/clarabez/TSE_Resultados)  |  Python   |       Pytest        |  Android   |
+| [Curso de Appium](https://github.com/clarabez/appium-robot) |  Robot    |Robot Framework      |  Android   |
+| [Verivox](https://github.com/clarabez/verivox) |  Python    |Pytest      |  Android   |
+| [HackerNews](https://github.com/clarabez/HackerNews) |  Python    |Pytest      |  Android   |
+| [Blinkist](https://github.com/clarabez/HackerNews) |  Python    |Unittest      |  Android   |
+| [Casas Bahia](https://github.com/clarabez/AppiumCasasBahia/) |  Python    |Unittest      |  Android   |
+
 ## Parte 2 - conhecendo métodos do Appium
 
 A parte 2 deste curso está relacionado a recursos e funcionalidades específicas do Appium. Os exemplos listados aqui serão em Python, mas quase todos os recursos usados aqui também existem em qualquer outra linguagem de programação que o Appium tenha suporte.
