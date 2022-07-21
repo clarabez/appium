@@ -63,7 +63,7 @@ ___
 | Nome do projeto | Linguagem | Framework de testes | Plataforma |
 |-----------------|-----------|---------------------|------------|
 |  Calculadora    |  Python   |       -             |  Android   |
-|  Calculadora    |  Python   |     Unittest        |  Android   |
+|  [Calculadora](https://github.com/clarabez/appium-calculator)    |  Python   |     Unittest        |  Android   |
 |  Calculadora    |  Python   |       Pytest        |  Android   |
 | [Resultados TSE](https://github.com/clarabez/TSE_Resultados)  |  Python   |       Pytest        |  Android   |
 | [Curso de Appium](https://github.com/clarabez/appium-robot) |  Robot    |Robot Framework      |  Android   |
