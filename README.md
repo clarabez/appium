@@ -67,6 +67,7 @@ ___
 |  Calculadora    |  Python   |       Pytest        |  Android   |
 | [Resultados TSE](https://github.com/clarabez/TSE_Resultados)  |  Python   |       Pytest        |  Android   |
 | [Curso de Appium](https://github.com/clarabez/appium-robot) |  Robot    |Robot Framework      |  Android   |
+| [Curso de Appium](https://github.com/clarabez/appium-curso-java) |  JAVA    | TestNG      |  Android   |
 | [Verivox](https://github.com/clarabez/verivox) |  Python    |Pytest      |  Android   |
 | [HackerNews](https://github.com/clarabez/HackerNews) |  Python    |Pytest      |  Android   |
 | [Blinkist](https://github.com/clarabez/HackerNews) |  Python    |Unittest      |  Android   |
