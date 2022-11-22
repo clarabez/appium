@@ -7,7 +7,7 @@ gitignore==0.0.8
 htmlmin==0.1.12
 importlib-metadata==2.0.0
 iniconfig==1.1.1
-Jinja2==2.11.2
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 packaging==20.4
 Pillow==9.3.0
