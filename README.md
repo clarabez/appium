@@ -190,7 +190,7 @@ Após o download (link acima) e instalação do JDK do seu ambiente Windows, é 
 Agora, para baixar (link acima) e instalar o Android SDK, siga os passos:
 1. Siga o mesmo passo #1 descrito acima até alcançar o campo de variáveis de ambiente.
 2. Agora, insira o nome da variável como "ANDROID_HOME" e insira como valor a localização exata onde seu Android SDK foi instalado, por exemplo, "C:\android-sdk".
-3. Agora, mais uma vez precisamos adicionar o valor da sua nova variável à sua variável global do sistema, que é o Path: "%ANDROID_HOME%\platform-tools" e também "%ANDROID_HOME\tools%".
+3. Agora, mais uma vez precisamos adicionar o valor da sua nova variável à sua variável global do sistema, que é o Path: "%ANDROID_HOME%\platform-tools" e também "%ANDROID_HOME%\tools".
 4. É só clicar OK e aplicar as mudanças de configuração.
 
 # Variáveis de ambiente - Linux:
