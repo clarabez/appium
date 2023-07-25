@@ -3,7 +3,7 @@
 <div align="center">
 <img src="/images/appiumwithpython.png">
 
-<i>Material recomendado pela <a href="https://github.com/appium/appium/tree/master/sample-code/python#tutorial">documentação oficial do Appium</a>.</i>
+<i>Material recomendado pela <a href="https://github.com/appium/appium/tree/1.x/sample-code/python#tutorial">documentação oficial do Appium</a>.</i>
 </div>
 
 Se este tutorial te ajudou, não esquece de deixar uma estrelinha ⭐️ 🌟
